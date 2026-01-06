@@ -1,6 +1,15 @@
 <?php
 
 use yii\helpers\Html;
+use app\custom\helpers\DateHelper;
+
+// 15 октября, вт в 20:00
+$timestamp = $quiz->date;
+$day = date('d', $timestamp);
+$month = DateHelper::getMonth2(date('n', $timestamp));
+$weekday = DateHelper::getWeekdayString(date('N', $timestamp), false);
+$date = $day.' '.$month.', '.$weekday.', '.$quiz->time;
+
 ?>
 <div class="quiz-card">
     <?php /*
@@ -10,16 +19,16 @@ use yii\helpers\Html;
     <div class="quiz-content">
         <div class="quiz-header">
             <h3 class="quiz-title"><?= $quiz->title ?></h3>
-            <span class="quiz-category">Кино и сериалы</span>
-            <span class="quiz-category">Музыка</span>
-            <span class="quiz-category">Мультфильмы</span>
-            <span class="quiz-category">Общие знания</span>
+
+            <?php foreach ($quiz->labels as $label) { ?>
+                <span class="quiz-category"><?=  $label->title ?></span>
+            <?php } ?>
         </div>
         
         <div class="quiz-details">
             <div class="detail-item">
                 <i class="far fa-calendar-alt"></i>
-                <span class="color-accent">15 октября, вт в 20:00</span>
+                <span class="color-accent"><?= $date ?></span>
             </div>
 
             <div class="detail-item">
@@ -47,8 +56,8 @@ use yii\helpers\Html;
         <div class="quiz-footer">
             <div class="quiz-price"><?= $quiz->price ?> руб.</div>
             <div class="quiz-actions">
-                <a href="/" class="btn-details" onclick="showQuizDetails(1)"><i class="fas fa-chevron-right"></i></a>
-                <a href="/" class="btn-signup" onclick="openSignupModal(1)">Записаться</a>
+                <a href="/" class="link-signup" onclick="openSignupModal(1)">Записаться</a>
+                <a href="/" class="link-details"><i class="fas fa-chevron-right"></i></a>
             </div>
         </div>
     </div>

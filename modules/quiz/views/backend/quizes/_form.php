@@ -33,14 +33,23 @@ use dosamigos\datepicker\DatePicker;
 
         <?php echo $form->field($model, 'desc')->textarea(['rows' => 8]); ?>
 
-        <?= $form->field($model, 'date')->widget(
-            DatePicker::class, [
-            'language' => 'ru',
-            'clientOptions' => [
-                'autoclose' => true,
-                'dateFormat' => 'dd.mm.yyyy'
-            ]
-        ]);?>
+        <div class="form-group">
+            <div class="col-md-6">
+                <?= $form->field($model, 'date')->widget(
+                    DatePicker::class, [
+                    'language' => 'ru',
+                    'clientOptions' => [
+                        'autoclose' => true,
+                        'dateFormat' => 'dd.mm.yyyy'
+                    ]
+                ]);?>
+            </div>
+
+            <div class="col-md-6">
+                <?php echo $form->field($model, 'time')->textInput(); ?>
+            </div>
+        </div>
+        
 
         <?php echo $form->field($model, 'text')->widget(TinyMce::class, [
             'options' => ['rows' => 10],

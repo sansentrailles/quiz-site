@@ -18,7 +18,7 @@ class QuizRepository extends BaseRepository
     {
         return $this->model::find()
             ->andWhere(['is_visible' => Model::STATUS_VISIBLE])
-            ->orderBy(['date' => SORT_DESC])
+            ->orderBy(['date' => SORT_ASC])
             ->all();
     }
 }

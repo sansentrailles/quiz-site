@@ -9,15 +9,6 @@ use yii\helpers\Url;
 
 ?>
 
-<?php // = Contacts::widget()?>
-<?php // = Menu::widget(['template' => 'sidebar_menu'])?>
-<?php // = SocialMedia::widget()?>
-<?php /*= Feedback::widget([
-    'action' => Url::to(['/feedback/send-feedback'])
-]) */ ?>
-<?php // = ExternalScripts::widget()?>
-
-
 <footer>
     <div class="container">
         <div class="footer-content">
@@ -26,9 +17,6 @@ use yii\helpers\Url;
                 <p>Лучшие барные викторины в вашем городе. Присоединяйтесь к нашему интеллектуальному сообществу!</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-vk"></i></a>
-                    <a href="#"><i class="fab fa-telegram"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
             
@@ -56,16 +44,14 @@ use yii\helpers\Url;
             <div class="footer-column">
                 <h3>Контакты</h3>
                 <ul>
-                    <li><i class="fas fa-envelope"></i> info@quiznight.ru</li>
-                    <li><i class="fas fa-phone"></i> +7 (999) 123-45-67</li>
-                    <li><i class="fas fa-map-marker-alt"></i> г. Москва, ул. Примерная, 15</li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Написать нам</a></li>
+                    <li><i class="fas fa-envelope"></i> info@i-quiz.ru</li>
+                    <li><a href="#"><i class="fab fa-vk"></i> Написать нам</a></li>
                 </ul>
             </div>
         </div>
         
         <div class="copyright">
-            <p>© <?= date('Y', time()) ?>?> IQuiz</p>
+            <p>© <?= date('Y', time()) ?> IQuiz</p>
         </div>
     </div>
 </footer>

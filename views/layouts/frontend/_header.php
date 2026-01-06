@@ -5,9 +5,12 @@
 <header>
     <div class="container header-content">
         <div class="logo">
+            <img src="/images/logo-w.png" alt="IQuiz лого">
+            <?php /*
             <i class="fas fa-brain"></i>
+            */ ?>
             <div class="logo-text">
-                <h1>IQuiz</h1>
+                <h1 class="google-sans-bold">IQuiz</h1>
                 <p>Интеллектуальные игры в барах города</p>
             </div>
         </div>

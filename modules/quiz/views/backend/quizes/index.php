@@ -39,6 +39,12 @@ $seoSection = 'quiz';
             ],
 
             [
+                'attribute' => 'date',
+                'headerOptions' => ['width' => '5%'],
+                'value' => static fn ($model) => date('d.m.Y', $model->date),
+            ],
+
+            [
                 'attribute' => 'image',
                 'headerOptions' => ['width' => '15%'],
                 'format' => 'raw',

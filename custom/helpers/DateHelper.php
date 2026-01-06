@@ -21,7 +21,22 @@ class DateHelper
         12 => 'декабрь',
     ];
 
-    public static $REAL_WEEK = [
+    public const RU_MONTHS2 = [
+        1 => 'января',
+        2 => 'февраля',
+        3 => 'марта',
+        4 => 'апреля',
+        5 => 'мая',
+        6 => 'июня',
+        7 => 'июля',
+        8 => 'августа',
+        9 => 'сентября',
+        10 => 'октября',
+        11 => 'ноября',
+        12 => 'декабря',
+    ];
+
+    public const REAL_WEEK = [
         1 => ['short' => 'Пн', 'full' => 'Понедельник'],
         2 => ['short' => 'Вт', 'full' => 'Вторник'],
         3 => ['short' => 'Ср', 'full' => 'Среда'],
@@ -33,7 +48,12 @@ class DateHelper
 
     public static function getMonth(int $num)
     {
-        return static::RU_MONTHS[$num + 1];
+        return static::RU_MONTHS[$num];
+    }
+
+    public static function getMonth2(int $num)
+    {
+        return static::RU_MONTHS2[$num];
     }
 
     public static function getWeekdayString($index, $full = true)
@@ -41,10 +61,10 @@ class DateHelper
         $index = trim($index, '0');
 
         if ($full) {
-            return static::$REAL_WEEK[$index]['full'];
+            return static::REAL_WEEK[$index]['full'];
         }
 
-        return static::$REAL_WEEK[$index]['short'];
+        return static::REAL_WEEK[$index]['short'];
     }
 
     public static function getQuarter(int $timestamp)
@@ -77,7 +97,7 @@ class DateHelper
         return $result;
     }
 
-    public static function formatTimestampRu($timestamp) 
+    public static function formatTimestampRu($timestamp)
     {
         // Создаем объект DateTime из timestamp
         $date = new \DateTime();
@@ -118,7 +138,7 @@ class DateHelper
         return trim($result);
     }
 
-    public static function getDeclension($number, $words) 
+    public static function getDeclension($number, $words)
     {
         $number = abs($number) % 100;
         $mod10 = $number % 10;
