@@ -12,19 +12,22 @@ use yii\helpers\Html;
             <h3 class="quiz-title"><?= $quiz->title ?></h3>
             <span class="quiz-category">Кино и сериалы</span>
             <span class="quiz-category">Музыка</span>
+            <span class="quiz-category">Мультфильмы</span>
             <span class="quiz-category">Общие знания</span>
         </div>
         
         <div class="quiz-details">
             <div class="detail-item">
                 <i class="far fa-calendar-alt"></i>
-                <span>15 октября, вт в 20:00</span>
+                <span class="color-accent">15 октября, вт в 20:00</span>
             </div>
+
             <div class="detail-item">
                 <i class="fas fa-map-marker-alt"></i>
-                <span><?= $quiz->location ?></span>
+                <span class="color-info"><?= $quiz->location ?></span>
             </div>
-            <p style="margin-top: 10px; color: #666;">Викторина по фильмам и сериалам 90-х годов. Вас ждут вопросы о культовых фильмах и актерах эпохи.</p>
+
+            <p style="margin-top: 10px; color: #666;"><?= $quiz->desc ?></p>
         </div>
         
         <?php /*
