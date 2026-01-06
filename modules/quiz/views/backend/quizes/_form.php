@@ -3,6 +3,7 @@
 use yii\web\View;
 use yii\helpers\Url;
 use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
 use app\modules\quiz\Module;
 use dosamigos\tinymce\TinyMce;
@@ -53,6 +54,8 @@ use dosamigos\datepicker\DatePicker;
                 'toolbar' => 'undo redo | styleselect | bold italic ',
             ],
         ]); ?>
+
+        <?php echo $form->field($model, 'labels[]')->checkboxList(ArrayHelper::map($labels, 'id', 'title'), ['multiple' => true, 'size' => '15', 'separator' => '<br>']); ?>
 
         <div class="form-group">
             <div class="row">

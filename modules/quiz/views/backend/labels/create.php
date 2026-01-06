@@ -5,11 +5,11 @@ use app\modules\quiz\Module;
 // @var $this yii\web\View
 // @var $model app\modules\quiz\forms\backend\QuestForm
 
-$this->title = Module::t('common', 'QUIZ_CREATE');
-$this->params['breadcrumbs'][] = ['label' => Module::t('common', 'QUIZES'), 'url' => ['/admin/quiz/quizes']];
+$this->title = Module::t('common', 'QUIZ_LABEL_CREATE');
+$this->params['breadcrumbs'][] = ['label' => Module::t('common', 'QUIZE_LABELS'), 'url' => ['/admin/quiz/labels']];
 $this->params['breadcrumbs'][] = $this->title;
 $this->params['boxheader'] = [
-    'icon' => 'fa-question',
+    'icon' => 'fa-tag',
     'text' => $this->title,
 ];
 ?>
@@ -17,7 +17,6 @@ $this->params['boxheader'] = [
 
     <?php echo $this->render('_form', [
         'model' => $model,
-        'labels' => $labels,
     ]); ?>
 
 </div>

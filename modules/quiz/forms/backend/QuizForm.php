@@ -29,6 +29,7 @@ class QuizForm extends Model
     public $image;
     public $imageFile;
     public $quizImage;
+    private $_labels = [];
 
     private $quiz;
 
@@ -92,6 +93,7 @@ class QuizForm extends Model
             }],
             [['date'], 'string'],
             [['imageFile'], 'image', 'skipOnEmpty' => true, 'extensions' => 'png, jpg, jpeg'],
+            ['labels', 'safe'],
         ];
     }
 
@@ -129,5 +131,26 @@ class QuizForm extends Model
     public function getImagePath()
     {
         return $this->quiz->imagePath;
+    }
+
+    public function getLabels()
+    {
+        if (!empty($this->_labels)) {
+            return $this->_labels;
+        }
+
+        if ($this->quiz) {
+            // BaseHtml::getAttributeValue is looking for index resides in []
+            // in this case it wiil be ''
+            // because the attribute name is labels[]
+            return ['' => $this->quiz->labelIds];
+        }
+
+        return [];
+    }
+
+    public function setLabels($value): void
+    {
+        $this->_labels = $value;
     }
 }

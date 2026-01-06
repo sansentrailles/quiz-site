@@ -63,6 +63,13 @@ use app\modules\settings\Module as SettingsModule;
                                 'active'=> RouteHelper::isRoute('quiz/quizes'),
                                 // 'visible' => Yii::$app->user->can('dev'),
                             ],
+                            [
+                                'label' => QuizModule::t('common', 'QUIZ_LABELS'),
+                                'icon' => 'tag',
+                                'url' => ['/admin/quiz/labels'],
+                                'active'=> RouteHelper::isRoute('quiz/labels'),
+                                // 'visible' => Yii::$app->user->can('dev'),
+                            ],
                         ],
                     ],
 

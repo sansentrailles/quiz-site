@@ -139,4 +139,16 @@ class Quiz extends ActiveRecord implements Fileable
 
         return null;
     }
+
+    public function getLabels()
+    {
+        return $this->hasMany(Label::class, ['id' => 'label_id'])
+            ->viaTable('quiz_label_refs', ['quiz_id' => 'id'])
+            ->orderBy('title');
+    }
+
+    public function getLabelIds(): array
+    {
+        return array_map(static fn ($label) => $label->id, $this->labels);
+    }
 }

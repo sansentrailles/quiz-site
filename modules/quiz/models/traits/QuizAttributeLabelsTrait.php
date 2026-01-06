@@ -19,6 +19,7 @@ trait QuizAttributeLabelsTrait
             'location'   => Module::t('common', 'QUIZ_LOCATION'),
             'date'       => Module::t('common', 'QUIZ_DATE'),
             'time'       => Module::t('common', 'QUIZ_TIME'),
+            'labels'     => Module::t('common', 'QUIZ_LABELS'),
             'image'      => Module::t('common', 'QUIZ_IMAGE'),
             'imageFile'  => Module::t('common', 'QUIZ_IMAGE'),
             'isVisible'  => Module::t('common', 'IS_VISIBLE'),
