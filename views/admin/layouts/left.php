@@ -1,14 +1,9 @@
 <?php declare(strict_types=1);
 
 use app\custom\helpers\RouteHelper;
-use app\modules\feedback\Module as FeedbackModule;
 use app\modules\user\Module as UserModule;
+use app\modules\quiz\Module as QuizModule;
 use app\modules\settings\Module as SettingsModule;
-use app\modules\tyres\Module as TyresModule;
-use app\modules\about\Module as AboutModule;
-use app\modules\social\Module as SocialModule;
-use app\modules\pages\Module as PageModule;
-use app\modules\quests\Module as QuestModule;
 
 ?>
 
@@ -56,16 +51,16 @@ use app\modules\quests\Module as QuestModule;
                     ],
 
                     [
-                        'label' => QuestModule::t('common', 'QUESTS'),
+                        'label' => QuizModule::t('common', 'QUIZES'),
                         'icon' => 'question',
                         'url' => '#',
                         'active'=> RouteHelper::isModule('quests'),
                         'items' => [
                             [
-                                'label' => QuestModule::t('common', 'QUESTS_LIST'),
+                                'label' => QuizModule::t('common', 'QUIZ_LIST'),
                                 'icon' => 'bars',
-                                'url' => ['/admin/quests/quests'],
-                                'active'=> RouteHelper::isRoute('quests/quests'),
+                                'url' => ['/admin/quiz/quizes'],
+                                'active'=> RouteHelper::isRoute('quiz/quizes'),
                                 // 'visible' => Yii::$app->user->can('dev'),
                             ],
                         ],

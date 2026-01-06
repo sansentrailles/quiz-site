@@ -3,28 +3,8 @@
 declare(strict_types=1);
 
 return [
-    'taskHintImage' => [
-        'baseSubPath' => 'images/quests/hints',
-        'fileSubDirTemplate' => '{^name}{^^name}/{^^^name}{^^^^name}',
-    ],
-
-    'taskImage' => [
-        'baseSubPath' => 'images/quests/tasks',
-        'fileSubDirTemplate' => '{^name}{^^name}/{^^^name}{^^^^name}',
-    ],
-
-    'taskImageInfo' => [
-        'baseSubPath' => 'images/quests/info',
-        'fileSubDirTemplate' => '{^name}{^^name}/{^^^name}{^^^^name}',
-    ],
-
-    'questImage' => [
-        'baseSubPath' => 'images/quests/image',
-        'fileSubDirTemplate' => '{^name}{^^name}/{^^^name}{^^^^name}',
-    ],
-
-    'questImageFinal' => [
-        'baseSubPath' => 'images/quests/image',
+    'quizImage' => [
+        'baseSubPath' => 'images/quizes/image',
         'fileSubDirTemplate' => '{^name}{^^name}/{^^^name}{^^^^name}',
     ],
 

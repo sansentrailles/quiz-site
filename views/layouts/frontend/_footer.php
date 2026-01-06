@@ -16,3 +16,56 @@ use yii\helpers\Url;
     'action' => Url::to(['/feedback/send-feedback'])
 ]) */ ?>
 <?php // = ExternalScripts::widget()?>
+
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>IQuiz</h3>
+                <p>Лучшие барные викторины в вашем городе. Присоединяйтесь к нашему интеллектуальному сообществу!</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-vk"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Навигация</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Главная</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Расписание квизов</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Все квизы</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Рейтинги команд</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Правила участия</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Организаторам</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Добавить квиз</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Партнерская программа</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Реклама на сайте</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Контакты для сотрудничества</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Контакты</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> info@quiznight.ru</li>
+                    <li><i class="fas fa-phone"></i> +7 (999) 123-45-67</li>
+                    <li><i class="fas fa-map-marker-alt"></i> г. Москва, ул. Примерная, 15</li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Написать нам</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>© <?= date('Y', time()) ?>?> IQuiz</p>
+        </div>
+    </div>
+</footer>

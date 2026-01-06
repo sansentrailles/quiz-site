@@ -97,6 +97,12 @@ $config = [
             'migrationNamespaces' => ['app\modules\quests\migrations'],
             'migrationTable' => 'migration_quests',
         ],
+
+        'migrate-quiz' => [
+            'class' => 'yii\console\controllers\MigrateController',
+            'migrationNamespaces' => ['app\modules\quiz\migrations'],
+            'migrationTable' => 'migration_quiz',
+        ],
     ],
 ];
 

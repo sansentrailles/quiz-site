@@ -22,6 +22,7 @@ $config = [
         'app\modules\admin\Bootstrap',
         'app\modules\user\Bootstrap',
         'app\modules\settings\Bootstrap',
+        'app\modules\quiz\Bootstrap',
     ],
     'language' => 'ru',
     'timezone' => 'Asia/Yekaterinburg',
@@ -54,29 +55,12 @@ $config = [
             'class' => 'yii\web\AssetManager',
             'forceCopy' => YII_DEBUG,
         ],
-        // 'request' => [
-        //     'class' => 'yii\web\Request',
-        //     'cookieValidationKey' => 'k0xChG06U7HTgyCu2RYYzy7d_Y49kssbfd',
-        //     'parsers' => [
-        //         'application/json' => 'yii\web\JsonParser',
-        //     ],
-        // ],
         'request' => [
             // 'class' => $params['multilang'] ? 'app\custom\components\Request' : 'yii\web\Request',
             'class' => 'yii\web\Request',
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'k0xCasdasdfhG06U7HTgyCu2RYYzy7d_Y49kbfd',
         ],
-        // 'response' => [
-        //     'formatters' => [
-        //         \yii\web\Response::FORMAT_JSON => [
-        //             'class' => 'yii\web\JsonResponseFormatter',
-        //             'prettyPrint' => YII_DEBUG, // use "pretty" output in debug mode
-        //             'encodeOptions' => JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE,
-        //             // ...
-        //         ],
-        //     ],
-        // ],
         'user' => [
             'identityClass' => 'app\modules\user\models\User',
             'enableAutoLogin' => true,

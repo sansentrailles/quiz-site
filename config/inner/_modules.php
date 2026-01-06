@@ -35,45 +35,10 @@ return [
                 'layout' => $layoutBackend,
             ],
 
-            'tyres' => [
-                'class' => 'app\modules\tyres\Module',
-                'controllerNamespace' => 'app\modules\tyres\controllers\backend',
-                'viewPath' => '@app/modules/tyres/views/backend',
-                'layout' => $layoutBackend,
-            ],
-
-            'feedback' => [
-                'class' => 'app\modules\feedback\Module',
-                'controllerNamespace' => 'app\modules\feedback\controllers\backend',
-                'viewPath' => '@app/modules/feedback/views/backend',
-                'layout' => $layoutBackend,
-            ],
-
-            'about' => [
-                'class' => 'app\modules\about\Module',
-                'controllerNamespace' => 'app\modules\about\controllers\backend',
-                'viewPath' => '@app/modules/about/views/backend',
-                'layout' => $layoutBackend,
-            ],
-
-            'social' => [
-                'class' => 'app\modules\social\Module',
-                'controllerNamespace' => 'app\modules\social\controllers\backend',
-                'viewPath' => '@app/modules/social/views/backend',
-                'layout' => $layoutBackend,
-            ],
-
-            'pages' => [
-                'class' => 'app\modules\pages\Module',
-                'controllerNamespace' => 'app\modules\pages\controllers\backend',
-                'viewPath' => '@app/modules/pages/views/backend',
-                'layout' => $layoutBackend,
-            ],
-
-            'quests' => [
-                'class' => 'app\modules\quests\Module',
-                'controllerNamespace' => 'app\modules\quests\controllers\backend',
-                'viewPath' => '@app/modules/quests/views/backend',
+            'quiz' => [
+                'class' => 'app\modules\quiz\Module',
+                'controllerNamespace' => 'app\modules\quiz\controllers\backend',
+                'viewPath' => '@app/modules/quiz/views/backend',
                 'layout' => $layoutBackend,
             ],
 
@@ -100,10 +65,10 @@ return [
         'layout' => $layoutFrontend,
     ],
     
-    'quests' => [
-        'class' => 'app\modules\quests\Module',
-        'controllerNamespace' => 'app\modules\quests\controllers\frontend',
-        'viewPath' => '@app/modules/quests/views/frontend',
+    'quiz' => [
+        'class' => 'app\modules\quiz\Module',
+        'controllerNamespace' => 'app\modules\quiz\controllers\frontend',
+        'viewPath' => '@app/modules/quiz/views/frontend',
         'layout' => $layoutFrontend,
     ],
 ];
