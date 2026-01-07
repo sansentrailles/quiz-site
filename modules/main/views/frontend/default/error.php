@@ -1,12 +1,45 @@
+<?php
 
-<!-- Заголовок ошибки -->
-<h1 class="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-yellow-400"> 404 </h1>
-<!-- Основной текст -->
-<div>
-    <h2 class="text-2xl font-bold text-pink-300 mb-4">Страница не найдена</h2>
-    <p class="text-gray-300 leading-relaxed"> Кажется, вы потеряли путь в улочках города. Такое бывает даже с опытными искателями приключений. Но не беда — вы всегда можете вернуться на главную и начать путь заново. </p>
-</div>
-<!-- Кнопка возврата -->
-<div class="mt-6">
-    <a href="/" class="inline-block px-5 py-2 bg-blue-700 hover:bg-blue-800 text-white font-medium rounded-lg shadow-md transition"> Вернуться на главную </a>
+use yii\helpers\Url;
+
+?>
+
+<?php $this->beginBlock('breadcrumbsBlock'); ?>
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul>
+                <li><a href="<?=  Url::to('/') ?>"><i class="fas fa-home"></i> Главная</a></li>
+                <li class="separator">/</li>
+                <li class="current">Страница не найдена (404)</li>
+            </ul>
+        </div>
+    </div>
+<?php $this->endBlock(); ?>
+
+
+<div class="error-container">
+    <div class="error-number">404</div>
+    
+    <div class="error-icon">
+        <i class="fas fa-question-circle"></i>
+    </div>
+    
+    <h1 class="error-title">Упс! Страница не найдена</h1>
+    
+    <p class="error-subtitle">
+        К сожалению, запрашиваемая вами страница не существует или была перемещена
+    </p>
+    
+    <div class="error-message">
+        <h3><i class="fas fa-exclamation-triangle"></i> Что случилось?</h3>
+        <p>Возможно, вы перешли по устаревшей ссылке, ввели неправильный адрес или страница была удалена.</p>
+        <p>Но не расстраивайтесь! У нас есть множество интересных квизов, которые вас точно заинтересуют.</p>
+    </div>
+    
+    <!-- Действия -->
+    <div class="error-actions">
+        <a href="#" class="btn btn-primary">
+            <i class="fas fa-home"></i> Вернуться на главную
+        </a>
+    </div>
 </div>

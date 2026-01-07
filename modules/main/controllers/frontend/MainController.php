@@ -19,4 +19,9 @@ class MainController extends Controller
             'quizes' => $quizes,
         ]);
     }
+
+    public function actionMaintance()
+    {
+        return $this->render('maintance');
+    }
 }

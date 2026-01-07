@@ -877,6 +877,171 @@ nav a.active {
     text-align: right;
 }
 
+/* Хлебные крошки */
+.breadcrumbs {
+    background-color: var(--light);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.breadcrumbs ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.breadcrumbs li {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumbs a {
+    text-decoration: none;
+    color: var(--gray);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: var(--transition);
+}
+
+.breadcrumbs a:hover {
+    color: var(--primary);
+}
+
+.breadcrumbs .separator {
+    margin: 0 10px;
+    color: #ced4da;
+}
+
+.breadcrumbs .current {
+    color: var(--dark);
+    font-weight: 500;
+}
+
+/* Основной контент - страница 404 */
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.error-number {
+    font-size: 8rem;
+    font-weight: 800;
+    color: var(--secondary);
+    line-height: 1;
+    margin-bottom: 10px;
+    text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.error-number::after {
+    content: '404';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    color: rgba(255, 107, 107, 0.3);
+    z-index: -1;
+}
+
+.error-icon {
+    font-size: 5rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+    animation: bounce 2s infinite;
+}
+
+.error-container .btn {
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: var(--transition);
+    text-decoration: none;
+    border: none;
+}
+
+.error-container .btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.error-container .btn-primary:hover {
+    background-color: #3a5bff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(74, 107, 255, 0.2);
+}
+
+.error-container .btn-secondary {
+    background-color: white;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.error-container .btn-secondary:hover {
+    background-color: var(--light-gray);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.error-title {
+    font-size: 2.5rem;
+    color: var(--dark);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.error-subtitle {
+    font-size: 1.3rem;
+    color: var(--gray);
+    margin-bottom: 30px;
+    max-width: 700px;
+}
+
+.error-message {
+    background-color: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    max-width: 800px;
+    margin: 20px 0 40px;
+    text-align: center;
+}
+
+.error-message h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.error-message p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.error-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
 /* Подвал */
 footer {
     background-color: var(--dark);

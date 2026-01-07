@@ -56,6 +56,10 @@ AppAsset::register($this);
                 <?= $this->blocks['heroBlock'] ?>
             <?php endif; ?>
 
+            <?php if (isset($this->blocks['breadcrumbsBlock'])): ?>
+                <?= $this->blocks['breadcrumbsBlock'] ?>
+            <?php endif; ?>
+
             <main class="container">
                 <?php echo $content; ?>
             </main>

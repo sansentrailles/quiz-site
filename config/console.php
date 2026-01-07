@@ -103,6 +103,12 @@ $config = [
             'migrationNamespaces' => ['app\modules\quiz\migrations'],
             'migrationTable' => 'migration_quiz',
         ],
+
+        'migrate-seo' => [
+            'class' => 'yii\console\controllers\MigrateController',
+            'migrationNamespaces' => ['app\modules\seo\migrations'],
+            'migrationTable' => 'migration_seo',
+        ],
     ],
 ];
 
