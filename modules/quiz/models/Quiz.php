@@ -11,6 +11,7 @@ use app\custom\traits\models\VisibilityTrait;
 use app\custom\interfaces\annotations\Fileable;
 use app\modules\quiz\forms\backend\QuizForm as Form;
 use app\modules\quiz\models\traits\QuizAttributeLabelsTrait;
+use yii\helpers\Url;
 
 /**
  * This is the model class for table "quizes".
@@ -23,6 +24,7 @@ use app\modules\quiz\models\traits\QuizAttributeLabelsTrait;
  * @property string $text
  * @property string $image
  * @property string $time
+ * @property string $items
  * @property int $price
  * @property int $date
  * @property int $is_visible
@@ -89,6 +91,7 @@ class Quiz extends ActiveRecord implements Fileable
         $this->text       = $form->text;
         $this->time       = $form->time;
         $this->image      = $form->image;
+        $this->items      = $form->items;
         $this->is_visible = $form->is_visible;
         
         // Преобразование даты в timestamp если это строка
@@ -109,7 +112,6 @@ class Quiz extends ActiveRecord implements Fileable
     {
         $this->loadFromForm($form);
     }
-
 
     public function getImageFiles()
     {
@@ -150,5 +152,15 @@ class Quiz extends ActiveRecord implements Fileable
     public function getLabelIds(): array
     {
         return array_map(static fn ($label) => $label->id, $this->labels);
+    }
+
+    public function getLink()
+    {
+        return Url::to(['/quiz/default/view', 'url' => $this->url]);
+    }
+
+    public function getItemsList()
+    {
+        return explode("\n", $this->items);
     }
 }

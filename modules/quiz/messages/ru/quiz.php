@@ -12,6 +12,7 @@ return [
     'QUIZ_LOCATION' => 'Локация',
     'QUIZ_DATE' => 'Дата',
     'QUIZ_TIME' => 'Время',
+    'QUIZ_ITEMS' => 'Пункты',
     'QUIZ_CREATE' => 'Добавить квиз',
     'QUIZ_UPDATE' => 'Обновить квиз',
 ];

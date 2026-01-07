@@ -6,6 +6,7 @@ namespace app\modules\quiz\controllers\common;
 
 use app\modules\quiz\services\QuizService;
 use app\modules\quiz\services\LabelService;
+use app\modules\quiz\services\LocationService;
 
 /**
  * Represents the base class for the category controllers.
@@ -18,6 +19,7 @@ abstract class Controller extends \app\custom\controllers\Controller
         $config,
         protected readonly QuizService $quizService,
         protected readonly LabelService $labelService,
+        protected readonly LocationService $locationService,
     ) {
         parent::__construct($id, $module, $config);
     }

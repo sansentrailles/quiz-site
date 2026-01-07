@@ -21,4 +21,9 @@ class QuizRepository extends BaseRepository
             ->orderBy(['date' => SORT_ASC])
             ->all();
     }
+
+    public function getByUrl(string $url)
+    {
+        return $this->model::findOne(['url' => $url]);
+    }
 }

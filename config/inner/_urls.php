@@ -40,10 +40,7 @@ return [
         '' => 'main/main/index',
         '<_a:error>' => 'main/default/<_a>',
 
-        '/quests/handler' => 'quests/default/handler',
-        '/quests/help' => 'quests/default/help',
-        '/quests/<id:\d+>' => 'quests/default/view',
-        '/quests/stat/<uuid:[\w_\/-]+>' => 'quests/default/stat',
+        '/quiz/<url:[\w_\/-]+>' => 'quiz/default/view',
 
         // '<pageUri:[\w_\/-]+>'=>'page/default/view',
         // 'page/<_a>' => 'page/default/<_a>',

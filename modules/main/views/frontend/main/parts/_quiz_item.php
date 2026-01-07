@@ -16,7 +16,7 @@ $date = $day.' '.$month.', '.$weekday.', '.$quiz->time;
     <div class="quiz-badge">Популярный</div>
     */?>
     <img src="<?= $quiz->imagePath ?>" alt="<?=  Html::encode($quiz->title) ?>" class="quiz-image">
-    <div class="quiz-content">
+    <div class="quiz-card-content">
         <div class="quiz-header">
             <h3 class="quiz-title"><?= $quiz->title ?></h3>
 
@@ -36,7 +36,7 @@ $date = $day.' '.$month.', '.$weekday.', '.$quiz->time;
                 <span class="color-info"><?= $quiz->location ?></span>
             </div>
 
-            <p style="margin-top: 10px; color: #666;"><?= $quiz->desc ?></p>
+            <p style="margin-top: 10px; color: #667;"><?= $quiz->desc ?></p>
         </div>
         
         <?php /*
@@ -57,7 +57,10 @@ $date = $day.' '.$month.', '.$weekday.', '.$quiz->time;
             <div class="quiz-price"><?= $quiz->price ?> руб.</div>
             <div class="quiz-actions">
                 <a href="/" class="link-signup" onclick="openSignupModal(1)">Записаться</a>
+                <a href="<?= $quiz->link ?>" class="link-details">Подробнее</a>
+                <?php /*
                 <a href="/" class="link-details"><i class="fas fa-chevron-right"></i></a>
+                */ ?>
             </div>
         </div>
     </div>

@@ -117,6 +117,11 @@ class QuizService extends BaseService
         return $state;
     }
 
+    public function getByUrl(string $url)
+    {
+        return $this->repository->getByUrl($url);
+    }
+
     public function getVisible()
     {
         return $this->repository->getVisible();

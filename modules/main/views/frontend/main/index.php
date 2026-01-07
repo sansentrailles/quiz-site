@@ -1,4 +1,6 @@
-<?= $this->render('parts/_top') ?>
+<?php $this->beginBlock('heroBlock'); ?>
+    <?= $this->render('parts/_top_v2') ?>
+<?php $this->endBlock(); ?>
 
 <!-- Список квизов -->
 <section id="quiz-list">

@@ -25,6 +25,7 @@ class QuizForm extends Model
     public $date;
     public $price;
     public $time;
+    public $items;
     public $is_visible;
     public $image;
     public $imageFile;
@@ -69,6 +70,7 @@ class QuizForm extends Model
         $this->image      = $this->quiz->image;
         $this->text       = $this->quiz->text;
         $this->price      = $this->quiz->price;
+        $this->items      = $this->quiz->items;
         $this->is_visible = $this->quiz->is_visible;
     }
 
@@ -78,6 +80,7 @@ class QuizForm extends Model
             [['is_visible', 'price'], 'integer'],
             [['title', 'time', 'location'], 'string', 'max' => 255],
             [['desc', 'text'], 'string'],
+            [['items'], 'string'],
             [['title'], 'required', 'message' => 'Введите название'],
             [['url'], 'filter', 'filter' => 'trim'],
             ['url', 'filter', 'filter' => static function ($value) {

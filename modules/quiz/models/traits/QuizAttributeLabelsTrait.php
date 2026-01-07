@@ -17,6 +17,7 @@ trait QuizAttributeLabelsTrait
             'desc'       => Module::t('common', 'QUIZ_DESC'),
             'text'       => Module::t('common', 'QUIZ_TEXT'),
             'location'   => Module::t('common', 'QUIZ_LOCATION'),
+            'items'      => Module::t('common', 'QUIZ_ITEMS'),
             'date'       => Module::t('common', 'QUIZ_DATE'),
             'time'       => Module::t('common', 'QUIZ_TIME'),
             'labels'     => Module::t('common', 'QUIZ_LABELS'),

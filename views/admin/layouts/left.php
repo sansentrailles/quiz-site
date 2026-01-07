@@ -54,21 +54,25 @@ use app\modules\settings\Module as SettingsModule;
                         'label' => QuizModule::t('common', 'QUIZES'),
                         'icon' => 'question',
                         'url' => '#',
-                        'active'=> RouteHelper::isModule('quests'),
+                        'active'=> RouteHelper::isModule('quiz'),
                         'items' => [
                             [
                                 'label' => QuizModule::t('common', 'QUIZ_LIST'),
                                 'icon' => 'bars',
                                 'url' => ['/admin/quiz/quizes'],
                                 'active'=> RouteHelper::isRoute('quiz/quizes'),
-                                // 'visible' => Yii::$app->user->can('dev'),
                             ],
                             [
                                 'label' => QuizModule::t('common', 'QUIZ_LABELS'),
                                 'icon' => 'tag',
                                 'url' => ['/admin/quiz/labels'],
                                 'active'=> RouteHelper::isRoute('quiz/labels'),
-                                // 'visible' => Yii::$app->user->can('dev'),
+                            ],
+                            [
+                                'label' => QuizModule::t('common', 'QUIZ_LOCATIONS'),
+                                'icon' => 'map-marker',
+                                'url' => ['/admin/quiz/locations'],
+                                'active'=> RouteHelper::isRoute('quiz/locations'),
                             ],
                         ],
                     ],

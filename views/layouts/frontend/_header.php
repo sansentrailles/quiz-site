@@ -1,7 +1,6 @@
 <?php declare(strict_types=1);
 ?>
 
-
 <header>
     <div class="container header-content">
         <div class="logo">
