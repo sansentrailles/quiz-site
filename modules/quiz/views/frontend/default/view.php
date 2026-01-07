@@ -69,6 +69,7 @@ $setting = Yii::$app->setting;
             <div class="price-container">
                 <div class="price-label">Стоимость участия</div>
                 <div class="price"><?= $quiz->price ?> руб.</div>
+                <div class="price-label">за участника</div>
             </div>
             
             <?php /*
@@ -97,3 +98,7 @@ $setting = Yii::$app->setting;
         <?php } ?>
     </div>
 </div>
+
+<?= $this->render('parts/_map', [
+    'location' => $quiz->location,
+]) ?>

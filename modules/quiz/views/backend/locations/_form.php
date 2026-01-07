@@ -4,8 +4,6 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use app\modules\quiz\Module;
 use app\modules\quiz\assets\QuizAsset;
-use app\modules\quiz\models\Location;
-
 
 QuizAsset::register($this);
 

@@ -36,10 +36,14 @@
             </div>
         </div>
     </div>
-    
+
     <?php /*
-    <button class="btn-map">
+    <a href="#" class="btn-map action-button" id="show-map">
+        <i class="fas fa-map"></i> Открыть карту
+    </a>
+    */ ?>
+    
+    <button class="btn-map" id="show-map">
         <i class="fas fa-map"></i> Посмотреть на карте
     </button>
-    */ ?>
 </div>

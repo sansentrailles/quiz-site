@@ -1,0 +1,37 @@
+<?php
+
+use app\modules\quiz\assets\ModalMapAsset;
+ModalMapAsset::register($this);
+
+?>
+
+<div class="modal" id="map-modal" data-latitude="<?= $location->latitude ?>" data-longitude="<?= $location->longitude ?>">
+    <div class="modal-content" style="max-width: 800px; padding: 0;">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem; border-bottom: 1px solid #eee;">
+            <h2 style="margin: 0; color: var(--primary)">Карта местоположения "<?= $location->title ?>"</h2>
+            <button id="close-map-modal" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #666;">&times;</button>
+        </div>
+        <div style="padding: 2rem; text-align: left;">
+            <div id="modal-map-container" style="height: 300px; background-color: #e9ecef; border-radius: 8px; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-bottom: 1.5rem;">
+                <?php /*
+                <i class="fas fa-map-marked-alt" style="font-size: 4rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                <p>Интерактивная карта с маршрутом</p>
+                <p style="font-size: 0.9rem; color: #666;">Здесь будет отображаться карта Яндекс.Карт или Google Maps</p>
+                */ ?>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Адрес</h3>
+                    <p><i class="fas fa-map-marker-alt" style="color: var(--primary);"></i> <?= $location->address ?></p>
+                    <?php /* <p><i class="fas fa-phone" style="color: var(--primary);"></i> +7 (495) 123-45-67</p> */ ?>
+                </div>
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Как добраться</h3>
+                    <p><strong>На транспорте:</strong> до остановки "ЮУрГУ" или "Лесопарковая"</p>
+                    <p><strong>На машине:</strong> парковка около Белого рынка (платная, 150 ₽/час).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
