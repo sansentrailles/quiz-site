@@ -5,8 +5,8 @@
         <div class="location-item">
             <i class="fas fa-beer"></i>
             <div class="location-text">
-                <h4>Бар "Кинопробы"</h4>
-                <p>Специализированный бар для киноманов с уникальной атмосферой</p>
+                <h4><?= $location->title ?></h4>
+                <p><?= $location->desc ?></p>
             </div>
         </div>
         
@@ -14,10 +14,11 @@
             <i class="fas fa-location-arrow"></i>
             <div class="location-text">
                 <h4>Адрес</h4>
-                <p>ул. Киношная, 15, центральный вход</p>
+                <p><?= $location->address ?></p>
             </div>
         </div>
         
+        <?php /*
         <div class="location-item">
             <i class="fas fa-subway"></i>
             <div class="location-text">
@@ -25,17 +26,20 @@
                 <p>Станция "Киевская", 5 минут пешком</p>
             </div>
         </div>
+        */ ?>
         
         <div class="location-item">
             <i class="fas fa-clock"></i>
             <div class="location-text">
                 <h4>Время работы</h4>
-                <p>Пн-Чт: 16:00-02:00, Пт-Сб: 16:00-06:00, Вс: 16:00-00:00</p>
+                <p><?= str_replace("\n", '<br>', $location->workmode) ?></p>
             </div>
         </div>
     </div>
     
+    <?php /*
     <button class="btn-map">
         <i class="fas fa-map"></i> Посмотреть на карте
     </button>
+    */ ?>
 </div>

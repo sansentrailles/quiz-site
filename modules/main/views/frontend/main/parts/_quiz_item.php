@@ -10,6 +10,8 @@ $month = DateHelper::getMonth2(date('n', $timestamp));
 $weekday = DateHelper::getWeekdayString(date('N', $timestamp), false);
 $date = $day.' '.$month.', '.$weekday.', '.$quiz->time;
 
+// var_dump($quiz->location);
+
 ?>
 <div class="quiz-card">
     <?php /*
@@ -31,10 +33,12 @@ $date = $day.' '.$month.', '.$weekday.', '.$quiz->time;
                 <span class="color-accent"><?= $date ?></span>
             </div>
 
-            <div class="detail-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <span class="color-info"><?= $quiz->location ?></span>
-            </div>
+            <?php if ($quiz->location) { ?>
+                <div class="detail-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span class="color-info"><?= $quiz->location->title ?></span>
+                </div>
+            <?php } ?>
 
             <p style="margin-top: 10px; color: #667;"><?= $quiz->desc ?></p>
         </div>

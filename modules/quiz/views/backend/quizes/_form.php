@@ -29,7 +29,9 @@ use dosamigos\datepicker\DatePicker;
 
         <?php echo $form->field($model, 'url')->textInput(['maxlength' => true]); ?>
 
-        <?php echo $form->field($model, 'location')->textInput(['maxlength' => true]); ?>
+        <?php echo $form->field($model, 'location_id')->dropDownList(ArrayHelper::map($locations, 'id', 'title'), [
+            'prompt' => 'Выбрать локацию',
+        ]); ?>
 
         <?php echo $form->field($model, 'desc')->textarea(['rows' => 8]); ?>
 

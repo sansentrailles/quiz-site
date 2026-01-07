@@ -17,10 +17,10 @@ use yii\helpers\Url;
  * This is the model class for table "quizes".
  *
  * @property int $id
+ * @property int $location_id
  * @property string $title
  * @property string $url
  * @property string $desc
- * @property string $location
  * @property string $text
  * @property string $image
  * @property string $time
@@ -83,16 +83,16 @@ class Quiz extends ActiveRecord implements Fileable
      */
     private function loadFromForm(Form $form): void
     {
-        $this->title      = $form->title;
-        $this->url        = $form->url;
-        $this->price      = $form->price;
-        $this->desc       = $form->desc;
-        $this->location   = $form->location;
-        $this->text       = $form->text;
-        $this->time       = $form->time;
-        $this->image      = $form->image;
-        $this->items      = $form->items;
-        $this->is_visible = $form->is_visible;
+        $this->title       = $form->title;
+        $this->url         = $form->url;
+        $this->price       = $form->price;
+        $this->desc        = $form->desc;
+        $this->text        = $form->text;
+        $this->time        = $form->time;
+        $this->image       = $form->image;
+        $this->items       = $form->items;
+        $this->location_id = $form->location_id;
+        $this->is_visible  = $form->is_visible;
         
         // Преобразование даты в timestamp если это строка
         if (is_string($form->date)) {
@@ -162,5 +162,10 @@ class Quiz extends ActiveRecord implements Fileable
     public function getItemsList()
     {
         return explode("\n", $this->items);
+    }
+
+    public function getLocation()
+    {
+        return $this->hasOne(Location::class, ['id' => 'location_id']);
     }
 }

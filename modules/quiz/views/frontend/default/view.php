@@ -33,11 +33,13 @@ $date = $day.' '.$month.', '.$weekday;
                     <p style="font-size: 1.1rem; color: var(--gray); margin-top: 5px;">Начало в <?= $quiz->time ?></p>
                 </div>
                 
-                <div class="detail-card">
-                    <h3><i class="fas fa-map-marker-alt"></i> Локация</h3>
-                    <p>Бар "Кинопробы"</p>
-                    <p style="font-size: 1.1rem; color: var(--gray); margin-top: 5px;">ул. Киношная, 15</p>
-                </div>
+                <?php if ($quiz->location) { ?>
+                    <div class="detail-card">
+                        <h3><i class="fas fa-map-marker-alt"></i> Локация</h3>
+                        <p><?= $quiz->location->title ?></p>
+                        <p style="font-size: 1.1rem; color: var(--gray); margin-top: 5px;"><?= $quiz->location->address ?></p>
+                    </div>
+                <?php } ?>
             </div>
             
             <div class="quiz-description">
@@ -86,6 +88,10 @@ $date = $day.' '.$month.', '.$weekday;
             */ ?>
         </div>
         
-        <?= $this->render('parts/_location') ?>
+        <?php if ($quiz->location) { ?>
+            <?= $this->render('parts/_location', [
+                'location' => $quiz->location,
+            ]) ?>
+        <?php } ?>
     </div>
 </div>

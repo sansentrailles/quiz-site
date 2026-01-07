@@ -17,6 +17,7 @@ $this->params['boxheader'] = [
     <?php echo $this->render('_form', [
         'model' => $model,
         'labels' => $labels,
+        'locations' => $locations,
     ]); ?>
 
 </div>

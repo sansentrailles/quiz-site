@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace app\modules\quiz\controllers\backend;
 
 use app\modules\quiz\controllers\common\Controller;
-use app\modules\quiz\models\Quiz as Model;
 use app\modules\quiz\forms\backend\QuizForm as Form;
 use app\modules\quiz\forms\backend\search\QuizSearch as SearchModel;
 use Exception;
@@ -54,6 +53,7 @@ class QuizesController extends Controller
         return $this->render('create', [
             'model' => $model,
             'labels' => $this->labelService->getAll(),
+            'locations' => $this->locationService->getAll(),
         ]);
     }
 
@@ -72,6 +72,7 @@ class QuizesController extends Controller
         return $this->render('update', [
             'model' => $model,
             'labels' => $this->labelService->getAll(),
+            'locations' => $this->locationService->getAll(),
         ]);
     }
 
