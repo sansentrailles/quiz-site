@@ -10,14 +10,12 @@ $month = DateHelper::getMonth2(date('n', $timestamp));
 $weekday = DateHelper::getWeekdayString(date('N', $timestamp), false);
 $date = $day.' '.$month.', '.$weekday.', '.$quiz->time;
 
-// var_dump($quiz->location);
-
 ?>
 <div class="quiz-card">
     <?php /*
     <div class="quiz-badge">Популярный</div>
     */?>
-    <img src="<?= $quiz->imagePath ?>" alt="<?=  Html::encode($quiz->title) ?>" class="quiz-image">
+    <img src="<?= $quiz->imagePath ?>" alt="<?=  Html::encode($quiz->title) ?>" class="quiz-card-image">
     <div class="quiz-card-content">
         <div class="quiz-header">
             <h3 class="quiz-title"><?= $quiz->title ?></h3>

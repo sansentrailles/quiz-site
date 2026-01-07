@@ -233,7 +233,7 @@ nav a.active {
     z-index: 2;
 }
 
-.quiz-image {
+.quiz-card-image {
     height: 200px;
     width: 100%;
     object-fit: cover;

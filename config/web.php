@@ -23,6 +23,7 @@ $config = [
         'app\modules\user\Bootstrap',
         'app\modules\settings\Bootstrap',
         'app\modules\quiz\Bootstrap',
+        'app\modules\seo\Bootstrap',
     ],
     'language' => 'ru',
     'timezone' => 'Asia/Yekaterinburg',

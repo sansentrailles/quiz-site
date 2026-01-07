@@ -13,17 +13,14 @@ use app\modules\seo\services\CityService;
 abstract class Controller extends \app\custom\controllers\Controller
 {
     protected $seoService;
-    protected $cityService;
 
     public function __construct(
         $id,
         $module,
         SeoService $seoService,
-        CityService $cityService,
         $config = []
     ) {
         $this->seoService = $seoService;
-        $this->cityService = $cityService;
 
         parent::__construct($id, $module, $config);
     }

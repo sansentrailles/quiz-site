@@ -42,6 +42,13 @@ return [
                 'layout' => $layoutBackend,
             ],
 
+            'seo' => [
+                'class' => 'app\modules\seo\Module',
+                'controllerNamespace' => 'app\modules\seo\controllers\backend',
+                'viewPath' => '@app/modules/seo/views/backend',
+                'layout' => $layoutBackend,
+            ],
+
             // 'guide' => [
             //     'class' => 'app\modules\guide\Module',
             //     'controllerNamespace' => 'app\modules\guide\controllers\backend',

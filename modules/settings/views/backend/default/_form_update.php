@@ -20,18 +20,11 @@ use yii\widgets\ActiveForm;
 ]); ?>
     <?php echo $form->field($model, 'type_id')->hiddenInput(['id' => 'setting-type'])->label(false); ?>
 
-    <?php if (!$isDev) { ?>
-        <?php echo $this->render('inner/edit', [
-            'form' => $form,
-            'model' => $model,
-            'groups' => $groups,
-        ]); ?>
-    <?php } else { ?>
-        <?php echo $this->render('inner/show', [
-            'form' => $form,
-            'model' => $model,
-        ]); ?>
-    <?php } ?>
+    <?php echo $this->render('inner/edit', [
+        'form' => $form,
+        'model' => $model,
+        'groups' => $groups,
+    ]); ?>
 
     <?php echo $this->render('inner/values', [
         'form' => $form,
