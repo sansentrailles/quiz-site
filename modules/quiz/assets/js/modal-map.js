@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Координаты бара "Пинта" (ул. Покровка, 15, Москва)
     const barCoordinates = [mapModal.dataset.latitude, mapModal.dataset.longitude];
-    alert(barCoordinates);
     
     // Функция инициализации карты
     function initMap() {
