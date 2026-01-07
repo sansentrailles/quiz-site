@@ -74,6 +74,12 @@ use app\modules\settings\Module as SettingsModule;
                                 'url' => ['/admin/quiz/locations'],
                                 'active'=> RouteHelper::isRoute('quiz/locations'),
                             ],
+                            [
+                                'label' => QuizModule::t('common', 'QUIZ_FAQ_ITEMS'),
+                                'icon' => 'question',
+                                'url' => ['/admin/quiz/faq-items'],
+                                'active'=> RouteHelper::isRoute('quiz/faq-items'),
+                            ],
                         ],
                     ],
 
