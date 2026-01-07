@@ -3,6 +3,15 @@
 use yii\helpers\Html;
 use app\custom\helpers\DateHelper;
 
+use app\modules\seo\widgets\frontend\seo\SeoWidget;
+
+SeoWidget::widget([
+    'refId' => 0,
+    'section' => $seoSection,
+    'view' => $this,
+    'default' => $defaultSeo
+]);
+
 $timestamp = $quiz->date;
 $day = date('d', $timestamp);
 $month = DateHelper::getMonth2(date('n', $timestamp));

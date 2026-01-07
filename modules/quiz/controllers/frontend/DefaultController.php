@@ -19,8 +19,15 @@ class DefaultController extends Controller
             throw new HttpException(404, 'Квиз не найден');
         }
 
+        $defaultSeo = [
+            'title' => 'Квиз '.$quiz->title.' | IQuiz Барные викторины и интеллектуальные игры',
+            'description' => \yii\helpers\Html::encode($quiz->desc),
+        ];
+
         return $this->render('view', [
             'quiz' => $quiz,
+            'defaultSeo' => $defaultSeo,
+            'seoSection' => 'quiz',
         ]);
     }
 }
