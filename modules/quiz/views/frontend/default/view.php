@@ -9,6 +9,8 @@ $month = DateHelper::getMonth2(date('n', $timestamp));
 $weekday = DateHelper::getWeekdayString(date('N', $timestamp));
 $date = $day.' '.$month.', '.$weekday;
 
+$setting = Yii::$app->setting;
+
 ?>
 
 <div class="quiz-page">
@@ -79,9 +81,9 @@ $date = $day.' '.$month.', '.$weekday;
             </div>
             */ ?>
             
-            <button class="btn-signup" onclick="openSignupModal()">
+            <a href="<?= $setting->get('link.booking') ?>" class="btn-signup" target="_blank">
                 <i class="fas fa-ticket-alt"></i> Записаться на квиз
-            </button>
+            </a>
             
             <?php /*
             <p style="margin-top: 15px; color: var(--gray); font-size: 0.9rem;">Запись открыта до 14 октября</p>
