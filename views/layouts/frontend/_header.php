@@ -23,8 +23,8 @@ use yii\helpers\Url;
         <nav>
             <ul>
                 <li><a href="<?=  Url::to('/') ?>" class="active"><i class="fas fa-home"></i> Главная</a></li>
-                <li><a href="#"><i class="fas fa-bars"></i> Квизы</a></li>
-                <li><a href="#reviews-section"><i class="fas fa-star"></i> Контакты</a></li>
+                <li><a href="<?=  Url::to('/maintance') ?>"><i class="fas fa-bars"></i> Квизы</a></li>
+                <li><a href="<?=  Url::to('/maintance') ?>"><i class="fas fa-star"></i> Контакты</a></li>
             </ul>
         </nav>
     </div>

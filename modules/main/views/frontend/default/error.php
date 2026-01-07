@@ -1,6 +1,14 @@
 <?php
 
 use yii\helpers\Url;
+use app\modules\seo\widgets\frontend\seo\SeoWidget;
+
+SeoWidget::widget([
+    'refId' => 0,
+    'section' => $seoSection,
+    'view' => $this,
+    'default' => $defaultSeo
+]);
 
 ?>
 

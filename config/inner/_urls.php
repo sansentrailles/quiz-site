@@ -40,6 +40,7 @@ return [
         '' => 'main/main/index',
         '<_a:error>' => 'main/default/<_a>',
 
+        '/maintance' => 'main/main/maintance',
         '/quiz/<url:[\w_\/-]+>' => 'quiz/default/view',
 
         // '<pageUri:[\w_\/-]+>'=>'page/default/view',

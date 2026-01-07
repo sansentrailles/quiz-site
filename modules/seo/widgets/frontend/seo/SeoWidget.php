@@ -44,7 +44,7 @@ class SeoWidget extends Widget
 
     public function run()
     {
-        $seo = $this->seoService->getSeo($this->refId, $this->section);
+        $seo = $this->seoService->getSeo($this->section, $this->refId);
         $this->load($seo);
 
         if ($this->title) {
