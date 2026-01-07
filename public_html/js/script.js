@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {   
+    const firstFaq = document.querySelector('.faq-item');
+    if (firstFaq) {
+        firstFaq.classList.add('active');
+    }
+
     // Добавление плавной прокрутки для якорных ссылок
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -19,3 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+function toggleFaq(element) {
+    element.classList.toggle('active');
+}

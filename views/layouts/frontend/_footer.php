@@ -24,7 +24,7 @@ $setting = Yii::$app->setting;
                     <li><a href="<?= Url::to("/") ?>"><i class="fas fa-chevron-right"></i> Главная</a></li>
                     <li><a href="<?=  Url::to("/quizes")  ?>"><i class="fas fa-chevron-right"></i> Все квизы</a></li>
                     <li><a href="<?= Url::to("/maintance") ?>"><i class="fas fa-chevron-right"></i> Рейтинги команд</a></li>
-                    <li><a href="<?= Url::to("/maintance") ?>"><i class="fas fa-chevron-right"></i> Правила участия</a></li>
+                    <li><a href="<?= Url::to("/rules") ?>"><i class="fas fa-chevron-right"></i> Правила участия</a></li>
                 </ul>
             </div>
             
@@ -32,7 +32,7 @@ $setting = Yii::$app->setting;
                 <h3>Сотрудничество</h3>
                 <ul>
                     <li><a href="<?= Url::to("/maintance") ?>"><i class="fas fa-chevron-right"></i> Партнеры</a></li>
-                    <li><a href="<?= Url::to("/maintance") ?>"><i class="fas fa-chevron-right"></i> Контакты для сотрудничества</a></li>
+                    <li><a href="<?= Url::to("/maintance") ?>"><i class="fas fa-chevron-right"></i> Сотрудничество</a></li>
                 </ul>
             </div>
             

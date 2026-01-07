@@ -27,6 +27,22 @@ class MainController extends Controller
         ]);
     }
 
+    public function actionRules()
+    {
+        $faqItems = $this->faqItemService->getVisible();
+
+        $defaultSeo = [
+            'title' => 'Правиала участия в квизах | IQuiz Барные викторины и интеллектуальные игры',
+            'description' => '',
+        ];
+
+        return $this->render('rules', [
+            'faqItems' => $faqItems,
+            'defaultSeo' => $defaultSeo,
+            'seoSection' => 'rules',
+        ]);
+    }
+
     public function actionMaintance()
     {
         $defaultSeo = [

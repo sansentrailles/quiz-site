@@ -652,6 +652,257 @@ nav a.active {
     font-size: 1.2rem;
 }
 
+.page-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.page-title i {
+    color: var(--primary);
+    font-size: 2rem;
+}
+
+.page-title h1 {
+    font-size: 2.5rem;
+    color: var(--dark);
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    color: var(--gray);
+    margin-bottom: 40px;
+    max-width: 800px;
+    line-height: 1.8;
+}
+
+/* Карточки с правилами - ИСПРАВЛЕННЫЕ СТИЛИ ДЛЯ КРУГЛЫХ ИКОНОК */
+.rules-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.rule-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 30px;
+    transition: var(--transition);
+    border-top: 4px solid var(--primary);
+}
+
+.rule-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.rule-card.warning {
+    border-top-color: var(--accent);
+}
+
+.rule-card.success {
+    border-top-color: #28a745;
+}
+
+.rule-card.info {
+    border-top-color: #17a2b8;
+}
+
+.rule-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* ИСПРАВЛЕНИЕ: Гарантируем идеальный круг для иконок */
+.rule-card-icon {
+    flex-shrink: 0; /* Предотвращаем сжатие */
+    width: 60px;
+    height: 60px;
+    min-width: 60px; /* Фиксированная минимальная ширина */
+    min-height: 60px; /* Фиксированная минимальная высота */
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    border-radius: 50%; /* Это гарантирует круглую форму */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    /* Убираем любые деформации */
+    overflow: hidden;
+    position: relative;
+}
+
+/* Убедимся, что иконка внутри всегда центрирована */
+.rule-card-icon i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rule-card.warning .rule-card-icon {
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+}
+
+.rule-card.success .rule-card-icon {
+    background: linear-gradient(to right, #28a745, #20c997);
+}
+
+.rule-card.info .rule-card-icon {
+    background: linear-gradient(to right, #17a2b8, #20c997);
+}
+
+.rule-card-title {
+    font-size: 1.5rem;
+    color: var(--dark);
+    margin-top: 5px; /* Выравниваем текст с иконкой */
+}
+
+.rule-card-content {
+    color: var(--gray);
+    line-height: 1.8;
+}
+
+.rule-card-content ul {
+    padding-left: 20px;
+    margin: 15px 0;
+}
+
+.rule-card-content li {
+    margin-bottom: 10px;
+}
+
+/* Блок с часто задаваемыми вопросами */
+.faq-section {
+    margin-bottom: 50px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    color: var(--dark);
+}
+
+.section-title i {
+    color: var(--primary);
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.faq-item {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: var(--transition);
+}
+
+.faq-question:hover {
+    background-color: var(--light-gray);
+}
+
+.faq-question i {
+    color: var(--primary);
+    transition: var(--transition);
+}
+
+.faq-answer {
+    padding: 0 30px;
+    max-height: 0;
+    overflow: hidden;
+    transition: var(--transition);
+    color: var(--gray);
+}
+
+.faq-item.active .faq-answer {
+    padding: 0 30px 30px 30px;
+    max-height: 500px;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+/* Контакты для вопросов */
+.contacts-section {
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    color: white;
+    border-radius: var(--border-radius);
+    padding: 40px;
+    margin-bottom: 50px;
+}
+
+.contacts-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.contacts-title i {
+    font-size: 2rem;
+}
+
+.contacts-description {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 800px;
+}
+
+.contact-methods {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.contact-method {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px 25px;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.contact-method a {
+    color: white;
+    text-decoration: none;
+}
+
+.contact-method:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.contact-method i {
+    font-size: 1.5rem;
+}
+
+
 /* Modal */
 .modal {
     display: none;
@@ -1234,45 +1485,72 @@ nav a.active {
     .development-subtitle {
         font-size: 1.2rem;
     }
+}
 
-    @media (max-width: 768px) {
-        .development-icon {
-            font-size: 4rem;
-        }
-        
-        .development-title {
-            font-size: 1.8rem;
-        }
-        
-        .development-subtitle {
-            font-size: 1.1rem;
-        }
-        
-        .development-features {
-            flex-direction: column;
-            align-items: center;
-        }
+@media (max-width: 768px) {
+    .page-title h1 {
+        font-size: 2rem;
     }
-
-    @media (max-width: 576px) {
-        .development-title {
-            font-size: 1.6rem;
-        }
-        
-        .development-subtitle {
-            font-size: 1rem;
-        }
-        
-        .development-message {
-            padding: 20px;
-        }
-        
-        .btn-home {
-            padding: 12px 25px;
-            font-size: 1rem;
-        }
+    
+    .rules-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-methods {
+        flex-direction: column;
+    }
+    
+    /* Для мобильных: гарантируем круглые иконки */
+    .rule-card-icon {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+        min-height: 50px;
+    }
+    
+    .rule-card-title {
+        font-size: 1.3rem;
     }
 }
+
+@media (max-width: 768px) {
+    .development-icon {
+        font-size: 4rem;
+    }
+    
+    .development-title {
+        font-size: 1.8rem;
+    }
+    
+    .development-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .development-features {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .development-title {
+        font-size: 1.6rem;
+    }
+    
+    .development-subtitle {
+        font-size: 1rem;
+    }
+    
+    .development-message {
+        padding: 20px;
+    }
+    
+    .btn-home {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}
+
 
 /* Подвал */
 footer {
@@ -1496,6 +1774,10 @@ footer {
     
     .hero p {
         font-size: 1.1rem;
+    }
+
+    .rules-container {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
 }
 

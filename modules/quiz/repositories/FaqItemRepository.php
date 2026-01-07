@@ -18,7 +18,7 @@ class FaqItemRepository extends BaseRepository
     {
         return $this->model::find()
             ->andWhere(['is_visible' => Model::STATUS_VISIBLE])
-            ->orderBy(['date' => SORT_ASC])
+            ->orderBy(['ord' => SORT_ASC])
             ->all();
     }
 }
