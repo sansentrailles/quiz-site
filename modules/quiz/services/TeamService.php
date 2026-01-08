@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace app\modules\quiz\services;
 
 use app\custom\services\base\BaseService;
-use app\modules\quiz\models\Label as Model;
-use app\modules\quiz\repositories\LabelRepository as Repository;
+use app\modules\quiz\models\Team as Model;
+use app\modules\quiz\repositories\TeamRepository as Repository;
 use yii\base\Model as Form;
 
-class LabelService extends BaseService
+class TeamService extends BaseService
 {
 
 

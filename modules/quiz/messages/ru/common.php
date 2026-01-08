@@ -8,4 +8,5 @@ return array_merge(
     require_once __DIR__ . '/label.php',
     require_once __DIR__ . '/location.php',
     require_once __DIR__ . '/faq.php',
+    require_once __DIR__ . '/team.php',
 );

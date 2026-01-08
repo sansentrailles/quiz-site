@@ -6,25 +6,24 @@ namespace app\modules\quiz\models;
 
 use yii\db\ActiveRecord;
 use yii\behaviors\TimestampBehavior;
-use app\custom\traits\models\VisibilityTrait;
-use app\modules\quiz\forms\backend\LabelForm as Form;
-use app\modules\quiz\models\traits\LabelAttributeLabelsTrait;
+use app\modules\quiz\forms\backend\TeamForm as Form;
+use app\modules\quiz\models\traits\TeamAttributeLabelsTrait;
 
 /**
- * This is the model class for table "quiz_labels".
+ * This is the model class for table "quiz_teams".
  *
  * @property int $id
  * @property string $title
  * @property int $created_at
  * @property int $updated_at
  */
-class Label extends ActiveRecord
+class Team extends ActiveRecord
 {
-    use LabelAttributeLabelsTrait;
+    use TeamAttributeLabelsTrait;
 
     public static function tableName()
     {
-        return 'quiz_labels';
+        return 'quiz_teams';
     }
 
     public function behaviors()

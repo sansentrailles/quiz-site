@@ -80,6 +80,12 @@ use app\modules\settings\Module as SettingsModule;
                                 'url' => ['/admin/quiz/faq-items'],
                                 'active'=> RouteHelper::isRoute('quiz/faq-items'),
                             ],
+                            [
+                                'label' => QuizModule::t('common', 'QUIZ_TEAMS'),
+                                'icon' => 'users',
+                                'url' => ['/admin/quiz/teams'],
+                                'active'=> RouteHelper::isRoute('quiz/teams'),
+                            ],
                         ],
                     ],
 

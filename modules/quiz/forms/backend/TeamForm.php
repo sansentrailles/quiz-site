@@ -4,32 +4,32 @@ declare(strict_types=1);
 
 namespace app\modules\quiz\forms\backend;
 
-use app\modules\quiz\models\Label;
-use app\modules\quiz\models\traits\LabelAttributeLabelsTrait;
+use app\modules\quiz\models\Team;
+use app\modules\quiz\models\traits\TeamAttributeLabelsTrait;
 use yii\base\Model;
 
-class LabelForm extends Model
+class TeamForm extends Model
 {
-    use LabelAttributeLabelsTrait;
+    use TeamAttributeLabelsTrait;
 
     public $id;
     public $title;
-    private $label;
+    private $team;
 
-    public function __construct(?Label $label = null, $config = [])
+    public function __construct(?Team $team = null, $config = [])
     {
-        $this->label = $label;
+        $this->team = $team;
         parent::__construct($config);
     }
 
     public function init(): void
     {
-        if (!$this->label) {
+        if (!$this->team) {
             return;
         }
 
-        $this->id    = $this->label->id;
-        $this->title = $this->label->title;
+        $this->id    = $this->team->id;
+        $this->title = $this->team->title;
     }
 
     public function rules()
@@ -42,8 +42,8 @@ class LabelForm extends Model
 
     public function isAttributeChanged($attr)
     {
-        if ($this->label) {
-            return $this->label->isAttributeChanged($attr);
+        if ($this->team) {
+            return $this->team->isAttributeChanged($attr);
         }
 
         return false;
@@ -51,7 +51,7 @@ class LabelForm extends Model
 
     public function getIsNewRecord()
     {
-        if ($this->label) {
+        if ($this->team) {
             return false;
         }
 
