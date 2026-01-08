@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 use yii\helpers\Url;
 
+$currentUrl = Url::to('');
+
 ?>
 
 <header>
@@ -22,9 +24,9 @@ use yii\helpers\Url;
         </div>
         <nav>
             <ul>
-                <li><a href="<?=  Url::to('/') ?>" class="active"><i class="fas fa-home"></i> Главная</a></li>
-                <li><a href="<?=  Url::to('/maintance') ?>"><i class="fas fa-bars"></i> Квизы</a></li>
-                <li><a href="<?=  Url::to('/maintance') ?>"><i class="fas fa-star"></i> Контакты</a></li>
+                <li><a href="<?=  Url::to('/') ?>" <?php if ($currentUrl == Url::to('/')) { ?>class="active"<?php } ?>><i class="fas fa-home"></i> Главная</a></li>
+                <li><a href="<?=  Url::to('/quizes') ?>" <?php if ($currentUrl == Url::to('/quizes')) { ?>class="active"<?php } ?>><i class="fas fa-bars"></i> Квизы</a></li>
+                <li><a href="<?=  Url::to('/maintance') ?>" <?php if ($currentUrl == Url::to('/maintance')) { ?>class="active"<?php } ?>><i class="fas fa-star"></i> Контакты</a></li>
             </ul>
         </nav>
     </div>

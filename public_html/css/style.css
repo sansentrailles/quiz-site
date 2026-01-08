@@ -247,11 +247,11 @@ nav a.active {
     flex-direction: column;
 }
 
-.quiz-header {
+.quiz-card .quiz-header {
     margin-bottom: 15px;
 }
 
-.quiz-title {
+.quiz-card .quiz-title {
     font-size: 1.4rem;
     color: var(--dark);
     margin-bottom: 10px;
@@ -340,6 +340,11 @@ nav a.active {
     font-size: 1.4rem;
     color: var(--success);
     line-height: 1;
+}
+
+.quiz-price.completed {
+    color: var(--gray);
+    text-decoration: line-through;
 }
 
 .quiz-actions {
@@ -487,6 +492,37 @@ nav a.active {
     font-weight: 600;
 }
 
+/* Сообщение об отсутствии квизов (компактное) */
+.no-quizzes-message {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    border: 1px solid #e9ecef;
+}
+
+.no-quizzes-icon {
+    font-size: 3rem;
+    color: var(--gray);
+    margin-bottom: 15px;
+}
+
+.no-quizzes-message h3 {
+    font-size: 1.5rem;
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+
+.no-quizzes-message p {
+    color: var(--gray);
+    font-size: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
 /* Основной контент страницы квиза */
 .quiz-page {
     display: grid;
@@ -539,6 +575,14 @@ nav a.active {
     z-index: 2;
 }
 
+.quiz-badge.completed {
+    background-color: var(--gray);
+}
+
+quiz-badge.upcoming {
+    background-color: var(--success);
+}
+
 .quiz-content {
     padding: 40px;
 }
@@ -557,7 +601,7 @@ nav a.active {
 .quiz-category {
     background-color: #e8f4fc;
     color: var(--primary);
-    padding: 8px 16px;
+    padding: 2px 8px;
     border-radius: 20px;
     font-size: 0.9rem;
     font-weight: 600;
@@ -957,6 +1001,36 @@ nav a.active {
 .modal-button:hover {
     background-color: #2a6bc5;
 }
+
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #eee;
+}
+
+/* Список квизов */
+.quiz-section {
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 1.8rem;
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.section-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 1.8rem;
+}
+
 
 /* Боковая панель */
 .quiz-sidebar {
@@ -1499,6 +1573,10 @@ nav a.active {
     .contact-methods {
         flex-direction: column;
     }
+
+    .no-quizzes-message {
+        padding: 25px 15px;
+    }
     
     /* Для мобильных: гарантируем круглые иконки */
     .rule-card-icon {
@@ -1548,6 +1626,14 @@ nav a.active {
     .btn-home {
         padding: 12px 25px;
         font-size: 1rem;
+    }
+
+    .no-quizzes-message h3 {
+        font-size: 1.3rem;
+    }
+    
+    .no-quizzes-message p {
+        font-size: 0.95rem;
     }
 }
 
