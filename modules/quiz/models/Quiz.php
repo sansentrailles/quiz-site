@@ -168,4 +168,10 @@ class Quiz extends ActiveRecord implements Fileable
     {
         return $this->hasOne(Location::class, ['id' => 'location_id']);
     }
+
+    public function GetisExpired()
+    {
+        // Если дата квиза меньше текущего времени, значит квиз уже прошел
+        return $this->date < time();
+    }
 }
