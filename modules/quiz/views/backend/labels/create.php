@@ -6,7 +6,7 @@ use app\modules\quiz\Module;
 // @var $model app\modules\quiz\forms\backend\QuestForm
 
 $this->title = Module::t('common', 'QUIZ_LABEL_CREATE');
-$this->params['breadcrumbs'][] = ['label' => Module::t('common', 'QUIZE_LABELS'), 'url' => ['/admin/quiz/labels']];
+$this->params['breadcrumbs'][] = ['label' => Module::t('common', 'QUIZ_LABELS'), 'url' => ['/admin/quiz/labels']];
 $this->params['breadcrumbs'][] = $this->title;
 $this->params['boxheader'] = [
     'icon' => 'fa-tag',

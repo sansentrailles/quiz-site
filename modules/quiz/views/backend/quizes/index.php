@@ -58,6 +58,16 @@ $seoSection = 'quiz';
             ],
 
             [
+                'headerOptions' => ['width' => '10%'],
+                'label' => Module::t('common', 'QUIZ_PARTICIPANTS'),
+                'format' => 'raw',
+                'value' => function($model) {
+                    $url = Url::to(['/admin/quiz/participants', 'quizId' => $model->id]);
+                    return Html::a(Module::t('common', 'QUIZ_PARTICIPANTS'), $url);
+                }
+            ],
+
+            [
                 'class' => ToggleColumn::class,
                 'contentOptions' => ['style' => 'text-align: center'],
                 'attribute' => 'is_visible',
