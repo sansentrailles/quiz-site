@@ -26,4 +26,24 @@ class QuizRepository extends BaseRepository
     {
         return $this->model::findOne(['url' => $url]);
     }
+
+    public function getActualQuizes()
+    {
+        $currentTime = time(); // Текущая дата в формате timestamp
+        return $this->model::find()
+            ->where(['is_visible' => true])
+            ->andWhere(['>', 'date', $currentTime])
+            ->orderBy(['date' => SORT_ASC])
+            ->all();
+    }
+
+    public function getExpiredQuizes()
+    {
+        $currentTime = time();
+        return $this->model::find()
+            ->where(['is_visible' => true])
+            ->andWhere(['<', 'date', $currentTime])
+            ->orderBy(['date' => SORT_DESC]) // Сортируем от более новых к более старым
+            ->all();
+    }
 }

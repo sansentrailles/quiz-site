@@ -126,4 +126,14 @@ class QuizService extends BaseService
     {
         return $this->repository->getVisible();
     }
+
+    public function getActualQuizes()
+    {
+        return $this->repository->getActualQuizes();
+    }
+
+    public function getExpiredQuizes()
+    {
+        return $this->repository->getExpiredQuizes();
+    }
 }

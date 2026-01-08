@@ -12,7 +12,7 @@ class MainController extends Controller
 {
     public function actionIndex()
     {
-        $quizes = $this->quizService->getVisible();
+        $quizes = $this->quizService->getActualQuizes();
 
         $defaultSeo = [
             'title' => 'Квизы в Челябинске - IQuiz | Барные викторины и интеллектуальные игры',
