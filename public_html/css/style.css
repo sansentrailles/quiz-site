@@ -1225,7 +1225,7 @@ quiz-badge.upcoming {
     padding: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     text-align: center;
-    position: sticky;
+    /* position: sticky; */
     top: 100px;
 }
 
