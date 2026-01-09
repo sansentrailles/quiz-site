@@ -8,6 +8,7 @@ use app\custom\services\base\BaseService;
 use app\modules\quiz\models\Participant as Model;
 use app\modules\quiz\repositories\ParticipantRepository as Repository;
 use yii\base\Model as Form;
+use app\modules\quiz\forms\backend\ParticipantForm;
 
 class ParticipantService extends BaseService
 {
@@ -33,4 +34,37 @@ class ParticipantService extends BaseService
     {
         return Repository::class;
     }
+
+    public function savePoints(array $pointLists, array $places)
+    {
+        foreach ($pointLists as $id => $points) {
+            try {
+                $model = $this->find((int)$id);
+            } catch (\Exception $e) {
+                continue;
+            }
+
+            $form = new ParticipantForm($model);
+            $form->points = $points;
+
+            if (isset($places[$id])) {
+                $form->place = $places[$id];
+            }
+
+            $this->save($form);
+        }
+    }
+
+    public function setPlacesByQuiz(int $quizId)
+    {
+        $participants = $this->repository->getParticipantsByQuiz($quizId);
+        foreach ($participants as $k => $participant) {
+            $place = $k + 1;
+            $form = new ParticipantForm($participant);
+            $form->place = $place;
+
+            $this->save($form);
+        }
+    }
+    
 }

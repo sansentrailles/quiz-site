@@ -174,4 +174,10 @@ class Quiz extends ActiveRecord implements Fileable
         // Если дата квиза меньше текущего времени, значит квиз уже прошел
         return $this->date < time();
     }
+
+    public function getParticipants()
+    {
+        return $this->hasMany(Participant::class, ['quiz_id' => 'id'])
+            ->orderBy([Participant::tableName().'.place' => SORT_ASC]);
+    }
 }

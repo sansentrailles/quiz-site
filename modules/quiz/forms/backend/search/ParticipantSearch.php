@@ -40,7 +40,10 @@ class ParticipantSearch extends SearchModel
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'sort' => [
-                'defaultOrder' => ['place' => SORT_ASC],
+                'defaultOrder' => [
+                    'place' => SORT_ASC,
+                    'points' => SORT_DESC
+                ],
             ],
         ]);
 

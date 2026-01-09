@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace app\modules\quiz\controllers\backend;
 
 use app\modules\quiz\controllers\common\Controller;
+use app\modules\quiz\Module;
 use app\modules\quiz\forms\backend\ParticipantForm as Form;
 use app\modules\quiz\forms\backend\search\ParticipantSearch as SearchModel;
 use Yii;
@@ -89,5 +90,29 @@ class ParticipantsController extends Controller
         $this->participantService->delete($id);
 
         return $this->redirect(['index', 'quizId' => $quizId]);
+    }
+
+    public function actionSavePoints()
+    {
+        $request = Yii::$app->request;
+        $points = $request->post('points_list');
+        $places = $request->post('places');
+
+        if (empty($points)) {
+            return $this->redirect($request->referrer);
+        }
+
+        $this->participantService->savePoints($points, $places);
+        Yii::$app->getSession()->setFlash('success', Module::t('common', 'POINTS_SAVED_SUCCESS'));
+        return $this->redirect($request->referrer);
+    }
+
+    public function actionSetPlaces()
+    {
+        $request = Yii::$app->request;
+        $quizId = $request->post('quizId');
+        $this->participantService->setPlacesByQuiz((int) $quizId);
+        Yii::$app->getSession()->setFlash('success', Module::t('common', 'PLACES_SAVED_SUCCESS'));
+        return $this->redirect($request->referrer);
     }
 }

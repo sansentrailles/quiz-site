@@ -10,4 +10,7 @@ return [
     'QUIZ_PARTICIPANT_PLACE' => 'Место',
     'QUIZ_PARTICIPANT_CREATE' => 'Добавить команду',
     'QUIZ_PARTICIPANT_UPDATE' => 'Обновить команду',
+    'BUTTON_SET_PLACES' => 'Распределить места',
+    'POINTS_SAVED_SUCCESS' => 'Очки и места успешно сохранены',
+    'PLACES_SAVED_SUCCESS' => 'Места распределены',
 ];

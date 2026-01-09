@@ -30,7 +30,7 @@ class m260108_204956_create_quiz_participants_table extends Migration
             'team_id' => $this->integer(),
             'persons' => $this->integer(),
             'points' => $this->decimal()->defaultValue(0),
-            'place' => $this->integer(),
+            'place' => $this->integer()->defaultValue(0),
             'created_at' => $this->integer(),
             'updated_at' => $this->integer(),
         ], $tableOptions);

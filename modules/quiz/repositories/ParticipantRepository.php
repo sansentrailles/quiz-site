@@ -13,4 +13,12 @@ class ParticipantRepository extends BaseRepository
     {
         $this->model = Model::class;
     }
+
+    public function getParticipantsByQuiz(int $quizId)
+    {
+        return $this->model::find()
+            ->andWhere(['quiz_id' => (int) $quizId])
+            ->orderBy(['points' => SORT_DESC])
+            ->all();
+    }
 }

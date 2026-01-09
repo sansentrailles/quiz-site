@@ -47,6 +47,8 @@ class ParticipantForm extends Model
         return [
             [['points'], 'double'],
             [['place'], 'integer'],
+            [['points'], 'default', 'value' => 0],
+            [['place'], 'default', 'value' => 0],
             [['persons'], 'integer', 'min' => 1, 'max' => 10],
             [['quiz_id'],
                 'exist',
