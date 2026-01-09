@@ -66,6 +66,10 @@ class ParticipantForm extends Model
                 'unique',
                 'targetClass' => Participant::class,
                 'filter' => function ($query) {
+                    // Ограничиваем проверку только участниками текущего квиза
+                    $query->andWhere(['quiz_id' => $this->quiz_id]);
+
+                    // Исключаем текущую запись при обновлении
                     if ($this->id) {
                         $query->andWhere('id <> :id', [':id' => $this->id]);
                     }
