@@ -663,6 +663,67 @@ quiz-badge.upcoming {
     margin-bottom: 20px;
 }
 
+/* ПРОСТЫЕ И АККУРАТНЫЕ СТИЛИ ДЛЯ СПИСКОВ */
+.quiz-description ul,
+.quiz-description ol {
+    margin: 15px 0 20px 0;
+    color: var(--dark);
+    padding-left: 25px;
+}
+
+.quiz-description li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+    color: var(--dark);
+}
+
+/* Неупорядоченные списки (маркированные) */
+.quiz-description ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.quiz-description ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+
+.quiz-description ul li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary);
+    border-radius: 50%;
+}
+
+/* Упорядоченные списки (нумерованные) */
+.quiz-description ol {
+    counter-reset: item;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.quiz-description ol li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+}
+
+.quiz-description ol li:before {
+    content: counter(item) ".";
+    counter-increment: item;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1em;
+}
+
 .quiz-features {
     background-color: #f8f9fa;
     padding: 25px;
