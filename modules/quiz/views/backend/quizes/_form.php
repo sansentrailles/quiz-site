@@ -63,7 +63,7 @@ use dosamigos\datepicker\DatePicker;
                     'wordcount code fullscreen nonbreaking',
                     'save insertdatetime contextmenu paste',
                 ],
-                'toolbar' => 'undo redo | styleselect | bold italic ',
+                'toolbar' => 'undo redo | styleselect | bold italic | bullist numlist',
             ],
         ]); ?>
 
