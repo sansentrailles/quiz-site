@@ -58,7 +58,7 @@ $setting = Yii::$app->setting;
 
                 <?= $quiz->text ?>
                 
-                <?php if ($quiz->items) { ?>
+                <?php if ($quiz->items && !$quiz->isExpired) { ?>
                     <div class="quiz-features">
                         <h3><i class="fas fa-star"></i> Что вас ждет на квизе:</h3>
                         <ul class="features-list">
@@ -79,7 +79,9 @@ $setting = Yii::$app->setting;
             ]) ?>
             
         <?php } else { ?>
-            <?= $this->render('parts/_expired_sidebar') ?>
+            <?= $this->render('parts/_expired_sidebar', [
+                'stats' => $stats,
+            ]) ?>
         <?php } ?>
         
         <?php if ($quiz->location) { ?>
@@ -90,8 +92,10 @@ $setting = Yii::$app->setting;
     </div>
 </div>
 
-<?php if ($quiz->isExpired) { ?>
-    <?=  $this->render('parts/_quiz_result') ?>
+<?php if ($quiz->isExpired && count($quiz->participants) > 0) { ?>
+    <?=  $this->render('parts/_quiz_result', [
+        'participants' => $quiz->participants,
+    ]) ?>
 <?php } ?>
 
 <?php if ($quiz->location && $quiz->location->latitude && $quiz->location->longitude) { ?>

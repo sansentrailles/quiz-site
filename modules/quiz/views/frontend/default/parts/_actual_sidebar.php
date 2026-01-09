@@ -1,3 +1,9 @@
+<?php
+
+$setting = Yii::$app->setting;
+
+?>
+
 <div class="signup-card">
     <div class="price-container">
         <div class="price-label">Стоимость участия</div>

@@ -13,4 +13,5 @@ return [
     'BUTTON_SET_PLACES' => 'Распределить места',
     'POINTS_SAVED_SUCCESS' => 'Очки и места успешно сохранены',
     'PLACES_SAVED_SUCCESS' => 'Места распределены',
+    'QUIZ_PARTICIPANTS_TITLE' => 'Участники квиза',
 ];

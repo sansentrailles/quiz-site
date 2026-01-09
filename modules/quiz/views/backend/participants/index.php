@@ -11,7 +11,7 @@ use app\custom\widgets\backend\grid\ActionColumn;
 // @var $searchModel app\modules\quiz\models\ParticipantSearch
 // @var $dataProvider yii\data\ActiveDataProvider
 
-$this->title = Module::t('common', 'QUIZ_PARTICIPANTS');
+$this->title = Module::t('common', 'QUIZ_PARTICIPANTS_TITLE').": ".$quiz->title ."(".date('d.m.Y', $quiz->date).")";
 $this->params['breadcrumbs'][] = ['label' => Module::t('common', 'QUIZES'), 'url' => ['/admin/quiz/quizes']];
 $this->params['breadcrumbs'][] = $this->title;
 

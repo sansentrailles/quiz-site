@@ -42,8 +42,14 @@ class DefaultController extends Controller
             'description' => \yii\helpers\Html::encode($quiz->desc),
         ];
 
+        $stats = null;
+        if ($quiz->isExpired && count($quiz->participants) > 0) {
+            $stats = $this->participantService->getStats($quiz->id);
+        }
+
         return $this->render('view', [
             'quiz' => $quiz,
+            'stats' => $stats,
             'defaultSeo' => $defaultSeo,
             'seoSection' => 'quiz',
         ]);

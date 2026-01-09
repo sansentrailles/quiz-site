@@ -66,5 +66,10 @@ class ParticipantService extends BaseService
             $this->save($form);
         }
     }
+
+    public function getStats(int $quizId)
+    {
+        return $this->repository->getStats($quizId);
+    }
     
 }

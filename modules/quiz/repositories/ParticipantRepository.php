@@ -21,4 +21,18 @@ class ParticipantRepository extends BaseRepository
             ->orderBy(['points' => SORT_DESC])
             ->all();
     }
+
+    public function getStats(int $quizId)
+    {
+        return $this->model::find()
+            ->select([
+                'MAX(points) as max_points',
+                'MIN(points) as min_points',
+                'SUM(persons) as total_persons',
+                'COUNT(*) as teams_count'
+            ])
+            ->where(['quiz_id' => $quizId])
+            ->asArray()
+            ->one();
+    }
 }
