@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use app\custom\helpers\DateHelper;
 
 use app\modules\seo\widgets\frontend\seo\SeoWidget;
@@ -21,6 +22,20 @@ $date = $day.' '.$month.', '.$weekday;
 $setting = Yii::$app->setting;
 
 ?>
+
+<?php $this->beginBlock('breadcrumbsBlock'); ?>
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul>
+                <li><a href="<?=  Url::to('/') ?>"><i class="fas fa-home"></i> Главная</a></li>
+                <li class="separator">/</li>
+                <li><a href="<?=  Url::to('/quizes') ?>"></i> Квизы</a></li>
+                <li class="separator">/</li>
+                <li class="current">Квиз: <?= $quiz->title ?></li>
+            </ul>
+        </div>
+    </div>
+<?php $this->endBlock(); ?>
 
 <div class="quiz-page">
     <div class="quiz-main">

@@ -37,9 +37,7 @@ SeoWidget::widget([
     Пожалуйста, ознакомьтесь с ними перед посещением квиза.
 </p>
 
-<!-- Карточки с правилами -->
 <div class="rules-container">
-    <!-- Правило 1 -->
     <div class="rule-card">
         <div class="rule-card-header">
             <div class="rule-card-icon">
@@ -58,7 +56,6 @@ SeoWidget::widget([
         </div>
     </div>
     
-    <!-- Правило 2 -->
     <div class="rule-card warning">
         <div class="rule-card-header">
             <div class="rule-card-icon">
@@ -77,7 +74,6 @@ SeoWidget::widget([
         </div>
     </div>
     
-    <!-- Правило 3 -->
     <div class="rule-card success">
         <div class="rule-card-header">
             <div class="rule-card-icon">
@@ -96,7 +92,6 @@ SeoWidget::widget([
         </div>
     </div>
     
-    <!-- Правило 4 -->
     <div class="rule-card info">
         <div class="rule-card-header">
             <div class="rule-card-icon">
@@ -115,7 +110,6 @@ SeoWidget::widget([
         </div>
     </div>
     
-    <!-- Правило 5 -->
     <div class="rule-card">
         <div class="rule-card-header">
             <div class="rule-card-icon">
@@ -134,7 +128,6 @@ SeoWidget::widget([
         </div>
     </div>
     
-    <!-- Правило 6 -->
     <div class="rule-card warning">
         <div class="rule-card-header">
             <div class="rule-card-icon">
@@ -158,7 +151,6 @@ SeoWidget::widget([
     'faqItems' => $faqItems,
 ]) ?>
 
-<!-- Контакты для вопросов -->
 <section class="contacts-section">
     <div class="contacts-title">
         <i class="fas fa-headset"></i>
