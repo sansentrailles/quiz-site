@@ -21,6 +21,9 @@ class Team extends ActiveRecord
 {
     use TeamAttributeLabelsTrait;
 
+    public $place;
+    public $trend;
+
     public static function tableName()
     {
         return 'quiz_teams';
@@ -66,5 +69,10 @@ class Team extends ActiveRecord
     public function edit(Form $form): void
     {
         $this->loadFromForm($form);
+    }
+
+    public function getParticipants()
+    {
+        return $this->hasMany(Participant::class, ['team_id' => 'id']);
     }
 }

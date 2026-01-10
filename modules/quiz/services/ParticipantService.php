@@ -71,5 +71,9 @@ class ParticipantService extends BaseService
     {
         return $this->repository->getStats($quizId);
     }
-    
+
+    public function getRating()
+    {
+        return $this->repository->getRating();
+    }
 }

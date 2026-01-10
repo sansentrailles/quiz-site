@@ -9,6 +9,7 @@ use Yii;
 use app\modules\quiz\controllers\common\Controller;
 use app\modules\quiz\models\Quiz;
 use yii\web\HttpException;
+use yii\data\ArrayDataProvider;
 
 class DefaultController extends Controller
 {
@@ -52,6 +53,31 @@ class DefaultController extends Controller
             'stats' => $stats,
             'defaultSeo' => $defaultSeo,
             'seoSection' => 'quiz',
+        ]);
+    }
+
+    public function actionRating()
+    {
+        $defaultSeo = [
+            'title' => 'Рейтинг команд квизов от IQuiz | IQuiz Барные викторины и интеллектуальные игры',
+            'description' => 'Страница рейтинга команд квизов и интеллектуальные барных викторин Челябинска от IQuiz',
+        ];
+
+
+        $data = $this->participantService->getRating();
+        $provider = new ArrayDataProvider([
+            'allModels' => $data,
+            'pagination' => [
+                'pageSize' => 15,
+                'pageSizeParam' => false,
+            ],
+            'sort' => false,
+        ]);
+
+        return $this->render('rating', [
+            'defaultSeo' => $defaultSeo,
+            'seoSection' => 'rating',
+            'provider' => $provider,
         ]);
     }
 }

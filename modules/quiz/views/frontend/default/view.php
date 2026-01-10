@@ -76,11 +76,11 @@ $setting = Yii::$app->setting;
                 <?php if ($quiz->items && !$quiz->isExpired) { ?>
                     <div class="quiz-features">
                         <h3><i class="fas fa-star"></i> Что вас ждет на квизе:</h3>
-                        <ul class="features-list">
+                        <div class="features-list">
                             <?php foreach ($quiz->itemsList as $item) { ?>
-                                <li><i class="fas fa-check-circle"></i> <?= $item ?></li>
+                                <p><i class="fas fa-check-circle"></i> <?= $item ?></p>
                             <?php } ?>
-                        </ul>
+                        </div>
                     </div>
                 <?php } ?>
             </div>

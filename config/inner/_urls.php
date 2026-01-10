@@ -44,6 +44,8 @@ return [
         '/rules' => 'main/main/rules',
         '/quizes/<url:[\w_\/-]+>' => 'quiz/default/view',
         '/quizes' => 'quiz/default/index',
+        '/rating' => 'quiz/default/rating',
+        '/rating2' => 'quiz/default/rating2',
 
         // '<pageUri:[\w_\/-]+>'=>'page/default/view',
         // 'page/<_a>' => 'page/default/<_a>',

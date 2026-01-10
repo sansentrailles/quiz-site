@@ -33,4 +33,9 @@ class TeamService extends BaseService
     {
         return Repository::class;
     }
+
+    public function getRating()
+    {
+        return $this->repository->getRating();
+    }
 }

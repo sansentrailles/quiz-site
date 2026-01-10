@@ -26,6 +26,7 @@ $currentUrl = Url::to('');
             <ul>
                 <li><a href="<?=  Url::to('/') ?>" <?php if ($currentUrl == Url::to('/')) { ?>class="active"<?php } ?>><i class="fas fa-home"></i> Главная</a></li>
                 <li><a href="<?=  Url::to('/quizes') ?>" <?php if ($currentUrl == Url::to('/quizes')) { ?>class="active"<?php } ?>><i class="fas fa-bars"></i> Квизы</a></li>
+                <li><a href="<?=  Url::to(url: '/rating') ?>" <?php if ($currentUrl == Url::to('/rating')) { ?>class="active"<?php } ?>><i class="fas fa-trophy"></i> Рейтинг</a></li>
                 <li><a href="<?=  Url::to('/maintance') ?>" <?php if ($currentUrl == Url::to('/maintance')) { ?>class="active"<?php } ?>><i class="fas fa-star"></i> Контакты</a></li>
             </ul>
         </nav>

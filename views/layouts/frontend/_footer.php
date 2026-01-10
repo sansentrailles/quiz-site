@@ -23,7 +23,7 @@ $setting = Yii::$app->setting;
                 <ul>
                     <li><a href="<?= Url::to("/") ?>"><i class="fas fa-chevron-right"></i> Главная</a></li>
                     <li><a href="<?=  Url::to("/quizes")  ?>"><i class="fas fa-chevron-right"></i> Все квизы</a></li>
-                    <li><a href="<?= Url::to("/maintance") ?>"><i class="fas fa-chevron-right"></i> Рейтинги команд</a></li>
+                    <li><a href="<?= Url::to("/rating") ?>"><i class="fas fa-chevron-right"></i> Рейтинги команд</a></li>
                     <li><a href="<?= Url::to("/rules") ?>"><i class="fas fa-chevron-right"></i> Правила участия</a></li>
                 </ul>
             </div>
