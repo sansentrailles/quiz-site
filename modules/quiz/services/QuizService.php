@@ -136,4 +136,9 @@ class QuizService extends BaseService
     {
         return $this->repository->getExpiredQuizes();
     }
+
+    public function getCurrentMonthQuizCount()
+    {
+        return $this->repository->getCurrentMonthQuizCount();
+    }
 }

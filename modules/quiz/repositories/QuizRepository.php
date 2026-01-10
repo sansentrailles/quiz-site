@@ -46,4 +46,12 @@ class QuizRepository extends BaseRepository
             ->orderBy(['date' => SORT_DESC]) // Сортируем от более новых к более старым
             ->all();
     }
+
+    public function getCurrentMonthQuizCount()
+    {
+        return $this->model::find()
+            ->andWhere(['>=', 'date', strtotime('first day of this month 00:00:00')])
+            ->andWhere(['<=', 'date', strtotime('last day of this month 23:59:59')])
+            ->count();
+    }
 }

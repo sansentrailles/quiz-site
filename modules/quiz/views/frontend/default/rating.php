@@ -47,20 +47,21 @@ $models = $provider->getModels();
         Текущий рейтинг команд. Рейтинг обновляется после каждого проведенного квиза.
     </p>
 
-    <?= $this->render('parts/_rating_stats') ?>
+    <?= $this->render('parts/_rating_stats', ['stats' => $stats]) ?>
 
     <div class="rating-section">
         <div class="rating-section-header">
             <h2 class="rating-section-title">
                 <i class="fas fa-list-ol"></i> Таблица рейтинга
             </h2>
-            <div class="controls">
-                <div class="search-box">
-                    <i class="fas fa-search"></i>
-                    <input type="text" id="teamSearch" placeholder="Поиск команды...">
+            <?php /*
+                <div class="controls">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="teamSearch" placeholder="Поиск команды...">
+                    </div>
                 </div>
-
-            </div>
+            */ ?>
         </div>
 
         <table class="rating-table">

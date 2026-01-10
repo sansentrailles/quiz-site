@@ -78,6 +78,12 @@ class DefaultController extends Controller
             'defaultSeo' => $defaultSeo,
             'seoSection' => 'rating',
             'provider' => $provider,
+            'stats' => [
+                'monthQuizes' => $this->quizService->getCurrentMonthQuizCount(),
+                'teamsCount' => count($this->teamService->getAll()),
+                'expiredQuizesCount' => count($this->quizService->getExpiredQuizes()),
+                'totalPoints' => $this->participantService->getTotalPoints(),
+            ],
         ]);
     }
 }

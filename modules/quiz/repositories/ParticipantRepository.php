@@ -113,4 +113,9 @@ class ParticipantRepository extends BaseRepository
 
         return $data;
     }
+
+    public function getTotalPoints()
+    {
+        return $this->model::find()->sum('points');
+    }
 }

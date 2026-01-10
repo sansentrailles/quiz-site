@@ -76,4 +76,9 @@ class ParticipantService extends BaseService
     {
         return $this->repository->getRating();
     }
+
+    public function getTotalPoints()
+    {
+        return $this->repository->getTotalPoints();
+    }
 }
