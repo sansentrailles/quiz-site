@@ -41,7 +41,7 @@
                 <i class="fas fa-star"></i>
             </div>
             <div class="stat-info">
-                <h3><?= number_format($stats['totalPoints'], 0, ' ', '') ?></h3>
+                <h3><?= number_format($stats['totalPoints'], 0, '', ' ') ?></h3>
                 <p>Всего набрано баллов</p>
             </div>
         </div>
