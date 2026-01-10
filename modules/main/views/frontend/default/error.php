@@ -46,7 +46,7 @@ SeoWidget::widget([
     
     <!-- Действия -->
     <div class="error-actions">
-        <a href="#" class="btn btn-primary">
+        <a href="<?= Url::to('/') ?>" class="btn btn-primary">
             <i class="fas fa-home"></i> Вернуться на главную
         </a>
     </div>
