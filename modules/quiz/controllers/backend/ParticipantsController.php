@@ -8,6 +8,7 @@ use app\modules\quiz\controllers\common\Controller;
 use app\modules\quiz\Module;
 use app\modules\quiz\forms\backend\ParticipantForm as Form;
 use app\modules\quiz\forms\backend\search\ParticipantSearch as SearchModel;
+use app\modules\quiz\forms\backend\search\QuizBookingSearch as BookingSearchModel;
 use Yii;
 use yii\filters\VerbFilter;
 
@@ -29,17 +30,27 @@ class ParticipantsController extends Controller
     public function actionIndex($quizId)
     {
         $quiz = $this->quizService->findOrFail((int)$quizId);
+        $quizBooking = $this->quizBookingService->find((int)$quizId);
 
         $searchModel = new SearchModel();
+        $bookingSearchModel = new BookingSearchModel();
 
         $dataProvider = $searchModel
             ->forQuiz($quizId)
             ->search(Yii::$app->request->queryParams);
 
+        $bookingDataProvider = null;
+        $bookingDataProvider = $bookingSearchModel
+            ->forQuiz($quizId)
+            ->search(Yii::$app->request->queryParams);
+
         return $this->render('index', [
             'searchModel' => $searchModel,
+            'bookingSearchModel' => $bookingSearchModel,
+            'bookingDataProvider' => $bookingDataProvider,
             'dataProvider' => $dataProvider,
             'quiz' => $quiz,
+            'quizBooking' => $quizBooking,
         ]);
     }
 

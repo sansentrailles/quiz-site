@@ -10,6 +10,7 @@ use app\modules\quiz\services\LabelService;
 use app\modules\quiz\services\LocationService;
 use app\modules\quiz\services\TeamService;
 use app\modules\quiz\services\ParticipantService;
+use app\modules\quiz\services\QuizBookingService;
 
 /**
  * Represents the base class for the category controllers.
@@ -26,6 +27,7 @@ abstract class Controller extends \app\custom\controllers\Controller
         protected readonly FaqItemService $faqItemService,
         protected readonly TeamService $teamService,
         protected readonly ParticipantService $participantService,
+        protected readonly QuizBookingService $quizBookingService,
     ) {
         parent::__construct($id, $module, $config);
     }

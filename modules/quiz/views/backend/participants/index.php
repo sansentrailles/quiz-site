@@ -1,11 +1,7 @@
 <?php declare(strict_types=1);
 
 use yii\helpers\Html;
-use yii\grid\GridView;
 use app\modules\quiz\Module;
-use app\modules\quiz\models\Participant;
-use app\custom\widgets\backend\grid\InputColumn;
-use app\custom\widgets\backend\grid\ActionColumn;
 
 // @var $this yii\web\View
 // @var $searchModel app\modules\quiz\models\ParticipantSearch
@@ -24,54 +20,17 @@ $seoSection = 'quiz';
 
 ?>
 <div class="index">
-    <p>
-        <?php echo Html::a(Module::t('common', 'QUIZ_PARTICIPANT_CREATE'), ['create', 'quizId' => $quiz->id], ['class' => 'btn btn-success']); ?>
-    </p>
+    <div class="row">
+        <div class="col-md-6">
+            <?= $this->render('_index_participants', [
+                'dataProvider' => $dataProvider,
+                'searchModel'=> $searchModel,
+                'quiz' => $quiz,
+            ]) ?>
+        </div>
+        <div class="col-md-6"></div>
+    </div>
 
-    <?= Html::beginForm(['participants/save-points'], 'post', ['enctype' => 'multipart/form-data']) ?>
-        <?php echo GridView::widget([
-            'dataProvider' => $dataProvider,
-            'filterModel' => $searchModel,
-            'columns' => [
-                [
-                    'class' => 'yii\grid\SerialColumn',
-                    'headerOptions' => ['width' => '5%'],
-                ],
-
-                [
-                    'attribute' => 'team_id',
-                    'format' => 'raw',
-                    'value' => function ($model) {
-                        return Html::a($model->team->title, ['/admin/quiz/participants/update', 'id' => $model->id]);
-                    },
-                ],
-
-                [
-                    'attribute' => 'points',
-                    'headerOptions' => ['width' => '5%'],
-                    'contentOptions' => ['style' => 'text-align: center'],
-                    'class' => InputColumn::class,
-                    'name' => 'points_list',
-                ],
-
-                [
-                    'attribute' => 'place',
-                    'headerOptions' => ['width' => '5%'],
-                    'contentOptions' => ['style' => 'text-align: center'],
-                    'class' => InputColumn::class,
-                    'name' => 'places',
-                ],
-
-                [
-                    'headerOptions' => ['width' => '5%'],
-                    'class' => ActionColumn::class,
-                    'contentOptions' => ['style' => 'text-align: center;'],
-                ],
-            ],
-        ]); ?>
-        <?= Html::submitButton(Module::t('common', 'BUTTON_SAVE'), ['class' => 'btn btn-sm btn-primary']) ?>
-    <?php echo Html::endForm(); ?>
-    
     <br>
     <div class="form-group mt-5">
         <?php if (count($dataProvider->getModels()) > 0) { ?>
