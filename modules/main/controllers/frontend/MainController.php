@@ -55,4 +55,17 @@ class MainController extends Controller
             'seoSection' => 'maintance',
         ]);
     }
+
+    public function actionPolicy()
+    {
+        $defaultSeo = [
+            'title' => 'Политика конфиденциальности | Квизы в Челябинске - IQuiz | Барные викторины и интеллектуальные игры',
+            'description' => 'IQuiz - проводим лучшие барные квизы в Челябинске. Интеллектуальные игры, вечерние викторины, корпоративные мероприятия. Записывайтесь на квизы онлайн!',
+        ];
+
+        return $this->render('policy', [
+            'defaultSeo' => $defaultSeo,
+            'seoSection' => 'policy',
+        ]);
+    }
 }

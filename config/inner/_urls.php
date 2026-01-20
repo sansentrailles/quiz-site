@@ -42,6 +42,7 @@ return [
 
         '/maintance' => 'main/main/maintance',
         '/rules' => 'main/main/rules',
+        '/policy' => 'main/main/policy',
         '/quizes/<url:[\w_\/-]+>' => 'quiz/default/view',
         '/quizes' => 'quiz/default/index',
         '/rating' => 'quiz/default/rating',
