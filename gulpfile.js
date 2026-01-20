@@ -38,7 +38,22 @@ function cleanBuild() {
 
 // Очистка папки public_html (для deploy)
 function cleanPublic() {
-    return del(['public_html/**/*', '!public_html']);
+    return del([
+        'public_html/**/*',
+        // Исключения:
+        '!public_html',
+        '!public_html/files',
+        '!public_html/files/**',
+        '!public_html/assets',
+        '!public_html/assets/**',
+        '!public_html/js/plugins',
+        '!public_html/js/plugins/**',
+        '!public_html/.htaccess',
+        '!public_html/index.php', 
+        '!public_html/index-test.php', 
+        '!public_html/favicon.ico',
+        '!public_html/favicon.png'
+    ]);
 }
 
 // Обработка HTML (сборка из частей)

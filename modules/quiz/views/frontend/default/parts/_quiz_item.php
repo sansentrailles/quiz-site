@@ -20,7 +20,7 @@ $setting = Yii::$app->setting;
     <img src="<?= $quiz->imagePath ?>" alt="<?=  Html::encode($quiz->title) ?>" class="quiz-card-image">
     <div class="quiz-card-content">
         <div class="quiz-header">
-            <h3 class="quiz-title"><?= $quiz->title ?></h3>
+            <h3 class="quiz-card-title"><?= $quiz->title ?></h3>
 
             <?php foreach ($quiz->labels as $label) { ?>
                 <span class="quiz-category"><?=  $label->title ?></span>

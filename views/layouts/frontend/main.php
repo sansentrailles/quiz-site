@@ -1,12 +1,17 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
+
+use yii\helpers\Html;
+use app\custom\helpers\AppHelper;
 
 // @var $this \yii\web\View
 // @var $content string
 
-use yii\helpers\Html;
-use app\assets\AppAsset;
 
-AppAsset::register($this);
+
+// use app\assets\AppAsset;
+// AppAsset::register($this);
 
 ?>
 <?php $this->beginPage(); ?>
@@ -24,6 +29,7 @@ AppAsset::register($this);
     <title><?php echo Html::encode($this->title); ?></title>
     <?= Html::csrfMetaTags() ?>
 
+    <link rel="stylesheet" href="/css/<?= AppHelper::getManifestData('rev-manifest.json', 'main.css') ?>">
     <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/media/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/media/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/media/apple-icon-72x72.png">
@@ -39,9 +45,12 @@ AppAsset::register($this);
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/media/favicon-16x16.png">
     <link rel="shortcut icon" href="/images/favicon/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/images/favicon/favicon.ico" type="image/x-icon">
+
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/images/favicon/media/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+
+    <script src="/js/<?= AppHelper::getManifestData('rev-manifest.json', 'main.js') ?>" defer></script>
 
     <?php $this->head() ?>
 
