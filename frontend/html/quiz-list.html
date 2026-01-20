@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <title></title>
+
+        <!-- Подключаем фрагмент head с мета-тегами и подключением стилей -->
+        @@include('partials/head.html')
+        <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,fetch" defer></script>
+    </head>
+    <body>
+        @@include('partials/nav/header.html')
+
+        @@include('partials/sections/hero.html')
+
+        <main class="container">
+            <section class="quiz-section" id="upcoming-quizzes">
+                <div class="section-header">
+                    <h2>
+                        <i class="fas fa-calendar-alt section-icon"></i>
+                        Предстоящие квизы
+                    </h2>
+                </div>
+
+                <div class="quiz-list" id="upcoming-quiz-list">
+                    @@include('partials/quiz-card.html', {
+                        "title": "Обо всем",
+                        "link": "quiz.html",
+                    })
+
+                    @@include('partials/quiz-card.html', {
+                        "title": "Только музыка",
+                        "link": "quiz.html",
+                    })
+
+                    @@include('partials/quiz-card.html', {
+                        "title": "Кино",
+                        "link": "quiz.html",
+                    })
+                </div>
+            </section>
+
+            <section class="quiz-section" id="completed-quizzes">
+                <div class="section-header">
+                    <h2>
+                        <i class="fas fa-history section-icon"></i>
+                        Завершенные квизы
+                    </h2>
+                </div>
+
+                <div class="quiz-list" id="completed-quiz-list">
+                    @@include('partials/quiz-card-expired.html', {
+                        "title": "Ностальгия",
+                        "link": "quiz-expired.html",
+                    })
+
+                    @@include('partials/quiz-card-expired.html', {
+                        "title": "Гарри Поттер",
+                        "link": "quiz-expired.html",
+                    })
+
+                    @@include('partials/quiz-card-expired.html', {
+                        "title": "Кино и сериалы",
+                        "link": "quiz-expired.html",
+                    })
+
+                    @@include('partials/quiz-card-expired.html', {
+                        "title": "Мультфильмы",
+                        "link": "quiz-expired.html",
+                    })
+                </div>
+            </section>
+            
+        </main>
+
+        @@include('partials/footer.html')
+    </body>
+</html>

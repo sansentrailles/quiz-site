@@ -1,0 +1,42 @@
+.no-quizzes-message,
+.encouragement,
+.highlight-box,
+.yandex-service,
+.contact-info {
+  border-radius: var(--border-radius);
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+.no-quizzes-message {
+  text-align: center;
+  background-color: #f8f9fa;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e9ecef;
+}
+
+.no-quizzes-icon {
+  font-size: 3rem;
+  color: var(--gray);
+  margin-bottom: 15px;
+}
+
+.encouragement {
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  border-left: 5px solid var(--accent);
+}
+
+.highlight-box {
+  background-color: #f8f9fa;
+  border-left: 5px solid var(--primary);
+}
+
+.yandex-service {
+  background-color: #fff9f0;
+  border-left: 5px solid #ffcc00;
+}
+
+.contact-info {
+  background-color: #e8f4fc;
+}

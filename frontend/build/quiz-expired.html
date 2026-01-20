@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <title></title>
+
+        <!-- Подключаем фрагмент head с мета-тегами и подключением стилей -->
+        <!-- В этом файле мы подключаем стили.  Путь указывается относительно папки сборки (build или public_html) -->
+<link rel="stylesheet" href="css/main.css">
+<meta name="description" content="Описание сайта">
+        <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,fetch" defer></script>
+    </head>
+    <body>
+        <header>
+    <div class="container header-content">
+        <div class="logo">
+            <a href="/">
+                <img src="/images/logo-w.png" alt="IQuiz лого">
+            </a>
+            <div class="logo-text">
+                <h1 class="google-sans-bold">IQuiz</h1>
+                <p>Интеллектуальные игры в барах города</p>
+            </div>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="/" class="active"><i class="fas fa-home"></i> Главная</a></li>
+                <li><a href="/quiz-list.html"><i class="fas fa-bars"></i> Квизы</a></li>
+                <li><a href="/rating.html"><i class="fas fa-trophy"></i> Рейтинг</a></li>
+                <li><a href="/maintance"><i class="fas fa-star"></i> Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="breadcrumbs">
+    <div class="container">
+        <ul>
+            <li><a href="/"><i class="fas fa-home"></i> Главная</a></li>
+            <li class="separator">/</li>
+            <li><a href="/quizes">Квизы</a></li>
+            <li class="separator">/</li>
+            <li class="current">Квиз: Обо всем</li>
+        </ul>
+    </div>
+</div>
+
+        <main class="container">
+            <div class="quiz-page">
+                <div class="quiz-main">
+                    <div class="quiz-image-container">
+                        <img src="/images/quiz1.png" alt="Обо всем" class="quiz-image">
+                    </div>
+                    <div class="quiz-content">
+                        <div class="quiz-header">
+                            <h1 class="quiz-title">Обо всем</h1>
+                            <span class="quiz-category">Общие знания</span>
+                        </div>
+
+                        <div class="quiz-details-grid">
+                            <div class="detail-card">
+                                <h3><i class="far fa-calendar-alt"></i> Дата и время</h3>
+                                <p>22 января, Четверг</p>
+                                <p style="font-size: 1.1rem; color: var(--gray); margin-top: 5px;">Начало в 19:00</p>
+                            </div>
+                            <div class="detail-card">
+                                <h3><i class="fas fa-map-marker-alt"></i> Локация</h3>
+                                <p>Good Company</p>
+                                <p style="font-size: 1.1rem; color: var(--gray); margin-top: 5px;">ул. Тернопольская, 6</p>
+                            </div>
+                        </div>
+
+                        <div class="quiz-description">
+                            <h2><i class="fas fa-info-circle"></i> Описание квиза</h2>
+                            <p>Готовы проверить свою эрудицию на прочность? Ждём вас на нашем масштабном квизе &laquo;Обо всём&raquo;!</p>
+                            <p>Это 7 раундов по 10 вопросов &mdash; 70 возможностей блеснуть знаниями или узнать что-то новое. От истории и науки до кино, музыки, географии и спорта. Ниша? Её тут нет! Только широта кругозора, логика, смекалка и веселая компания.</p>
+                            <p>Соберите команду, разомните извилины и сразись за звание самых разносторонних умов!</p>
+                            <p><strong>Формат: 7 раундов &times; 10 вопросов = 70 вопросов.</strong><br /><strong>Что вас ждет: логика, факты, образы, музыка и много сюрпризов!</strong></p>
+                            <div class="quiz-features">
+                                <h3><i class="fas fa-star"></i> Что вас ждет на квизе:</h3>
+                                <div class="features-list">
+                                    <p><i class="fas fa-check-circle"></i> 7 увлекательных раундов с вопросами разной сложности</p>
+                                    <p><i class="fas fa-check-circle"></i> 3 команды-победителя получат призы</p>
+                                    <p><i class="fas fa-check-circle"></i> Профессиональный ведущий</p>
+                                    <p><i class="fas fa-check-circle"></i> Музыкальное сопровождение</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-sidebar">
+                    <div class="completion-card">
+                        <div class="completion-icon">
+                            <i class="fas fa-flag-checkered"></i>
+                        </div>
+
+                        <h2 class="completion-title">Квиз завершен</h2>
+
+                        <p class="completion-text">
+                            Это интеллектуальное соревнование уже состоялось.
+                            Благодарим всех участников за интересную игру!
+                        </p>
+
+                        <div class="completion-stats">
+                            <h3>
+                                <i class="fas fa-chart-line"></i> Статистика
+                                квиза
+                            </h3>
+                            <div class="stats-grid">
+                                <div class="stat-box">
+                                    <div class="stat-value">6</div>
+                                    <div class="stat-label">команд</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-value">21</div>
+                                    <div class="stat-label">участников</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-value">77</div>
+                                    <div class="stat-label">макс. балл</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-value">30</div>
+                                    <div class="stat-label">мин балл</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="location-card">
+    <h3><i class="fas fa-map-marker-alt"></i> Локация</h3>
+    <div class="location-details">
+        <div class="location-item">
+            <i class="fas fa-beer"></i>
+            <div class="location-text">
+                <h4>Good Company</h4>
+                <p>гриль-бар с горячим сердцем</p>
+            </div>
+        </div>
+        <div class="location-item">
+            <i class="fas fa-location-arrow"></i>
+            <div class="location-text">
+                <h4>Адрес</h4>
+                <p>ул. Тернопольская, 6</p>
+            </div>
+        </div>
+        <div class="location-item">
+            <i class="fas fa-clock"></i>
+            <div class="location-text">
+                <h4>Время работы</h4>
+                <p>Пн — Чт: 12:00–24:00
+                    <br>Пт — Сб: 12:00–03:00
+                    <br>Вc: 12:00–24:00
+                </p>
+            </div>
+        </div>
+    </div>
+    <button class="btn-map" id="show-map">
+        <i class="fas fa-map"></i> Посмотреть на карте
+    </button>
+</div>
+                </div>
+            </div>
+
+            <div class="quiz-results">
+    <div class="results-header">
+        <h2 class="results-title">
+            <i class="fas fa-trophy"></i> Результаты команд
+        </h2>
+        <p class="results-subtitle">
+            Команды отсортированы по убыванию баллов. Показаны
+            результаты всех 6 команд-участниц.
+        </p>
+    </div>
+
+    <table class="results-table">
+        <thead>
+            <tr>
+                <th style="width: 70px">Место</th>
+                <th>Название команды</th>
+                <th style="width: 100px">Баллы</th>
+                <th style="width: 70px">Награда</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="podium-row">
+                <td class="place-cell place-1">1</td>
+                <td class="team-cell">Гладкий мозг</td>
+                <td class="score-cell">77</td>
+                <td class="award-cell">
+                    <i class="fas fa-trophy place-1"></i>
+                </td>
+            </tr>
+            <tr class="podium-row">
+                <td class="place-cell place-2">2</td>
+                <td class="team-cell">Очень вежливый лось</td>
+                <td class="score-cell">54</td>
+                <td class="award-cell">
+                    <i class="fas fa-trophy place-2"></i>
+                </td>
+            </tr>
+            <tr class="podium-row">
+                <td class="place-cell place-3">3</td>
+                <td class="team-cell">Двое из ларца</td>
+                <td class="score-cell">48</td>
+                <td class="award-cell">
+                    <i class="fas fa-trophy place-3"></i>
+                </td>
+            </tr>
+            <tr>
+                <td class="place-cell">4</td>
+                <td class="team-cell">Консилиум</td>
+                <td class="score-cell">39</td>
+                <td class="award-cell"></td>
+            </tr>
+            <tr>
+                <td class="place-cell">5</td>
+                <td class="team-cell">Chicas Locas</td>
+                <td class="score-cell">38</td>
+                <td class="award-cell"></td>
+            </tr>
+            <tr>
+                <td class="place-cell">6</td>
+                <td class="team-cell">Ёжики из тумана</td>
+                <td class="score-cell">30</td>
+                <td class="award-cell"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+            <div
+                class="modal"
+                id="map-modal"
+                data-latitude="55.156081"
+                data-longitude="61.370071"
+            >
+                <div class="modal-content" style="max-width: 800px; padding: 0">
+                    <div
+                        style="
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            padding: 1.5rem;
+                            border-bottom: 1px solid #eee;
+                        "
+                    >
+                        <h2 style="margin: 0; color: var(--primary)">
+                            Карта местоположения "Good Company"
+                        </h2>
+                        <button
+                            id="close-map-modal"
+                            style="
+                                background: none;
+                                border: none;
+                                font-size: 1.5rem;
+                                cursor: pointer;
+                                color: #666;
+                            "
+                        >
+                            &times;
+                        </button>
+                    </div>
+                    <div style="padding: 2rem; text-align: left">
+                        <div
+                            id="modal-map-container"
+                            style="
+                                height: 300px;
+                                background-color: #e9ecef;
+                                border-radius: 8px;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                                margin-bottom: 1.5rem;
+                            "
+                        ></div>
+
+                        <div
+                            style="
+                                display: grid;
+                                grid-template-columns: repeat(2, 1fr);
+                                gap: 20px;
+                            "
+                        >
+                            <div>
+                                <h3
+                                    style="
+                                        color: var(--primary);
+                                        margin-bottom: 1rem;
+                                    "
+                                >
+                                    Адрес
+                                </h3>
+                                <p>
+                                    <i
+                                        class="fas fa-map-marker-alt"
+                                        style="color: var(--primary)"
+                                    ></i>
+                                    ул. Тернопольская, 6
+                                </p>
+                            </div>
+                            <div>
+                                <h3
+                                    style="
+                                        color: var(--primary);
+                                        margin-bottom: 1rem;
+                                    "
+                                >
+                                    Как добраться
+                                </h3>
+                                <p>
+                                    <strong>На транспорте:</strong> до остановки
+                                    "ЮУрГУ" или "Лесопарковая"
+                                </p>
+                                <p>
+                                    <strong>На машине:</strong> парковка около
+                                    Белого рынка (платная, 150 ₽/час).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="map-modal" data-latitude="55.156081" data-longitude="61.370071">
+    <div class="modal-content" style="max-width: 800px; padding: 0;">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem; border-bottom: 1px solid #eee;">
+            <h2 style="margin: 0; color: var(--primary)">Карта местоположения "Good Company"</h2>
+            <button id="close-map-modal" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #666;">&times;</button>
+        </div>
+        <div style="padding: 2rem; text-align: left;">
+            <div id="modal-map-container" style="height: 300px; background-color: #e9ecef; border-radius: 8px; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-bottom: 1.5rem;">
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Адрес</h3>
+                    <p><i class="fas fa-map-marker-alt" style="color: var(--primary);"></i> ул. Тернопольская, 6</p>
+                </div>
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Как добраться</h3>
+                    <p><strong>На транспорте:</strong> до остановки "ЮУрГУ" или "Лесопарковая"</p>
+                    <p><strong>На машине:</strong> парковка около Белого рынка (платная, 150 ₽/час).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            
+        </main>
+
+        <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>IQuiz</h3>
+                <p>Лучшие барные викторины в вашем городе. Присоединяйтесь к нашему интеллектуальному сообществу!</p>
+                <div class="social-links">
+                    <a href="https://vk.com/iquizchel" target="_blank"><i class="fab fa-vk"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Навигация</h3>
+                <ul>
+                    <li><a href="/"><i class="fas fa-chevron-right"></i> Главная</a></li>
+                    <li><a href="/quiz-list.html"><i class="fas fa-chevron-right"></i> Все квизы</a></li>
+                    <li><a href="/rating.html"><i class="fas fa-chevron-right"></i> Рейтинги команд</a></li>
+                    <li><a href="/rules.html"><i class="fas fa-chevron-right"></i> Правила участия</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Сотрудничество</h3>
+                <ul>
+                    <li><a href="/maintance"><i class="fas fa-chevron-right"></i> Партнеры</a></li>
+                    <li><a href="/maintance"><i class="fas fa-chevron-right"></i> Сотрудничество</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Контакты</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> info@i-quiz.ru</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>© 2026 IQuiz</p>
+        </div>
+    </div>
+</footer>
+
+<script src="//api-maps.yandex.ru/2.1/?apikey=58f61641-0027-42b9-992f-d44aad687fc3&amp;lang=ru_RU"></script>
+<script src="/js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <title></title>
+
+        <!-- Подключаем фрагмент head с мета-тегами и подключением стилей -->
+        @@include('partials/head.html')
+        <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,fetch" defer></script>
+    </head>
+    <body>
+        @@include('partials/nav/header.html')
+
+        @@include('partials/nav/breadcrumbs.html')
+
+        <main class="container">
+            <div class="quiz-page">
+                <div class="quiz-main">
+                    <div class="quiz-image-container">
+                        <img src="/images/quiz1.png" alt="Обо всем" class="quiz-image">
+                    </div>
+                    <div class="quiz-content">
+                        <div class="quiz-header">
+                            <h1 class="quiz-title">Обо всем</h1>
+                            <span class="quiz-category">Общие знания</span>
+                        </div>
+
+                        <div class="quiz-details-grid">
+                            <div class="detail-card">
+                                <h3><i class="far fa-calendar-alt"></i> Дата и время</h3>
+                                <p>22 января, Четверг</p>
+                                <p style="font-size: 1.1rem; color: var(--gray); margin-top: 5px;">Начало в 19:00</p>
+                            </div>
+                            <div class="detail-card">
+                                <h3><i class="fas fa-map-marker-alt"></i> Локация</h3>
+                                <p>Good Company</p>
+                                <p style="font-size: 1.1rem; color: var(--gray); margin-top: 5px;">ул. Тернопольская, 6</p>
+                            </div>
+                        </div>
+
+                        <div class="quiz-description">
+                            <h2><i class="fas fa-info-circle"></i> Описание квиза</h2>
+                            <p>Готовы проверить свою эрудицию на прочность? Ждём вас на нашем масштабном квизе &laquo;Обо всём&raquo;!</p>
+                            <p>Это 7 раундов по 10 вопросов &mdash; 70 возможностей блеснуть знаниями или узнать что-то новое. От истории и науки до кино, музыки, географии и спорта. Ниша? Её тут нет! Только широта кругозора, логика, смекалка и веселая компания.</p>
+                            <p>Соберите команду, разомните извилины и сразись за звание самых разносторонних умов!</p>
+                            <p><strong>Формат: 7 раундов &times; 10 вопросов = 70 вопросов.</strong><br /><strong>Что вас ждет: логика, факты, образы, музыка и много сюрпризов!</strong></p>
+                            <div class="quiz-features">
+                                <h3><i class="fas fa-star"></i> Что вас ждет на квизе:</h3>
+                                <div class="features-list">
+                                    <p><i class="fas fa-check-circle"></i> 7 увлекательных раундов с вопросами разной сложности</p>
+                                    <p><i class="fas fa-check-circle"></i> 3 команды-победителя получат призы</p>
+                                    <p><i class="fas fa-check-circle"></i> Профессиональный ведущий</p>
+                                    <p><i class="fas fa-check-circle"></i> Музыкальное сопровождение</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-sidebar">
+                    <div class="price-card">
+                        <div class="price-container">
+                            <div class="price-label">Стоимость участия</div>
+                            <div class="price">500 руб.</div>
+                            <div class="price-label">за участника</div>
+                        </div>
+
+                        <button class="btn-signup" id="openSignupModal">
+                            <i class="fas fa-ticket-alt"></i> Записаться на квиз
+                        </button>
+                    </div>
+
+                    @@include('partials/sections/quiz_location_card.html')
+                </div>
+            </div>
+
+            @@include('partials/modals/quiz_map_modal.html')
+            
+        </main>
+
+        @@include('partials/footer.html')
+
+        @@include('partials/modals/booking-form.html')
+        @@include('partials/modals/toast.html')
+    </body>
+</html>

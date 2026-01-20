@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <title></title>
+
+        <!-- Подключаем фрагмент head с мета-тегами и подключением стилей -->
+        <!-- В этом файле мы подключаем стили.  Путь указывается относительно папки сборки (build или public_html) -->
+<link rel="stylesheet" href="css/main.css">
+<meta name="description" content="Описание сайта">
+        <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,fetch" defer></script>
+    </head>
+    <body>
+        <header>
+    <div class="container header-content">
+        <div class="logo">
+            <a href="/">
+                <img src="/images/logo-w.png" alt="IQuiz лого">
+            </a>
+            <div class="logo-text">
+                <h1 class="google-sans-bold">IQuiz</h1>
+                <p>Интеллектуальные игры в барах города</p>
+            </div>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="/" class="active"><i class="fas fa-home"></i> Главная</a></li>
+                <li><a href="/quiz-list.html"><i class="fas fa-bars"></i> Квизы</a></li>
+                <li><a href="/rating.html"><i class="fas fa-trophy"></i> Рейтинг</a></li>
+                <li><a href="/maintance"><i class="fas fa-star"></i> Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="breadcrumbs">
+    <div class="container">
+        <ul>
+            <li><a href="/"><i class="fas fa-home"></i> Главная</a></li>
+            <li class="separator">/</li>
+            <li><a href="/quizes">Квизы</a></li>
+            <li class="separator">/</li>
+            <li class="current">Квиз: Обо всем</li>
+        </ul>
+    </div>
+</div>
+
+        <main class="container">
+            <div class="quiz-page">
+                <div class="quiz-main">
+                    <div class="quiz-image-container">
+                        <img src="/images/quiz1.png" alt="Обо всем" class="quiz-image">
+                    </div>
+                    <div class="quiz-content">
+                        <div class="quiz-header">
+                            <h1 class="quiz-title">Обо всем</h1>
+                            <span class="quiz-category">Общие знания</span>
+                        </div>
+
+                        <div class="quiz-details-grid">
+                            <div class="detail-card">
+                                <h3><i class="far fa-calendar-alt"></i> Дата и время</h3>
+                                <p>22 января, Четверг</p>
+                                <p style="font-size: 1.1rem; color: var(--gray); margin-top: 5px;">Начало в 19:00</p>
+                            </div>
+                            <div class="detail-card">
+                                <h3><i class="fas fa-map-marker-alt"></i> Локация</h3>
+                                <p>Good Company</p>
+                                <p style="font-size: 1.1rem; color: var(--gray); margin-top: 5px;">ул. Тернопольская, 6</p>
+                            </div>
+                        </div>
+
+                        <div class="quiz-description">
+                            <h2><i class="fas fa-info-circle"></i> Описание квиза</h2>
+                            <p>Готовы проверить свою эрудицию на прочность? Ждём вас на нашем масштабном квизе &laquo;Обо всём&raquo;!</p>
+                            <p>Это 7 раундов по 10 вопросов &mdash; 70 возможностей блеснуть знаниями или узнать что-то новое. От истории и науки до кино, музыки, географии и спорта. Ниша? Её тут нет! Только широта кругозора, логика, смекалка и веселая компания.</p>
+                            <p>Соберите команду, разомните извилины и сразись за звание самых разносторонних умов!</p>
+                            <p><strong>Формат: 7 раундов &times; 10 вопросов = 70 вопросов.</strong><br /><strong>Что вас ждет: логика, факты, образы, музыка и много сюрпризов!</strong></p>
+                            <div class="quiz-features">
+                                <h3><i class="fas fa-star"></i> Что вас ждет на квизе:</h3>
+                                <div class="features-list">
+                                    <p><i class="fas fa-check-circle"></i> 7 увлекательных раундов с вопросами разной сложности</p>
+                                    <p><i class="fas fa-check-circle"></i> 3 команды-победителя получат призы</p>
+                                    <p><i class="fas fa-check-circle"></i> Профессиональный ведущий</p>
+                                    <p><i class="fas fa-check-circle"></i> Музыкальное сопровождение</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-sidebar">
+                    <div class="price-card">
+                        <div class="price-container">
+                            <div class="price-label">Стоимость участия</div>
+                            <div class="price">500 руб.</div>
+                            <div class="price-label">за участника</div>
+                        </div>
+
+                        <button class="btn-signup" id="openSignupModal">
+                            <i class="fas fa-ticket-alt"></i> Записаться на квиз
+                        </button>
+                    </div>
+
+                    <div class="location-card">
+    <h3><i class="fas fa-map-marker-alt"></i> Локация</h3>
+    <div class="location-details">
+        <div class="location-item">
+            <i class="fas fa-beer"></i>
+            <div class="location-text">
+                <h4>Good Company</h4>
+                <p>гриль-бар с горячим сердцем</p>
+            </div>
+        </div>
+        <div class="location-item">
+            <i class="fas fa-location-arrow"></i>
+            <div class="location-text">
+                <h4>Адрес</h4>
+                <p>ул. Тернопольская, 6</p>
+            </div>
+        </div>
+        <div class="location-item">
+            <i class="fas fa-clock"></i>
+            <div class="location-text">
+                <h4>Время работы</h4>
+                <p>Пн — Чт: 12:00–24:00
+                    <br>Пт — Сб: 12:00–03:00
+                    <br>Вc: 12:00–24:00
+                </p>
+            </div>
+        </div>
+    </div>
+    <button class="btn-map" id="show-map">
+        <i class="fas fa-map"></i> Посмотреть на карте
+    </button>
+</div>
+                </div>
+            </div>
+
+            <div class="modal" id="map-modal" data-latitude="55.156081" data-longitude="61.370071">
+    <div class="modal-content" style="max-width: 800px; padding: 0;">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem; border-bottom: 1px solid #eee;">
+            <h2 style="margin: 0; color: var(--primary)">Карта местоположения "Good Company"</h2>
+            <button id="close-map-modal" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #666;">&times;</button>
+        </div>
+        <div style="padding: 2rem; text-align: left;">
+            <div id="modal-map-container" style="height: 300px; background-color: #e9ecef; border-radius: 8px; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-bottom: 1.5rem;">
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Адрес</h3>
+                    <p><i class="fas fa-map-marker-alt" style="color: var(--primary);"></i> ул. Тернопольская, 6</p>
+                </div>
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Как добраться</h3>
+                    <p><strong>На транспорте:</strong> до остановки "ЮУрГУ" или "Лесопарковая"</p>
+                    <p><strong>На машине:</strong> парковка около Белого рынка (платная, 150 ₽/час).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            
+        </main>
+
+        <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>IQuiz</h3>
+                <p>Лучшие барные викторины в вашем городе. Присоединяйтесь к нашему интеллектуальному сообществу!</p>
+                <div class="social-links">
+                    <a href="https://vk.com/iquizchel" target="_blank"><i class="fab fa-vk"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Навигация</h3>
+                <ul>
+                    <li><a href="/"><i class="fas fa-chevron-right"></i> Главная</a></li>
+                    <li><a href="/quiz-list.html"><i class="fas fa-chevron-right"></i> Все квизы</a></li>
+                    <li><a href="/rating.html"><i class="fas fa-chevron-right"></i> Рейтинги команд</a></li>
+                    <li><a href="/rules.html"><i class="fas fa-chevron-right"></i> Правила участия</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Сотрудничество</h3>
+                <ul>
+                    <li><a href="/maintance"><i class="fas fa-chevron-right"></i> Партнеры</a></li>
+                    <li><a href="/maintance"><i class="fas fa-chevron-right"></i> Сотрудничество</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Контакты</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> info@i-quiz.ru</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>© 2026 IQuiz</p>
+        </div>
+    </div>
+</footer>
+
+<script src="//api-maps.yandex.ru/2.1/?apikey=58f61641-0027-42b9-992f-d44aad687fc3&amp;lang=ru_RU"></script>
+<script src="/js/main.js"></script>
+
+        <!-- Модальное окно записи -->
+<div class="modal" id="signupModal">
+    <div class="modal-content">
+        <a class="modal-close" id="closeModal">&times;</a>
+        <h3 class="modal-title">Регистрация на квиз</h3>
+        
+        <form class="booking-form" id="quizForm" novalidate>
+            <div class="form-group">
+                <label for="name">Имя *</label>
+                <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+                <span class="form-error-message" id="error-name"><i class="fas fa-exclamation-circle"></i> <span>Текст ошибки</span></span>
+            </div>
+
+            <div class="form-group">
+                <label for="teamName">Название команды</label>
+                <input type="text" id="teamName" name="teamName" placeholder="Например: Киноманы">
+                <span class="form-error-message" id="error-teamName"><i class="fas fa-exclamation-circle"></i> <span>Текст ошибки</span></span>
+            </div>
+
+            <div class="form-group">
+                <label for="contact">Контакт для связи (Телефон или Telegram) *</label>
+                <input type="text" id="contact" name="contact" placeholder="+7 (999) 000-00-00" required>
+                <span class="form-error-message" id="error-contact"><i class="fas fa-exclamation-circle"></i> <span>Текст ошибки</span></span>
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">Количество человек *</label>
+                <select id="quantity" name="quantity" required>
+                    <option value="" disabled selected>Выберите количество</option>
+                    <option value="1">1 человек</option>
+                    <option value="2">2 человека</option>
+                    <option value="3">3 человека</option>
+                    <option value="4">4 человека</option>
+                    <option value="5">5 человек</option>
+                    <option value="6">6 человек</option>
+                    <option value="7">7 человек</option>
+                    <option value="8">8 человек</option>
+                    <option value="9">9 человек</option>
+                    <option value="10">10 человек</option>
+                </select>
+                <span class="form-error-message" id="error-quantity"><i class="fas fa-exclamation-circle"></i> <span>Текст ошибки</span></span>
+            </div>
+
+            <div class="form-group">
+                <label for="occasion">ДР или другой праздничный повод</label>
+                <input type="text" id="occasion" name="occasion" placeholder="Например: День рождения Васи">
+                <span class="form-error-message" id="error-occasion"><i class="fas fa-exclamation-circle"></i> <span>Текст ошибки</span></span>
+            </div>
+
+            <div class="checkbox-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="joinTeam" name="flags" value="join_team">
+                    Готовы принимать новых участников в команду
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="solo" name="flags" value="solo">
+                    Я один (без команды)
+                </label>
+            </div>
+            
+            <button type="submit" class="btn-signup" id="submitBtn">
+                <i class="fas fa-paper-plane"></i> Отправить заявку
+            </button>
+        </form>
+    </div>
+</div>
+        <!-- Toast уведомление -->
+<div class="toast" id="successToast">
+    <div class="toast-icon">
+        <i class="fas fa-check-circle"></i>
+    </div>
+    <div class="toast-content">
+        <h4>Заявка принята!</h4>
+        <p>Мы свяжемся с вами в ближайшее время для подтверждения.</p>
+    </div>
+</div>
+    </body>
+</html>

@@ -1,0 +1,4 @@
+@use '../mixins' as *;
+
+.d-flex { display: flex; }
+.flex-center { @include flex-center; }

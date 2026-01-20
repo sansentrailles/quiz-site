@@ -1,0 +1,121 @@
+@use '../vars' as *;
+
+/* Компактная таблица результатов */
+.quiz-results {
+    background-color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 60px;
+}
+
+.results-header {
+    padding: 25px 30px;
+    background-color: var(--light);
+    border-bottom: 1px solid #eee;
+}
+
+.results-title {
+    font-size: 1.8rem;
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.results-subtitle {
+    color: var(--gray);
+    font-size: 1rem;
+}
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.results-table thead {
+    background-color: #f1f5f9;
+}
+
+.results-table th {
+    padding: 18px 20px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--dark);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.results-table tbody tr {
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.3s;
+}
+
+.results-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.results-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.results-table td {
+    padding: 16px 20px;
+    font-size: 0.95rem;
+    vertical-align: middle;
+}
+
+.place-cell {
+    width: 70px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.place-1 {
+    color: #FFD700;
+}
+
+.place-2 {
+    color: #C0C0C0;
+}
+
+.place-3 {
+    color: #CD7F32;
+}
+
+.team-cell {
+    font-weight: 600;
+    color: var(--dark);
+    font-size: 1.05rem;
+}
+
+.score-cell {
+    width: 100px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--dark);
+}
+
+.award-cell {
+    width: 70px;
+    text-align: center;
+}
+
+.award-icon {
+    color: var(--warning);
+    font-size: 1.2rem;
+}
+
+.medal-icon {
+    color: #C0C0C0;
+    font-size: 1.2rem;
+}
+
+.podium-row {
+    background-color: #f8f9ff;
+}

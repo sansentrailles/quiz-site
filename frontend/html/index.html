@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title></title>
+
+    <!-- Подключаем фрагмент head с мета-тегами и подключением стилей -->
+    @@include('partials/head.html')
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,fetch" defer></script>
+</head>
+
+<body>
+
+    @@include('partials/nav/header.html')
+    
+    @@include('partials/sections/hero.html')
+
+    <main class="container">
+        <!-- Список квизов -->
+        <section id="quiz-list">
+            <h2 style="font-size: 1.8rem; color: var(--dark); margin-bottom: 30px; display: flex; align-items: center; gap: 12px;">
+                <i class="fas fa-gamepad"></i> Предстоящие квизы
+            </h2>
+
+            <div class="quiz-list">
+                @@include('partials/quiz-card.html', {
+                    "title": "Обо всем",
+                    "link": "quiz.html",
+                })
+                
+                @@include('partials/quiz-card.html', {
+                    "title": "Только музыка",
+                    "link": "quiz-expired.html",
+                })
+            </div>
+        </section>
+
+    </main>
+
+    @@include('partials/footer.html')
+</body>
+
+</html>

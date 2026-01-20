@@ -1,0 +1,84 @@
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.error-number {
+  font-size: 8rem;
+  font-weight: 800;
+  color: var(--secondary);
+  line-height: 1;
+  margin-bottom: 10px;
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.error-number::after {
+  content: '404';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  color: rgba(255, 107, 107, 0.3);
+  z-index: -1;
+}
+
+.error-icon {
+  font-size: 5rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.error-title {
+  font-size: 2.5rem;
+  color: var(--dark);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.error-subtitle {
+  font-size: 1.3rem;
+  color: var(--gray);
+  margin-bottom: 30px;
+  max-width: 700px;
+}
+
+.error-message {
+  background-color: white;
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  max-width: 800px;
+  margin: 20px 0 40px;
+  text-align: center;
+}
+
+.error-message h3 {
+  color: var(--primary);
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.error-message p {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.error-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}

@@ -1,0 +1,87 @@
+@use '../mixins' as *;
+
+.btn-signup {
+  @include button-style(var(--accent), #ff5252);
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 18px 30px;
+  border-radius: 10px;
+}
+
+.btn-map {
+  @include button-style(var(--primary), var(--secondary));
+  width: 100%;
+}
+
+.link-details,
+.link-signup {
+  background-color: var(--primary);
+  color: white;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.link-details {
+  background-color: var(--success);
+  &:hover {
+    background-color: var(--success-light);
+  }
+}
+
+.link-signup {
+  background-color: var(--accent);
+  &:hover {
+    background-color: #ff5252;
+  }
+}
+
+/* Кнопки ошибок */
+.error-container .btn {
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition);
+  text-decoration: none;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  &:hover {
+    background-color: #3a5bff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(74, 107, 255, 0.2);
+  }
+}
+
+.btn-secondary {
+  background-color: white;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  &:hover {
+    background-color: var(--light-gray);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.btn-home {
+  @extend .btn-primary;
+}

@@ -1,0 +1,323 @@
+@use 'mixins' as *;
+
+// Общие утилиты и компоненты
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.google-sans-bold {
+  font-family: "Google Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  font-variation-settings: "GRAD" 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.color-accent {
+  color: var(--warning);
+  font-weight: bold;
+}
+
+// Хлебные крошки
+.breadcrumbs {
+  background-color: var(--light);
+  padding: 15px 0;
+  border-bottom: 1px solid var(--light-gray);
+
+  ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--gray);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: var(--transition);
+
+    &:hover {
+      color: var(--primary);
+    }
+  }
+
+  .separator {
+    margin: 0 10px;
+    color: #ced4da;
+  }
+
+  .current {
+    color: var(--dark);
+    font-weight: 500;
+  }
+}
+
+.page-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+    
+  & i {
+    color: var(--primary);
+    font-size: 2rem;
+  }
+
+  & h1 {
+    font-size: 2.5rem;
+    color: var(--dark);
+  }
+}
+
+.page-subtitle {
+  font-size: 1.2rem;
+  color: var(--gray);
+  margin-bottom: 40px;
+  max-width: 800px;
+  line-height: 1.8;
+}
+
+// Пагинация
+.pagination {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  &-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    @include flex-center;
+    background-color: var(--light);
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    border: 1px solid transparent;
+
+    &:hover {
+      background-color: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(106, 17, 203, 0.2);
+    }
+
+    &.active {
+      background-color: var(--primary);
+      color: white;
+      box-shadow: 0 4px 8px rgba(106, 17, 203, 0.3);
+      pointer-events: none;
+    }
+  }
+
+  span {
+    padding: 0 5px;
+    color: var(--gray);
+  }
+}
+
+// Сообщение об отсутствии квизов
+.no-quizzes-message {
+  text-align: center;
+  padding: 30px 20px;
+  background-color: #f8f9fa;
+  border-radius: var(--border-radius);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+  border: 1px solid #e9ecef;
+
+  &-icon {
+    font-size: 3rem;
+    color: var(--gray);
+    margin-bottom: 15px;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    color: var(--dark);
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: var(--gray);
+    font-size: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+}
+
+// Поощрительные сообщения
+.encouragement {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 25px;
+  box-shadow: var(--box-shadow);
+  margin-bottom: 30px;
+  border-left: 5px solid var(--accent);
+
+  h3 {
+    color: var(--dark);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  p {
+    color: var(--gray);
+    line-height: 1.7;
+  }
+}
+
+// // Modal
+// .modal {
+//   display: none;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background-color: rgba(0, 0, 0, 0.7);
+//   z-index: 2000;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 20px;
+
+//   &-content {
+//     background-color: white;
+//     padding: 40px;
+//     border-radius: var(--border-radius);
+//     max-width: 600px;
+//     width: 100%;
+//     max-height: 90vh;
+//     overflow-y: auto;
+//     position: relative;
+//     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+//   }
+
+//   &-close {
+//     position: absolute;
+//     top: 20px;
+//     right: 20px;
+//     background: none;
+//     border: none;
+//     font-size: 1.5rem;
+//     cursor: pointer;
+//     color: var(--gray);
+//     width: 40px;
+//     height: 40px;
+//     @include flex-center;
+//     border-radius: 50%;
+//     transition: background-color 0.3s;
+
+//     &:hover {
+//       background-color: #f5f5f5;
+//     }
+//   }
+
+//   &-title {
+//     font-size: 1.8rem;
+//     color: var(--dark);
+//     margin-bottom: 20px;
+//     padding-right: 40px;
+//   }
+// }
+
+// Подвал
+footer {
+  background-color: var(--dark);
+  color: white;
+  padding: 60px 0 30px;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .footer-column {
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    ul {
+      list-style: none;
+
+      li {
+        margin-bottom: 10px;
+      }
+    }
+
+    a {
+      color: #bdc3c7;
+      text-decoration: none;
+      transition: color 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  .social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+
+    a {
+      @include flex-center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: white;
+      transition: background-color 0.3s;
+      text-decoration: none;
+
+      &:hover {
+        background-color: var(--primary);
+        transform: translateY(-3px);
+      }
+    }
+  }
+
+  .copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #bdc3c7;
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <title></title>
+
+        <!-- Подключаем фрагмент head с мета-тегами и подключением стилей -->
+        <!-- В этом файле мы подключаем стили.  Путь указывается относительно папки сборки (build или public_html) -->
+<link rel="stylesheet" href="css/main.css">
+<meta name="description" content="Описание сайта">
+        <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,fetch" defer></script>
+    </head>
+    <body>
+        <header>
+    <div class="container header-content">
+        <div class="logo">
+            <a href="/">
+                <img src="/images/logo-w.png" alt="IQuiz лого">
+            </a>
+            <div class="logo-text">
+                <h1 class="google-sans-bold">IQuiz</h1>
+                <p>Интеллектуальные игры в барах города</p>
+            </div>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="/" class="active"><i class="fas fa-home"></i> Главная</a></li>
+                <li><a href="/quiz-list.html"><i class="fas fa-bars"></i> Квизы</a></li>
+                <li><a href="/rating.html"><i class="fas fa-trophy"></i> Рейтинг</a></li>
+                <li><a href="/maintance"><i class="fas fa-star"></i> Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="breadcrumbs">
+    <div class="container">
+        <ul>
+            <li><a href="/"><i class="fas fa-home"></i> Главная</a></li>
+            <li class="separator">/</li>
+            <li><a href="/quizes">Квизы</a></li>
+            <li class="separator">/</li>
+            <li class="current">Квиз: Обо всем</li>
+        </ul>
+    </div>
+</div>
+
+        <main class="container">
+            <div class="rating-page">
+                <h1 class="rating-page-title">
+                    <i class="fas fa-trophy"></i> Рейтинг команд IQuiz
+                </h1>
+
+                <p class="  page-description">
+                    Текущий рейтинг команд. Рейтинг обновляется после каждого
+                    проведенного квиза.
+                </p>
+
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>18</h3>
+                            <p>Всего<br>команд</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>4</h3>
+                            <p>Проведено<br>квизов</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>2</h3>
+                            <p>Квизов в этом месяце</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>1 163</h3>
+                            <p>Всего набрано баллов</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rating-section">
+                    <div class="rating-section-header">
+                        <h2 class="rating-section-title">
+                            <i class="fas fa-list-ol"></i> Таблица рейтинга
+                        </h2>
+                    </div>
+
+                    <table class="rating-table">
+                        <thead>
+                            <tr>
+                                <th>Место</th>
+                                <th>Команда</th>
+                                <th>
+                                    Кол-во игр <i class="fas fa-gamepad"></i>
+                                </th>
+                                <th>
+                                    Всего баллов <i class="fas fa-star"></i>
+                                </th>
+                                <th>
+                                    Средний балл
+                                    <i class="fas fa-chart-line"></i>
+                                </th>
+                                <th>
+                                    Тренд <i class="fas fa-arrow-trend-up"></i>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="place-number">
+                                    <i
+                                        class="fas fa-trophy fa-trophy gold-medal"
+                                    ></i>
+                                </td>
+                                <td>
+                                    <div class="team-name">Chicas Locas</div>
+                                </td>
+                                <td class="games-cell">4</td>
+                                <td class="points-cell">135</td>
+                                <td class="avg-points">33.8</td>
+                                <td class="trend-cell trend-up">
+                                    <i class="fas fa-arrow-up"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="place-number">
+                                    <i
+                                        class="fas fa-trophy fa-trophy silver-medal"
+                                    ></i>
+                                </td>
+                                <td>
+                                    <div class="team-name">Ёжики из тумана</div>
+                                </td>
+                                <td class="games-cell">3</td>
+                                <td class="points-cell">110</td>
+                                <td class="avg-points">36.7</td>
+                                <td class="trend-cell trend-up">
+                                    <i class="fas fa-arrow-up"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="place-number">
+                                    <i
+                                        class="fas fa-trophy fa-trophy bronze-medal"
+                                    ></i>
+                                </td>
+                                <td>
+                                    <div class="team-name">
+                                        Очень вежливый лось
+                                    </div>
+                                </td>
+                                <td class="games-cell">2</td>
+                                <td class="points-cell">109</td>
+                                <td class="avg-points">54.5</td>
+                                <td class="trend-cell trend-down">
+                                    <i class="fas fa-arrow-down"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="place-number">4</td>
+                                <td><div class="team-name">Консилиум</div></td>
+                                <td class="games-cell">3</td>
+                                <td class="points-cell">106</td>
+                                <td class="avg-points">35.3</td>
+                                <td class="trend-cell trend-down">
+                                    <i class="fas fa-arrow-down"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="place-number">5</td>
+                                <td>
+                                    <div class="team-name">Чикипибарум</div>
+                                </td>
+                                <td class="games-cell">2</td>
+                                <td class="points-cell">100</td>
+                                <td class="avg-points">50.0</td>
+                                <td class="trend-cell trend-up">
+                                    <i class="fas fa-arrow-up"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="place-number">6</td>
+                                <td>
+                                    <div class="team-name">Гладкий мозг</div>
+                                </td>
+                                <td class="games-cell">1</td>
+                                <td class="points-cell">77</td>
+                                <td class="avg-points">77.0</td>
+                                <td class="trend-cell trend-down">
+                                    <i class="fas fa-arrow-down"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="place-number">7</td>
+                                <td>
+                                    <div class="team-name">Погладь Манула</div>
+                                </td>
+                                <td class="games-cell">1</td>
+                                <td class="points-cell">68</td>
+                                <td class="avg-points">68.0</td>
+                                <td class="trend-cell trend-down">
+                                    <i class="fas fa-arrow-down"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="place-number">8</td>
+                                <td>
+                                    <div class="team-name">Пик Балмера</div>
+                                </td>
+                                <td class="games-cell">1</td>
+                                <td class="points-cell">56</td>
+                                <td class="avg-points">56.0</td>
+                                <td class="trend-cell">new</td>
+                            </tr>
+                            <tr>
+                                <td class="place-number">9</td>
+                                <td><div class="team-name">Тюлени</div></td>
+                                <td class="games-cell">1</td>
+                                <td class="points-cell">53</td>
+                                <td class="avg-points">53.0</td>
+                                <td class="trend-cell">new</td>
+                            </tr>
+                            <tr>
+                                <td class="place-number">10</td>
+                                <td>
+                                    <div class="team-name">Двое из ларца</div>
+                                </td>
+                                <td class="games-cell">1</td>
+                                <td class="points-cell">48</td>
+                                <td class="avg-points">48.0</td>
+                                <td class="trend-cell trend-down">
+                                    <i class="fas fa-arrow-down"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="place-number">11</td>
+                                <td>
+                                    <div class="team-name">
+                                        Долговские кореша
+                                    </div>
+                                </td>
+                                <td class="games-cell">1</td>
+                                <td class="points-cell">47</td>
+                                <td class="avg-points">47.0</td>
+                                <td class="trend-cell trend-down">
+                                    <i class="fas fa-arrow-down"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="place-number">12</td>
+                                <td><div class="team-name">Душнилы</div></td>
+                                <td class="games-cell">1</td>
+                                <td class="points-cell">44</td>
+                                <td class="avg-points">44.0</td>
+                                <td class="trend-cell trend-down">
+                                    <i class="fas fa-arrow-down"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="place-number">13</td>
+                                <td>
+                                    <div class="team-name">
+                                        Не знаем, но верим
+                                    </div>
+                                </td>
+                                <td class="games-cell">1</td>
+                                <td class="points-cell">44</td>
+                                <td class="avg-points">44.0</td>
+                                <td class="trend-cell trend-down">
+                                    <i class="fas fa-arrow-down"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="place-number">14</td>
+                                <td>
+                                    <div class="team-name">Особое мнение</div>
+                                </td>
+                                <td class="games-cell">1</td>
+                                <td class="points-cell">42</td>
+                                <td class="avg-points">42.0</td>
+                                <td class="trend-cell trend-down">
+                                    <i class="fas fa-arrow-down"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="place-number">15</td>
+                                <td>
+                                    <div class="team-name">
+                                        Сообразим на четверых
+                                    </div>
+                                </td>
+                                <td class="games-cell">1</td>
+                                <td class="points-cell">35</td>
+                                <td class="avg-points">35.0</td>
+                                <td class="trend-cell trend-down">
+                                    <i class="fas fa-arrow-down"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="rating-table-footer">
+                        <div class="table-info">Показано 15 из 18 команд</div>
+
+                        <div class="pagination">
+                            <a
+                                class="pagination-link disabled"
+                                aria-label="Страница 0"
+                                ><i class="fas fa-chevron-left"></i
+                            ></a>
+                            <a
+                                class="pagination-link active"
+                                href="/rating?page=1"
+                                aria-label="Текущая страница 0"
+                                >1</a
+                            >
+                            <a
+                                class="pagination-link"
+                                href="/rating?page=2"
+                                aria-label="Страница 1"
+                                >2</a
+                            >
+                            <a
+                                class="pagination-link"
+                                href="/rating?page=2"
+                                aria-label="Страница 1"
+                                ><i class="fas fa-chevron-right"></i
+                            ></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="encouragement">
+                    <h3>
+                        <i class="fas fa-bullhorn"></i> Как улучшить свой
+                        рейтинг?
+                    </h3>
+                    <p>
+                        Хотите подняться в рейтинге? Участвуйте в больше
+                        количестве квизов, привлекайте новых участников в
+                        команду и следите за нашими специальными событиями, где
+                        можно получить бонусные баллы. Не забывайте, что
+                        команда, занимающая первое место в конце сезона, получит
+                        специальный приз и звание "Лучшая команда IQuiz"!
+                    </p>
+                </div>
+            </div>
+            
+        </main>
+
+        <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>IQuiz</h3>
+                <p>Лучшие барные викторины в вашем городе. Присоединяйтесь к нашему интеллектуальному сообществу!</p>
+                <div class="social-links">
+                    <a href="https://vk.com/iquizchel" target="_blank"><i class="fab fa-vk"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Навигация</h3>
+                <ul>
+                    <li><a href="/"><i class="fas fa-chevron-right"></i> Главная</a></li>
+                    <li><a href="/quiz-list.html"><i class="fas fa-chevron-right"></i> Все квизы</a></li>
+                    <li><a href="/rating.html"><i class="fas fa-chevron-right"></i> Рейтинги команд</a></li>
+                    <li><a href="/rules.html"><i class="fas fa-chevron-right"></i> Правила участия</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Сотрудничество</h3>
+                <ul>
+                    <li><a href="/maintance"><i class="fas fa-chevron-right"></i> Партнеры</a></li>
+                    <li><a href="/maintance"><i class="fas fa-chevron-right"></i> Сотрудничество</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Контакты</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> info@i-quiz.ru</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>© 2026 IQuiz</p>
+        </div>
+    </div>
+</footer>
+
+<script src="//api-maps.yandex.ru/2.1/?apikey=58f61641-0027-42b9-992f-d44aad687fc3&amp;lang=ru_RU"></script>
+<script src="/js/main.js"></script>
+    </body>
+</html>

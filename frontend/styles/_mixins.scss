@@ -1,0 +1,43 @@
+@mixin flex-center($direction: row) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin hover-transform {
+  transition: var(--transition);
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@mixin button-style($bg, $hover-bg) {
+  background-color: $bg;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  font-size: 1rem;
+
+  &:hover {
+    background-color: $hover-bg;
+    @include hover-transform;
+  }
+}
+
+@mixin responsive-font($mobile, $desktop) {
+  font-size: $mobile;
+  @media (min-width: 768px) {
+    font-size: $desktop;
+  }
+}

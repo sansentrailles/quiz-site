@@ -1,0 +1,20 @@
+.quiz-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: var(--accent);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  z-index: 2;
+
+  &.completed {
+    background-color: var(--gray);
+  }
+
+  .upcoming {
+    background-color: var(--success);
+  }
+}

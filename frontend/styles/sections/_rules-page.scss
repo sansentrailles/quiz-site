@@ -1,0 +1,157 @@
+/* Карточки с правилами - ИСПРАВЛЕННЫЕ СТИЛИ ДЛЯ КРУГЛЫХ ИКОНОК */
+.rules-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.rule-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 30px;
+    transition: var(--transition);
+    border-top: 4px solid var(--primary);
+
+    &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  &.warning {
+    border-top-color: var(--accent);
+  }
+
+  &.success {
+    border-top-color: #28a745;
+  }
+
+  &.info {
+    border-top-color: #17a2b8;
+  }
+
+  &-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  &-icon {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    min-height: 60px;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    overflow: hidden;
+    position: relative;
+
+    & i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.rule-card.warning .rule-card-icon {
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+}
+
+.rule-card.success .rule-card-icon {
+    background: linear-gradient(to right, #28a745, #20c997);
+}
+
+.rule-card.info .rule-card-icon {
+    background: linear-gradient(to right, #17a2b8, #20c997);
+}
+
+.rule-card-title {
+    font-size: 1.5rem;
+    color: var(--dark);
+    margin-top: 5px;
+}
+
+.rule-card-content {
+    color: var(--gray);
+    line-height: 1.8;
+}
+
+.rule-card-content ul {
+    padding-left: 20px;
+    margin: 15px 0;
+}
+
+.rule-card-content li {
+    margin-bottom: 10px;
+}
+
+.rules {
+  &-contacts {
+    &-section {
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      color: white;
+      border-radius: var(--border-radius);
+      padding: 40px;
+      margin-bottom: 50px;
+    }
+
+    &-description {
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 800px;
+    }
+
+    &-title {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+
+      & i {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  &-contact {
+    &-methods {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    &-method {
+      display: flex;
+      align-items: baseline;
+      gap: 15px;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 15px 15px;
+      border-radius: 8px;
+      transition: var(--transition);
+
+      & a {
+        color: white;
+        text-decoration: none;
+      }
+
+      & i {
+        font-size: 1.4rem;
+      }
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+}

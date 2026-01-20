@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <title></title>
+
+        <!-- Подключаем фрагмент head с мета-тегами и подключением стилей -->
+        @@include('partials/head.html')
+        <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,fetch" defer></script>
+    </head>
+    <body>
+        @@include('partials/nav/header.html')
+
+        @@include('partials/nav/breadcrumbs.html')
+
+        <main class="container">
+            <div class="page-title">
+                <i class="fas fa-book"></i>
+                <h1>Правила участия в квизах</h1>
+            </div>
+
+            <p class="page-subtitle">
+                Чтобы каждый участник мог насладиться игрой в полной мере, мы
+                разработали простые и понятные правила. Пожалуйста, ознакомьтесь
+                с ними перед посещением квиза.
+            </p>
+
+            <div class="rules-container">
+                <div class="rule-card">
+                    <div class="rule-card-header">
+                        <div class="rule-card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h2 class="rule-card-title">Формирование команд</h2>
+                    </div>
+                    <div class="rule-card-content">
+                        <p>
+                            Команды формируются самостоятельно или на месте.
+                            Максимальное количество участников в команде — 10
+                            человек.
+                        </p>
+                        <ul>
+                            <li>Минимальный размер команды — 2 человека</li>
+                            <li>
+                                Можно приходить одному — мы поможем найти
+                                команду
+                            </li>
+                            <li>
+                                Название команды не должно содержать нецензурные
+                                выражения
+                            </li>
+                            <li>
+                                Дети до 16 лет допускаются только в
+                                сопровождении взрослых
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="rule-card warning">
+                    <div class="rule-card-header">
+                        <div class="rule-card-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h2 class="rule-card-title">Использование телефонов</h2>
+                    </div>
+                    <div class="rule-card-content">
+                        <p>
+                            Во время игры использование телефонов и других
+                            устройств для поиска ответов строго запрещено.
+                        </p>
+                        <ul>
+                            <li>
+                                Телефоны должны быть переведены в беззвучный
+                                режим
+                            </li>
+                            <li>
+                                При обнаружении факта использования интернета
+                                команда лишается 10 баллов
+                            </li>
+                            <li>
+                                Разрешается использовать телефон только для
+                                фотографирования
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="rule-card success">
+                    <div class="rule-card-header">
+                        <div class="rule-card-icon">
+                            <i class="fas fa-ticket-alt"></i>
+                        </div>
+                        <h2 class="rule-card-title">Регистрация и оплата</h2>
+                    </div>
+                    <div class="rule-card-content">
+                        <p>
+                            Регистрация на квиз обязательна. Вы можете
+                            записаться онлайн или по телефону.
+                        </p>
+                        <ul>
+                            <li>
+                                Оплата производится на месте во время первого
+                                перерыва
+                            </li>
+                            <li>
+                                Оплата принимается наличным или безанличным
+                                рассчетом
+                            </li>
+                            <li>
+                                При безналичной оплате следует делать один
+                                перевод от команды
+                            </li>
+                            <li>
+                                При безналичной оплате укажите номер телефона, с
+                                которого была произведена оплата
+                            </li>
+                            <li>
+                                Обязательно укажите свое название оплаты и
+                                количество участников
+                            </li>
+                            <li>Приложите сертификат, если имеете</li>
+                            <li>
+                                От одной команды можно использовать только один
+                                сертификат
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="rule-card info">
+                    <div class="rule-card-header">
+                        <div class="rule-card-icon">
+                            <i class="fas fa-glass-cheers"></i>
+                        </div>
+                        <h2 class="rule-card-title">Поведение в баре</h2>
+                    </div>
+                    <div class="rule-card-content">
+                        <p>
+                            Мы играем в барах и пабах, поэтому соблюдайте
+                            правила заведения и уважайте других гостей.
+                        </p>
+                        <ul>
+                            <li>
+                                Не мешайте другим командам во время обсуждения
+                                ответов
+                            </li>
+                            <li>
+                                Соблюдайте тишину во время озвучивания вопросов
+                            </li>
+                            <li>
+                                Будьте вежливы с ведущим и другими участников
+                            </li>
+                            <li>
+                                Запрещается употреблять принесенные с собой
+                                напитки и еду
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="rule-card">
+                    <div class="rule-card-header">
+                        <div class="rule-card-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h2 class="rule-card-title">Определение победителей</h2>
+                    </div>
+                    <div class="rule-card-content">
+                        <p>
+                            Победитель определяется по наибольшему количеству
+                            баллов, набранных за все раунды.
+                        </p>
+                        <ul>
+                            <li>
+                                В спорных ситуациях решение ведущего является
+                                окончательным
+                            </li>
+                            <li>
+                                Апелляции принимаются только во время перерывов
+                                и до окончания игры
+                            </li>
+                            <li>
+                                При равенстве баллов, лучшей считается та
+                                команда, которая набрала больше баллов в
+                                предыдущем раунде
+                            </li>
+                            <li>
+                                Результаты публикуются на нашем сайте на
+                                следующий день
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="rule-card warning">
+                    <div class="rule-card-header">
+                        <div class="rule-card-icon">
+                            <i class="fas fa-ban"></i>
+                        </div>
+                        <h2 class="rule-card-title">Запрещенные действия</h2>
+                    </div>
+                    <div class="rule-card-content">
+                        <p>
+                            Некоторые действия могут привести к дисквалификации
+                            команды без возврата оплаты.
+                        </p>
+                        <ul>
+                            <li>Использование интернета для поиска ответов</li>
+                            <li>
+                                Подсказки другим командам или получение
+                                подсказок извне
+                            </li>
+                            <li>
+                                Грубое поведение по отношению к другим
+                                участникам или персоналу
+                            </li>
+                            <li>
+                                Нарушение правил заведения, в котором проходит
+                                квиз
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <section class="faq-section">
+                <h2 class="faq-section-title">
+                    <i class="fas fa-question-circle"></i> Часто задаваемые
+                    вопросы
+                </h2>
+
+                <div class="faq-container">
+                    <div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-question">
+                            <span>Можно ли прийти одному?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                Да, конечно! Мы всегда рады одиночным игрокам.
+                                Вы можете присоединиться к другой команде или
+                                сформировать новую с такими же одиночными
+                                участниками. На многих квизах есть специальная
+                                зона для тех, кто пришел один, где можно
+                                познакомиться с будущими командными игроками.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-question">
+                            <span>Что делать, если мы опоздаем?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                Если вы опаздываете, пожалуйста, предупредите
+                                нас по телефону. Мы постараемся вас подождать,
+                                но имейте в виду, что игра начинается строго по
+                                расписанию. Опоздавшая команда может
+                                присоединиться к текущему раунду, но вопросы
+                                пропущенных раундов не повторяются.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-question">
+                            <span>Можно ли приносить свою еду и напитки?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                К сожалению, нет. Мы проводим квизы в барах и
+                                кафе, которые предоставляют нам помещение на
+                                условиях минимального заказа. Приносить свою еду
+                                и напитки запрещено правилами заведений. В
+                                каждом баре есть меню с доступными позициями по
+                                разным ценам.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-question">
+                            <span>Как формируется стоимость участия?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                Стоимость участия складывается из нескольких
+                                факторов: аренда помещения, оплата работы
+                                ведущего, подготовка вопросов, призовой фонд и
+                                организационные расходы. Цена составляет 500
+                                рублей* с человека.<br /><br />*Не является
+                                публичной офертой
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="rules-contacts-section">
+                <div class="rules-contacts-title">
+                    <i class="fas fa-headset"></i>
+                    <h2>Остались вопросы?</h2>
+                </div>
+
+                <p class="rules-contacts-description">
+                    Если у вас есть дополнительные вопросы о правилах участия
+                    или вы хотите уточнить какие-то моменты, свяжитесь с нами
+                    любым удобным способом. Мы всегда рады помочь!
+                </p>
+
+                <div class="rules-contact-methods">
+                    <div class="rules-contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@i-quiz.ru</p>
+                        </div>
+                    </div>
+
+                    <div class="rules-contact-method">
+                        <i class="fab fa-vk"></i>
+                        <div>
+                            <h3>ВКонтакте</h3>
+                            <p>
+                                <a href="https://vk.com/iquizchel" target="_blank" >https://vk.com/iquizchel</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+
+        @@include('partials/footer.html')
+    </body>
+</html>
