@@ -3,6 +3,7 @@
 import { initCommon } from './modules/common';
 import { initMap } from './modules/map';
 import { initBooking } from './modules/booking';
+import { initQuiz } from './modules/quiz';
 
 // Используем одно событие DOMContentLoaded для запуска всего
 document.addEventListener('DOMContentLoaded', function() {
@@ -11,6 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Инициализируем карту
     initMap();
+
+    // страница квиза
+    initQuiz();
 
     // Форма записи
     initBooking();

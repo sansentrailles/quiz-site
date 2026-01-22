@@ -19,7 +19,12 @@ use dosamigos\datepicker\DatePicker;
 
 <div class="form">
 
-    <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
+    <?php $form = ActiveForm::begin([
+        'options' => ['enctype' => 'multipart/form-data'],
+        'fieldConfig' => [
+            'hintOptions' => ['style' => 'color: rgb(3, 71, 30);'],
+        ],
+    ]); ?>
 
         <?php echo $form->field($model, 'is_visible')->checkbox(); ?>
 

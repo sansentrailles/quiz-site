@@ -68,22 +68,21 @@
                             <div class="price-label">за участника</div>
                         </div>
 
-                        <button class="btn-signup" id="openSignupModal">
+                        <button class="btn-signup" id="showBookingFormBtn">
                             <i class="fas fa-ticket-alt"></i> Записаться на квиз
                         </button>
                     </div>
 
                     @@include('partials/sections/quiz_location_card.html')
                 </div>
+
+                @@include('partials/sections/quiz_form.html')
             </div>
 
-            @@include('partials/modals/quiz_map_modal.html')
-            
         </main>
 
         @@include('partials/footer.html')
 
-        @@include('partials/modals/booking-form.html')
         @@include('partials/modals/toast.html')
     </body>
 </html>

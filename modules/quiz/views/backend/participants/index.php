@@ -28,7 +28,13 @@ $seoSection = 'quiz';
                 'quiz' => $quiz,
             ]) ?>
         </div>
-        <div class="col-md-6"></div>
+        <div class="col-md-6">
+            <?= $this->render('_index_booking', [
+                'dataProvider' => $bookingDataProvider,
+                'searchModel'=> $bookingSearchModel,
+                'quiz' => $quiz,
+            ]) ?>
+        </div>
     </div>
 
     <br>

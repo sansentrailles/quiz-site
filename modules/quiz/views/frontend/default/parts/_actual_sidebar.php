@@ -21,9 +21,9 @@ $setting = Yii::$app->setting;
     </div>
     */ ?>
     
-    <a href="<?= $setting->get('link.booking') ?>" class="btn-signup" target="_blank">
+    <button class="btn-signup" id="showBookingFormBtn">
         <i class="fas fa-ticket-alt"></i> Записаться на квиз
-    </a>
+    </button>
     
     <?php /*
     <p style="margin-top: 15px; color: var(--gray); font-size: 0.9rem;">Запись открыта до 14 октября</p>

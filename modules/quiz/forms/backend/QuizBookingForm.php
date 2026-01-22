@@ -19,6 +19,7 @@ class QuizBookingForm extends Model
     public $team_name;
     public $contact;
     public $persons;
+    public $holiday;
     public $is_single;
     public $is_opened;
     public $place;
@@ -40,9 +41,10 @@ class QuizBookingForm extends Model
         $this->quiz_id   = $this->quizBooking->quiz_id;
         $this->team_name = $this->quizBooking->team_name;
         $this->name      = $this->quizBooking->name;
+        $this->holiday   = $this->quizBooking->holiday;
         $this->contact   = $this->quizBooking->contact;
         $this->persons   = $this->quizBooking->persons;
-        $this->is_single = $this->quizBooking->place;
+        $this->is_single = $this->quizBooking->is_single;
         $this->is_opened = $this->quizBooking->is_opened;
     }
 
@@ -50,7 +52,7 @@ class QuizBookingForm extends Model
     {
         return [
             [['is_single', 'is_opened'], 'integer'],
-            [['name', 'team_name', 'contact'], 'string'],
+            [['name', 'team_name', 'contact', 'holiday'], 'string'],
             [['persons'], 'integer', 'min' => 1, 'max' => 10],
             [['quiz_id'],
                 'exist',

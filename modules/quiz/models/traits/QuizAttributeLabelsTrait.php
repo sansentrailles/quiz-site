@@ -30,4 +30,22 @@ trait QuizAttributeLabelsTrait
             'updated_at'  => Module::t('common', 'UPDATED_AT'),
         ];
     }
+
+    public function attributeHints()
+    {
+        return [
+            'id'          => Module::t('common', 'ID'),
+            'title'       => 'Укажите название квиза',
+            // 'location_id' => Module::t('common', 'QUIZ_LOCATION_ID'),
+            // 'price'       => Module::t('common', 'QUIZ_PRICE'),
+            // 'desc'        => Module::t('common', 'QUIZ_DESC'),
+            // 'text'        => Module::t('common', 'QUIZ_TEXT'),
+            // 'items'       => Module::t('common', 'QUIZ_ITEMS'),
+            // 'date'        => Module::t('common', 'QUIZ_DATE'),
+            // 'time'        => Module::t('common', 'QUIZ_TIME'),
+            // 'labels'      => Module::t('common', 'QUIZ_LABELS'),
+            // 'image'       => Module::t('common', 'QUIZ_IMAGE'),
+            // 'imageFile'   => Module::t('common', 'QUIZ_IMAGE'),
+        ];
+    }
 }

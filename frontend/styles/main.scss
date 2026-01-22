@@ -34,7 +34,9 @@
 @use 'sections/sections';
 @use 'sections/rules-page';
 @use 'sections/contact-section';
-@use 'sections/booking-form';
+// @use 'sections/booking-form';
+@use 'sections/booking-section'; // quiz page booking form
+@use 'sections/toast'; // quiz page booking form
 
 // Утилиты
 @use 'utils/typography';

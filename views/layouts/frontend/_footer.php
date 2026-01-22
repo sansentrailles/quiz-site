@@ -52,3 +52,13 @@ $setting = Yii::$app->setting;
         </div>
     </div>
 </footer>
+
+<div class="toast" id="successToast">
+    <div class="toast-icon">
+        <i class="fas fa-check-circle"></i>
+    </div>
+    <div class="toast-content">
+        <h4></h4>
+        <p>Мы свяжемся с вами в ближайшее время для подтверждения.</p>
+    </div>
+</div>

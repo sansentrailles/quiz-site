@@ -4,15 +4,28 @@ declare(strict_types=1);
 
 namespace app\modules\quiz\controllers\frontend;
 
-use app\modules\quiz\models\Quest;
 use Yii;
 use app\modules\quiz\controllers\common\Controller;
 use app\modules\quiz\models\Quiz;
 use yii\web\HttpException;
 use yii\data\ArrayDataProvider;
+use yii\filters\VerbFilter;
+use app\modules\quiz\forms\frontend\QuizBookingForm;
 
 class DefaultController extends Controller
 {
+    public function behaviors()
+    {
+        return [
+            'verbs' => [
+                'class' => VerbFilter::class,
+                'actions' => [
+                    'booking' => ['POST'],
+                ],
+            ],
+        ];
+    }
+
     public function actionIndex()
     {
         $actualQuizes = $this->quizService->getActualQuizes();
@@ -85,5 +98,31 @@ class DefaultController extends Controller
                 'totalPoints' => $this->participantService->getTotalPoints(),
             ],
         ]);
+    }
+
+    public function actionBooking()
+    {
+        $this->setJsonResponse();
+
+        $post = Yii::$app->request->post();
+        $model = new QuizBookingForm();
+
+        if ($model->load($post) && $model->validate()) {
+            $this->quizBookingService->booking($model);
+
+            return [
+                'success' => true,
+                'message' => 'Заявка успешно отправлена',
+            ];
+        } else {
+            return [
+                'success' => false,
+                'name' => $model->name,
+                'persons' => $model->persons,
+                'teamName' => $model->teamName,
+                'isAccept' => $model->isAccept,
+                'errors' => \yii\widgets\ActiveForm::validate($model),
+            ];
+        }
     }
 }

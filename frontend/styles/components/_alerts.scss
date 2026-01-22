@@ -32,9 +32,20 @@
   border-left: 5px solid var(--primary);
 }
 
-.yandex-service {
+.info-service {
   background-color: #fff9f0;
   border-left: 5px solid #ffcc00;
+  padding: 15px 25px;
+  border-radius: 8px;
+  margin: 30px 0;
+
+  h4 {
+    color: #333;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
 }
 
 .contact-info {

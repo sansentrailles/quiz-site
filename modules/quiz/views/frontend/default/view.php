@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use app\custom\helpers\DateHelper;
+use app\modules\quiz\widgets\frontend\booking\Booking;
 
 use app\modules\seo\widgets\frontend\seo\SeoWidget;
 
@@ -105,6 +106,11 @@ $setting = Yii::$app->setting;
             ]) ?>
         <?php } ?>
     </div>
+
+    <?= Booking::widget([
+        'action' => Url::to('/quizes/booking'),
+        'quizId' => $quiz->id,
+    ]) ?>
 </div>
 
 <?php if ($quiz->isExpired && count($quiz->participants) > 0) { ?>
