@@ -39,7 +39,11 @@ class QuizBookingForm extends Model
             [['isSingle', 'isOpened'], 'integer'],
             [['name', 'teamName', 'contact'], 'string'],
             [['name'], 'required', 'message' => 'Введите имя'],
-            [['teamName'], 'required', 'message' => 'Введите название команды'],
+            // [['teamName'], 'required', 'message' => 'Введите название команды'],
+            [['teamName'], 'required', 'message' => 'Введите название команды', 'when' => function($model) {
+                // Валидируем как обязательное, только если isSingle НЕ выбрано (равно 0 или null)
+                return !$model->isSingle;
+            }],
             [['holiday'], 'string', 'max' => 100],
             [['persons'], 'integer', 'min' => 1, 'max' => 10],
             [['quizId'],

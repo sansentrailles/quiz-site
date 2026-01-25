@@ -4,20 +4,22 @@ use app\modules\quiz\Module;
 
 // @var $this yii\web\View
 
-$this->title = Module::t('common', 'QUIZ_PARTICIPANT_UPDATE');
+$this->title = Module::t('common', 'QUIZ_APPLY_BOOKING');
 $this->params['breadcrumbs'][] = ['label' => Module::t('common', 'QUIZES'), 'url' => ['/admin/quiz/quizes']];
 $this->params['breadcrumbs'][] = ['label' => Module::t('common', 'QUIZ_PARTICIPANTS'), 'url' => ['/admin/quiz/participants', 'quizId' => $model->quiz_id]];
 $this->params['breadcrumbs'][] = $this->title;
 $this->params['boxheader'] = [
-    'icon' => 'fa-cubes',
+    'icon' => 'fa-plus',
     'text' => $this->title,
 ];
 ?>
 <div class="update">
 
-    <?php echo $this->render('_form', [
+    <?php echo $this->render('_form_booking', [
         'model' => $model,
         'teams' => $teams,
+        'team' => $team,
+        'booking' => $booking,
     ]); ?>
 
 </div>

@@ -41,6 +41,17 @@ $formName = mb_strtolower($model::getName());
 ]); ?>
     <?= Html::activeHiddenInput($model, 'quizId', [])?>
 
+    <div class="checkbox-group">
+        <?= Html::activeCheckbox($model, 'isSingle', [
+            'label' => Html::decode($model->getAttributeLabel('isSingle')),
+            'class' => 'checkbox-input',
+            'labelOptions' => [
+                'class' => 'checkbox-label',
+            ],
+            'uncheck' => 0,
+        ]) ?>
+    </div>
+
     <div class="form-group">
         <?= Html::activeLabel($model, 'name', [
             'class' => 'form__label',
@@ -53,17 +64,6 @@ $formName = mb_strtolower($model::getName());
     </div>
 
     <div class="form-group">
-        <?= Html::activeLabel($model, 'teamName', [
-            'class' => 'form__label',
-            'label' => Html::decode($model->getAttributeLabel('teamName'))
-        ]) ?>
-        <?= Html::activeTextInput($model, 'teamName', [
-            'class' => 'form__control',
-        ])?>
-        <span class="form-error-message" id="<?= $formName ?>-teamname-error"><i class="fas fa-exclamation-circle"></i> <span></span></span>
-    </div>
-
-    <div class="form-group">
         <?= Html::activeLabel($model, 'contact', [
             'class' => 'form__label',
             'label' => Html::decode($model->getAttributeLabel('contact'))
@@ -73,7 +73,17 @@ $formName = mb_strtolower($model::getName());
         ])?>
         <span class="form-error-message" id="<?= $formName ?>-contact-error"><i class="fas fa-exclamation-circle"></i> <span></span></span>
     </div>
-    
+
+    <div class="form-group">
+        <?= Html::activeLabel($model, 'teamName', [
+            'class' => 'form__label',
+            'label' => Html::decode($model->getAttributeLabel('teamName'))
+        ]) ?>
+        <?= Html::activeTextInput($model, 'teamName', [
+            'class' => 'form__control',
+        ])?>
+        <span class="form-error-message" id="<?= $formName ?>-teamname-error"><i class="fas fa-exclamation-circle"></i> <span></span></span>
+    </div>
 
     <div class="form-group">
         <?= Html::activeLabel($model, 'persons', [
@@ -99,15 +109,6 @@ $formName = mb_strtolower($model::getName());
     <div class="checkbox-group">
         <?= Html::activeCheckbox($model, 'isOpened', [
             'label' => Html::decode($model->getAttributeLabel('isOpened')),
-            'class' => 'checkbox-input',
-            'labelOptions' => [
-                'class' => 'checkbox-label',
-            ],
-            'uncheck' => 0,
-        ]) ?>
-
-        <?= Html::activeCheckbox($model, 'isSingle', [
-            'label' => Html::decode($model->getAttributeLabel('isSingle')),
             'class' => 'checkbox-input',
             'labelOptions' => [
                 'class' => 'checkbox-label',

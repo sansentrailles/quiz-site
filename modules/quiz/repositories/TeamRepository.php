@@ -68,4 +68,26 @@ class TeamRepository extends BaseRepository
 
         return $teamsData;
     }
+
+    public function getByName(string $name)
+    {
+        $searchTerm = '%'.trim($name).'%';
+        $query = $this->model::find()
+            ->where(['like', 'title', $searchTerm, false]);
+
+        return $query->one();
+    }
+
+    public function getAvailableTeams(int $quizId)
+    {
+        $query = $this->model::find()
+        ->innerJoinWith('participants') // Предполагается наличие связи quizParticipants
+        ->where([
+            'quiz_participants.quiz_id' => $quizId,
+            'quiz_participants.is_opened' => 1,
+        ])
+        ->andWhere(['<', 'quiz_participants.persons', 10]);
+        
+        return $query->all();
+    }
 }

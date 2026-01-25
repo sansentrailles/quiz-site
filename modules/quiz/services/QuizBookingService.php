@@ -48,9 +48,15 @@ class QuizBookingService extends BaseService
 
         $form->quiz_id = $frontendForm->quizId;
         $form->name = $frontendForm->name;
-        $form->team_name = $frontendForm->teamName;
+
+        if (!$frontendForm->isSingle) {
+            $form->team_name = $frontendForm->teamName;
+            $form->persons = $frontendForm->persons;
+        } else {
+            $form->persons = 1;
+        }
+        
         $form->holiday = $frontendForm->holiday;
-        $form->persons = $frontendForm->persons;
         $form->contact = $frontendForm->contact;
         $form->is_single = $frontendForm->isSingle;
         $form->is_opened = $frontendForm->isOpened;

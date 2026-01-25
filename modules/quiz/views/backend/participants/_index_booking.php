@@ -22,29 +22,43 @@ use app\custom\widgets\backend\grid\ActionColumn;
         'filterModel' => $searchModel,
         'columns' => [
             [
-                'class' => 'yii\grid\SerialColumn',
-                'headerOptions' => ['width' => '5%'],
+                'format' => 'raw',
+                'value' => function ($model) {
+                    $url = ['/admin/quiz/participants/apply-booking', 'id' => $model->id];
+                    $label = "<i class='fa fa-arrow-left'></i>";
+                    return Html::a($label, $url, ['title' => 'Принять заявку']);
+                },
+                'headerOptions' => ['width' => '1%', 'style' => 'text-align: center;'],
             ],
 
             [
                 'headerOptions' => ['width' => '10%'],
+                'format' => 'raw',
                 'attribute' => 'team_name',
+                'value' => function ($model) {
+                    if ($model->is_single) {
+                        return '<span class="text-red">Без команды</span>';
+                    }
+
+                    return $model->team_name;
+                }
             ],
 
             [
-                'headerOptions' => ['width' => '10%'],
+                'headerOptions' => ['width' => '8%'],
                 'attribute' => 'name',
             ],
 
             [
                 'attribute' => 'persons',
-                'headerOptions' => ['width' => '5%'],
+                'headerOptions' => ['width' => '3%'],
             ],
 
             [
-                'headerOptions' => ['width' => '5%'],
-                'class' => ActionColumn::class,
-                'contentOptions' => ['style' => 'text-align: center;'],
+                'headerOptions' => ['width' => '3%'],
+                'value' => function ($model) {
+                    return date('d.m H:i', $model->created_at);
+                },
             ],
         ],
     ]); ?>

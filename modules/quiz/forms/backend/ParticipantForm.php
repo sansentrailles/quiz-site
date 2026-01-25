@@ -20,6 +20,10 @@ class ParticipantForm extends Model
     public $persons;
     public $points;
     public $place;
+    public $is_opened;
+    public $comment;
+    public $name;
+    public $contact;
     private $participant;
 
     public function __construct(?Participant $participant = null, $config = [])
@@ -34,17 +38,24 @@ class ParticipantForm extends Model
             return;
         }
 
-        $this->id      = $this->participant->id;
-        $this->quiz_id = $this->participant->quiz_id;
-        $this->team_id = $this->participant->team_id;
-        $this->persons = $this->participant->persons;
-        $this->place   = $this->participant->place;
-        $this->points  = $this->participant->points;
+        $this->id        = $this->participant->id;
+        $this->quiz_id   = $this->participant->quiz_id;
+        $this->team_id   = $this->participant->team_id;
+        $this->persons   = $this->participant->persons;
+        $this->place     = $this->participant->place;
+        $this->points    = $this->participant->points;
+        $this->is_opened = $this->participant->is_opened;
+        $this->comment   = $this->participant->comment;
+        $this->contact   = $this->participant->contact;
+        $this->name      = $this->participant->name;
     }
 
     public function rules()
     {
         return [
+            [['is_opened'], 'integer'],
+            [['comment'], 'string'],
+            [['name', 'contact'], 'string', 'max' => 255],
             [['points'], 'double'],
             [['place'], 'integer'],
             [['points'], 'default', 'value' => 0],

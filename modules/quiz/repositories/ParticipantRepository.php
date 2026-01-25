@@ -23,6 +23,17 @@ class ParticipantRepository extends BaseRepository
             ->all();
     }
 
+    // public function getAvailableTeams($quizId)
+    // {
+    //     $query = $this->model::find()
+    //         ->andWhere(['quiz_id' => $quizId])
+    //         ->andWhere(['is_opened' => 1])
+    //         ->andWhere(['<', 'persons', 10]);
+
+    //     echo $query->createCommand()->rawSql; exit;
+    //     return $query->all();
+    // }
+
     public function getStats(int $quizId)
     {
         return $this->model::find()
@@ -58,7 +69,6 @@ class ParticipantRepository extends BaseRepository
             ->all();
 
         // 3. Получаем рейтинг БЕЗ последнего квиза (для расчета тренда)
-         // 3. Получаем рейтинг БЕЗ последнего квиза (для расчета тренда)
         $previousStats = [];
         if ($lastQuizId) {
             $previousStatsRaw = $this->model::find()
@@ -117,5 +127,13 @@ class ParticipantRepository extends BaseRepository
     public function getTotalPoints()
     {
         return $this->model::find()->sum('points');
+    }
+
+    public function getByRefs(int $quizId, int $teamId)
+    {
+        return $this->model::findOne([
+                'quiz_id' => $quizId,
+                'team_id' => $teamId,
+            ]);
     }
 }

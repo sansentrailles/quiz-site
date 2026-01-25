@@ -117,10 +117,6 @@ class DefaultController extends Controller
         } else {
             return [
                 'success' => false,
-                'name' => $model->name,
-                'persons' => $model->persons,
-                'teamName' => $model->teamName,
-                'isAccept' => $model->isAccept,
                 'errors' => \yii\widgets\ActiveForm::validate($model),
             ];
         }

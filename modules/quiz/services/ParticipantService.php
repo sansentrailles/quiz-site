@@ -81,4 +81,9 @@ class ParticipantService extends BaseService
     {
         return $this->repository->getTotalPoints();
     }
+
+    public function getByRefs(int $quizId, int $teamId)
+    {
+        return $this->repository->getByRefs($quizId, $teamId);
+    }
 }

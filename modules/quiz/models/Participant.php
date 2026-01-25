@@ -18,6 +18,10 @@ use yii\helpers\Url;
  * @property int $team_id
  * @property int $persons
  * @property float $points
+ * @property int $is_opened
+ * @property string $comment
+ * @property string $name
+ * @property string $contact
  * @property int $place
  * @property int $created_at
  * @property int $updated_at
@@ -59,11 +63,15 @@ class Participant extends ActiveRecord
      */
     private function loadFromForm(Form $form): void
     {
-        $this->quiz_id = $form->quiz_id;
-        $this->team_id = $form->team_id;
-        $this->persons = $form->persons;
-        $this->points  = $form->points;
-        $this->place   = $form->place;
+        $this->quiz_id   = $form->quiz_id;
+        $this->team_id   = $form->team_id;
+        $this->persons   = $form->persons;
+        $this->points    = $form->points;
+        $this->place     = $form->place;
+        $this->is_opened = $form->is_opened;
+        $this->comment   = $form->comment;
+        $this->name      = $form->name;
+        $this->contact   = $form->contact;
     }
 
     /**

@@ -7,7 +7,7 @@ return [
     'QUIZ_BOOKING_NAME' => 'Имя',
     'QUIZ_BOOKING_TEAM_NAME' => 'Название команды',
     'QUIZ_BOOKING_HOLIDAY' => '',
-    'QUIZ_BOOKING_PERSONS' => 'Количество человек',
+    'QUIZ_BOOKING_PERSONS' => 'Кол-во чел.',
     'QUIZ_BOOKING_CONTACT' => 'Контакт для связи',
     'QUIZ_BOOKING_IS_OPENED' => 'Открыты для добавления участников',
     'QUIZ_BOOKING_IS_SINGLE' => 'Один (без команды)',

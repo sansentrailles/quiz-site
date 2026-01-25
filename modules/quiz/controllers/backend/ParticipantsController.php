@@ -126,4 +126,120 @@ class ParticipantsController extends Controller
         Yii::$app->getSession()->setFlash('success', Module::t('common', 'PLACES_SAVED_SUCCESS'));
         return $this->redirect($request->referrer);
     }
+
+    public function actionApplyBooking($id) {
+        $booking = $this->quizBookingService->findOrFail((int)$id);
+
+        $model = new Form();
+        $model->setQuiz($booking->quiz_id);
+        $model->persons = $booking->persons;
+        $model->is_opened = $booking->is_opened;
+        $model->name = $booking->name;
+        $model->contact = $booking->contact;
+
+        if ($booking->is_single) {
+            $model->comment .= "\nДобавлен участник: ".$booking->name."(".$booking->contact.")";
+
+            return $this->render('apply-single', [
+                'model' => $model,
+                'booking' => $booking,
+                'teams' => $this->teamService->getAvailableTeams($booking->quiz_id),
+            ]);
+        }
+
+        $team = $this->teamService->getByName($booking->team_name);
+        if ($team) {
+            $model->team_id = $team->id;
+        }
+        
+        return $this->render('apply-booking', [
+            'model' => $model,
+            'booking' => $booking,
+            'team' => $team,
+            'teams' => $this->teamService->getAll(),
+        ]);
+    }
+
+    public function actionApplySingle(int $bookingId)
+    {
+        $booking = $this->quizBookingService->findOrFail($bookingId);
+
+        $model = new Form();
+        $post = Yii::$app->request->post();
+        $model->load($post);
+
+        $participant = $this->participantService->getByRefs((int) $model->quiz_id, (int) $model->team_id);
+        if ($participant === null) {
+            Yii::$app->getSession()->setFlash('danger', Module::t('common', 'Произошла непредвиденная ошибка'));
+            return $this->render('apply-single', [
+                'model' => $model,
+                'booking' => $booking,
+                'teams' => $this->teamService->getAvailableTeams($booking->quiz_id),
+            ]);
+        }
+
+        $model = new Form($participant);
+        $model->persons += 1;
+
+        if ($model->validate()) {
+            $this->participantService->save($model);
+            $this->quizBookingService->delete($booking->id);
+            Yii::$app->getSession()->setFlash('success', 'Участник добавлен в команду - '.$participant->team->title);
+            return $this->redirect(['index', 'quizId' => $booking->quiz_id]);
+        }
+
+        Yii::$app->getSession()->setFlash('danger', 'Произошла ошибка валидации');
+        return $this->render('apply-single', [
+            'model' => $model,
+            'booking' => $booking,
+            'teams' => $this->teamService->getAvailableTeams($booking->quiz_id),
+        ]);
+    }
+
+    public function actionAddParticipant(int $bookingId)
+    {
+        $booking = $this->quizBookingService->findOrFail($bookingId);
+        $model = new Form();
+        $post = Yii::$app->request->post();
+        if ($model->load($post) && $model->validate()) {
+            $this->participantService->save($model);
+            $this->quizBookingService->delete($booking->id);
+
+            Yii::$app->getSession()->setFlash('success', 'Участник добавлен');
+            return $this->redirect(['index', 'quizId' => $model->quiz_id]);
+        }
+
+        Yii::$app->getSession()->setFlash('danger', 'Какая-то ошибка №122');
+        return $this->redirect(['apply-booking', 'id' => $bookingId]);
+    }
+
+    public function actionAddNewParticipant(int $bookingId)
+    {
+        $booking = $this->quizBookingService->findOrFail($bookingId);
+
+        $post = Yii::$app->request->post();
+        $teamName = Yii::$app->request->post('team_name');
+
+        $team = $this->teamService->createByName($teamName);
+        if (!$team) {
+            Yii::$app->getSession()->setFlash('warning', 'Не удалось создать команду - '.$teamName);
+        }
+
+        $model = new Form();
+        $model->team_id = $team->id;
+
+        if ($model->load($post) && $model->validate()) {
+            $this->participantService->save($model);
+            $this->quizBookingService->delete($booking->id);
+            return $this->redirect(['index', 'quizId' => $model->quiz_id]);
+        }
+
+        Yii::$app->getSession()->setFlash('danger', 'Произошла непонятная ошибка валидации');
+        return $this->render('apply-booking', [
+            'model' => $model,
+            'booking' => $booking,
+            'team' => $team,
+            'teams' => $this->teamService->getAll(),
+        ]);
+    }
 }
