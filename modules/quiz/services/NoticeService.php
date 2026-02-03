@@ -27,6 +27,7 @@ class NoticeService
     public function notifyQuizBooking(QuizBooking $booking)
     {
         $message = 'Заявка на квиз ' . $booking->quiz->title.'<br><br>';
+        $url = \yii\helpers\Url::to(['/admin/quiz/participants/apply-booking', 'id' => $booking->id], true);
 
         $message .= "Имя: ".$booking->name."<br>";
         if ($booking->is_single) {
@@ -36,6 +37,7 @@ class NoticeService
         }
         $message .= "Контакт: ".$booking->contact."<br>";
         $message .= "Количество участников: ". $booking->persons."<br>";
+        $message .= "Посмотреть <a href='".$url."'>заявку</a>";
 
 
         $subject = 'Запись на квиз: ' . $booking->quiz->title;
