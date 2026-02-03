@@ -28,8 +28,12 @@
 
     &:focus {
       outline: none;
-      border-color: var(--primary);
+      border-color: var(--success);
       box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.1);
+    }
+
+    &:disabled {
+      background-color: var(--light-gray);
     }
   }
 }
@@ -40,7 +44,6 @@
   display: none;
   align-items: center;
   gap: 5px;
-  margin-top: 5px;
 }
 
 .checkbox-group {

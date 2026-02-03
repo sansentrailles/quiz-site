@@ -60,6 +60,21 @@ use app\custom\widgets\backend\grid\ActionColumn;
                     return date('d.m H:i', $model->created_at);
                 },
             ],
+
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'headerOptions' => ['width' => '1%', 'style' => 'text-align: center;'], // Центрирует заголовок
+                'contentOptions' => ['style' => 'text-align: center; vertical-align: middle;'], // Центрирует кнопки
+                'template' => '{delete}',
+                'urlCreator' => function ($action, $model, $key, $index) {
+                    if ($action === 'delete') {
+                        // Возвращаем кастомный URL (например, другой контроллер или параметры)
+                        return ['participants/delete-booking', 'id' => $model->id];
+                    }
+                    // Для остальных кнопок используем стандартную логику
+                    return \yii\helpers\Url::toRoute([$action, 'id' => $model->id]);
+                }
+            ],
         ],
     ]); ?>
     <?php //= Html::submitButton(Module::t('common', 'BUTTON_SAVE'), ['class' => 'btn btn-sm btn-primary']) ?>

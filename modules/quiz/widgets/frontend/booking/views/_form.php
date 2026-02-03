@@ -30,14 +30,7 @@ $formName = mb_strtolower($model::getName());
         'enctype' => 'multipart/form-data',
         'data-name' => $formName,
     ],
-    // 'errorCssClass' => 'form__group_error',
-    'fieldConfig' => [
-        // 'errorOptions' => ['class' => 'form-error-message'],
-        // 'labelOptions' => ['class' => 'form__label'],
-        // 'options' => [
-        //     'class' => 'booking-form',
-        // ],
-    ],
+    'fieldConfig' => [],
 ]); ?>
     <?= Html::activeHiddenInput($model, 'quizId', [])?>
 
@@ -45,6 +38,7 @@ $formName = mb_strtolower($model::getName());
         <?= Html::activeCheckbox($model, 'isSingle', [
             'label' => Html::decode($model->getAttributeLabel('isSingle')),
             'class' => 'checkbox-input',
+            'data-single-checkbox' => true,
             'labelOptions' => [
                 'class' => 'checkbox-label',
             ],
@@ -81,6 +75,7 @@ $formName = mb_strtolower($model::getName());
         ]) ?>
         <?= Html::activeTextInput($model, 'teamName', [
             'class' => 'form__control',
+            'data-team-name' => true,
         ])?>
         <span class="form-error-message" id="<?= $formName ?>-teamname-error"><i class="fas fa-exclamation-circle"></i> <span></span></span>
     </div>

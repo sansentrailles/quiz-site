@@ -242,4 +242,13 @@ class ParticipantsController extends Controller
             'teams' => $this->teamService->getAll(),
         ]);
     }
+
+    public function actionDeleteBooking($id)
+    {
+        $entity = $this->quizBookingService->findOrFail((int)$id);
+        $quizId = $entity->quiz_id;
+        $this->quizBookingService->delete($id);
+
+        return $this->redirect(['index', 'quizId' => $quizId]);
+    }
 }

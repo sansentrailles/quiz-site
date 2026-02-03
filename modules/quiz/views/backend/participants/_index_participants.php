@@ -21,13 +21,13 @@ use app\custom\widgets\backend\grid\ActionColumn;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            [
-                'class' => 'yii\grid\SerialColumn',
-                'headerOptions' => ['width' => '5%'],
-            ],
+            // [
+            //     'class' => 'yii\grid\SerialColumn',
+            //     'headerOptions' => ['width' => '2%'],
+            // ],
 
             [
-                'headerOptions' => ['width' => '15%'],
+                'headerOptions' => ['width' => '80%'],
                 'attribute' => 'team_id',
                 'format' => 'raw',
                 'value' => function ($model) {
@@ -37,7 +37,7 @@ use app\custom\widgets\backend\grid\ActionColumn;
 
             [
                 'attribute' => 'points',
-                'headerOptions' => ['width' => '3%'],
+                // 'headerOptions' => ['width' => '5%'],
                 'contentOptions' => ['style' => 'text-align: center'],
                 'class' => InputColumn::class,
                 'name' => 'points_list',
@@ -45,7 +45,7 @@ use app\custom\widgets\backend\grid\ActionColumn;
 
             [
                 'attribute' => 'place',
-                'headerOptions' => ['width' => '3%'],
+                'headerOptions' => ['width' => '5%'],
                 'contentOptions' => ['style' => 'text-align: center'],
                 'class' => InputColumn::class,
                 'name' => 'places',
@@ -53,6 +53,7 @@ use app\custom\widgets\backend\grid\ActionColumn;
 
             [
                 'headerOptions' => ['width' => '3%'],
+                'template' => '{delete}',
                 'class' => ActionColumn::class,
                 'contentOptions' => ['style' => 'text-align: center;'],
             ],

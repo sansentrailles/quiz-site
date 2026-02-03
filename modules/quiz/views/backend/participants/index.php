@@ -17,24 +17,28 @@ $this->params['boxheader'] = [
 ];
 
 $seoSection = 'quiz';
+$bookingCount = count($bookingDataProvider->getModels());
+$colClass = $bookingCount > 0 ? 'col-md-6' : 'col-md-12';
 
 ?>
 <div class="index">
     <div class="row">
-        <div class="col-md-6">
+        <div class="<?=  $colClass ?>">
             <?= $this->render('_index_participants', [
                 'dataProvider' => $dataProvider,
                 'searchModel'=> $searchModel,
                 'quiz' => $quiz,
             ]) ?>
         </div>
-        <div class="col-md-6">
-            <?= $this->render('_index_booking', [
-                'dataProvider' => $bookingDataProvider,
-                'searchModel'=> $bookingSearchModel,
-                'quiz' => $quiz,
-            ]) ?>
-        </div>
+        <?php if ($bookingCount > 0) { ?>
+            <div class="col-md-6">
+                <?= $this->render('_index_booking', [
+                    'dataProvider' => $bookingDataProvider,
+                    'searchModel'=> $bookingSearchModel,
+                    'quiz' => $quiz,
+                ]) ?>
+            </div>
+        <?php } ?>
     </div>
 
     <br>

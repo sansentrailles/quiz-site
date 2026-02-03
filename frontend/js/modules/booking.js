@@ -3,8 +3,8 @@ import { showToast } from './toast';
 export function initBooking() {
     const form = document.getElementById('quizBookingForm');
     const submitBtn = form.querySelector('button[type="submit"]');
-    const toast = document.getElementById('successToast');
-    console.log(toast);
+    const isSingleCheckbox = document.querySelector('[data-single-checkbox]');
+    const teamNameInput = document.querySelector('[data-team-name]');
 
     // Обработка отправки формы
     form.addEventListener('submit', async (e) => {
@@ -81,5 +81,9 @@ export function initBooking() {
             errorContainer.style.display = 'flex';
         }
     }
+
+    isSingleCheckbox.addEventListener('change', () => {
+        teamNameInput.disabled = isSingleCheckbox.checked;
+    });
 }
 
