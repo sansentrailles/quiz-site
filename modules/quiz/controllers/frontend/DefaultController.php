@@ -108,7 +108,9 @@ class DefaultController extends Controller
         $model = new QuizBookingForm();
 
         if ($model->load($post) && $model->validate()) {
-            $this->quizBookingService->booking($model);
+            $quizBooking = $this->quizBookingService->booking($model);
+            
+            $this->noticeService->notifyQuizBooking($quizBooking);
 
             return [
                 'success' => true,

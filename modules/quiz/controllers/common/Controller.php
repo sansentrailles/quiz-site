@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace app\modules\quiz\controllers\common;
 
+use app\modules\quiz\services\NoticeService;
 use app\modules\quiz\services\FaqItemService;
 use app\modules\quiz\services\QuizService;
 use app\modules\quiz\services\LabelService;
@@ -28,6 +29,7 @@ abstract class Controller extends \app\custom\controllers\Controller
         protected readonly TeamService $teamService,
         protected readonly ParticipantService $participantService,
         protected readonly QuizBookingService $quizBookingService,
+        protected readonly NoticeService $noticeService,
     ) {
         parent::__construct($id, $module, $config);
     }
