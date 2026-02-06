@@ -67,12 +67,12 @@ $models = $provider->getModels();
         <table class="rating-table">
             <thead>
                 <tr>
-                    <th>Место</th>
-                    <th>Команда</th>
-                    <th>Кол-во игр <i class="fas fa-gamepad"></i></th>
-                    <th>Всего баллов <i class="fas fa-star"></i></th>
-                    <th>Средний балл <i class="fas fa-chart-line"></i></th>
-                    <th>Тренд <i class="fas fa-arrow-trend-up"></i></th>
+                    <th class="place-number-header">Место</th>
+                    <th class="team-name">Команда</th>
+                    <th class="games-cell-header">Кол-во игр <i class="fas fa-gamepad"></i></th>
+                    <th class="points-cell-header">Всего баллов <i class="fas fa-star"></i></th>
+                    <th class="avg-points-header">Средний балл <i class="fas fa-chart-line"></i></th>
+                    <th class="trend-cell-header">Тренд <i class="fas fa-arrow-trend-up"></i></th>
                 </tr>
             </thead>
             <tbody>

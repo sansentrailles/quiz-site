@@ -107,10 +107,12 @@ $setting = Yii::$app->setting;
         <?php } ?>
     </div>
 
-    <?= Booking::widget([
-        'action' => Url::to('/quizes/booking'),
-        'quizId' => $quiz->id,
-    ]) ?>
+    <?php if (!$quiz->isExpired) { ?>
+        <?= Booking::widget([
+            'action' => Url::to('/quizes/booking'),
+            'quizId' => $quiz->id,
+        ]) ?>
+    <?php } ?>
 </div>
 
 <?php if ($quiz->isExpired && count($quiz->participants) > 0) { ?>
