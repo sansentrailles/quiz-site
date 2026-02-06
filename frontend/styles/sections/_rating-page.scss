@@ -65,7 +65,7 @@
   @media (max-width: 992px) {
     width: 70px;
     height: 60px;
-    font-size: 1.6rem;
+    font-size: 1
   }
 }
 
@@ -77,35 +77,26 @@
 .stat-info {
   @media (max-width: 992px) {
     width: 100%;
-    // border: #0f0 1px solid;
     display: flex;
     flex-direction: row;
     align-items: center; /* Выровняет текст по нижней линии шрифта */
     gap: 10px;
+  }
 
-    h3 {
-      // border: #f00 1px solid;
-    }
+  h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
 
-    p {
-      // border: #00f 1px solid;
+    @media (max-width: 992px) {
+      font-size: 1.5rem;
     }
   }
-}
 
-.stat-info h3 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 5px;
-
-  @media (max-width: 992px) {
-    font-size: 2rem;
+  p {
+    color: var(--gray);
+    font-size: 0.95rem;
   }
-}
-
-.stat-info p {
-  color: var(--gray);
-  font-size: 0.95rem;
 }
 
 /* Таблица */
@@ -232,7 +223,7 @@
   padding: 18px 15px;
 
   @media (max-width: 992px) {
-    padding: 10;
+    padding: 10px;
     font-size: 0.98rem;
   }
 }

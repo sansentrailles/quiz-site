@@ -13,6 +13,10 @@
     padding: 25px 30px;
     background-color: var(--light);
     border-bottom: 1px solid #eee;
+
+    @media (max-width: 992px) {
+        padding: 20px;
+    }
 }
 
 .results-title {

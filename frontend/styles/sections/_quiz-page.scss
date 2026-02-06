@@ -7,6 +7,8 @@
 
   @media (max-width: 992px) {
     grid-template-columns: 1fr;
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
 }
 
@@ -36,6 +38,10 @@
 
 .quiz-content {
   padding: 40px;
+
+  @media (max-width: 992px) {
+    padding: 20px;
+  }
 }
 
 .quiz-header {
@@ -84,6 +90,10 @@
 
 .quiz-description {
   margin-bottom: 40px;
+
+  @media (max-width: 992px) {
+    margin-bottom: 0;
+  }
 }
 
 .quiz-description h2 {
@@ -207,6 +217,10 @@
   border-radius: var(--border-radius);
   padding: 30px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
+  @media (max-width: 992px) {
+    padding: 20px;
+  }
 }
 
 .price-card {
@@ -225,6 +239,10 @@
     padding: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     text-align: center;
+
+    @media (max-width: 992px) {
+      padding: 20px;
+    }
   }
 
   &-icon {

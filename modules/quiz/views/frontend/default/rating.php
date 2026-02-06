@@ -40,7 +40,7 @@ $models = $provider->getModels();
 <?php $this->endBlock(); ?>
 
 <div class="rating-page">
-    <h1 class="page-title">
+    <h1 class="rating-page-title">
         <i class="fas fa-trophy"></i> Рейтинг команд IQuiz
     </h1>
     <p class="page-description">
