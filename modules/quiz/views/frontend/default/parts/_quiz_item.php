@@ -60,7 +60,6 @@ $setting = Yii::$app->setting;
         <div class="quiz-footer">
             <div class="quiz-price"><?= $quiz->price ?> руб.</div>
             <div class="quiz-actions">
-                <a href="<?= $setting->get('link.booking') ?>" class="link-signup" target="_blank">Записаться</a>
                 <a href="<?= $quiz->link ?>" class="link-details">Подробнее</a>
                 <?php /*
                 <a href="/" class="link-details"><i class="fas fa-chevron-right"></i></a>

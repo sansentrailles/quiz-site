@@ -43,7 +43,7 @@ $setting = Yii::$app->setting;
         <div class="quiz-footer">
             <div class="quiz-price completed"><?= $quiz->price ?> руб.</div>
             <div class="quiz-actions">
-                <a href="<?= $quiz->link ?>" class="link-details">Подробнее</a>
+                <a href="<?= $quiz->link ?>" class="link-details">Итоги</a>
             </div>
         </div>
     </div>
