@@ -46,6 +46,7 @@ class TeamRepository extends BaseRepository
             ->from(['p' => Participant::tableName()])
             ->innerJoin(['q' => 'quizes'], 'p.quiz_id = q.id')
             ->where(['p.team_id' => $teamIds])
+            // ->andWhere
             ->orderBy(['q.id' => SORT_DESC]) // предполагаем, что id квиза растёт со временем
             ->indexBy('team_id')
             ->column(); // вернёт [team_id => place]

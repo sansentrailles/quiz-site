@@ -55,6 +55,10 @@ use app\custom\helpers\AppHelper;
     <?php $this->head() ?>
 
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,fetch" defer></script>
+
+    <?php if (YII_ENV === 'prod') { ?>
+        <?= $this->render('_scripts') ?>
+    <?php } ?>
 </head>
 
 <body>
