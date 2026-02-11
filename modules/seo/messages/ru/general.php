@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'CATALOG' => 'Каталог',
+    'SCRIPS' => 'Скрипты',
     'STATE_DEFAULT' => 'По-умолчанию',
     'STATE_NOT_DEFAULT' => 'Обычные',
     'IS_VISIBLE' => 'Видимость',

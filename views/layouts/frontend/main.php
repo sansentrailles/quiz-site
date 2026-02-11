@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use yii\helpers\Html;
 use app\custom\helpers\AppHelper;
+use app\modules\seo\widgets\frontend\metric\MetricCode;
 
 // @var $this \yii\web\View
 // @var $content string
@@ -56,9 +57,9 @@ use app\custom\helpers\AppHelper;
 
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,fetch" defer></script>
 
-    <?php if (YII_ENV === 'prod') { ?>
-        <?= $this->render('_scripts') ?>
-    <?php } ?>
+    <?= MetricCode::widget([
+        'place' => MetricCode::PLACE_HEAD,
+    ]) ?>
 </head>
 
 <body>
@@ -77,6 +78,10 @@ use app\custom\helpers\AppHelper;
                 <?php echo $content; ?>
             </main>
         <?php echo $this->render('_footer'); ?>
+
+        <?= MetricCode::widget([
+            'place' => MetricCode::PLACE_BODY,
+        ]) ?>
     <?php $this->endBody(); ?>
 </body>
 </html>

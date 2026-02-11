@@ -1,15 +1,16 @@
 <?php
 
+use yii\helpers\Html;
 use app\modules\seo\Module;
 
 /* @var $this yii\web\View */
-/* @var $model app\modules\seo\forms\backend\CityForm */
+/* @var $model app\modules\seo\forms\backend\MetaTagForm */
 
-$this->title = Module::t('common', 'SEO_CITY_CREATE');
-$this->params['breadcrumbs'][] = ['label' => Module::t('common', 'SEO_CITIES'), 'url' => ['/admin/seo/cities']];
+$this->title = Module::t('common', 'META_TAG_CREATE');
+$this->params['breadcrumbs'][] = ['label' => Module::t('common', 'META_TAGS'), 'url' => ['/admin/seo/metas']];
 $this->params['breadcrumbs'][] = $this->title;
 $this->params['boxheader'] = [
-    'icon' => 'fa-map',
+    'icon' => 'fa-code',
     'text' => $this->title,
 ];
 ?>

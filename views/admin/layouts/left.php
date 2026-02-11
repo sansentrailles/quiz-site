@@ -4,6 +4,7 @@ use app\custom\helpers\RouteHelper;
 use app\modules\user\Module as UserModule;
 use app\modules\quiz\Module as QuizModule;
 use app\modules\settings\Module as SettingsModule;
+use app\modules\seo\Module as SeoModule;
 
 ?>
 
@@ -85,6 +86,28 @@ use app\modules\settings\Module as SettingsModule;
                                 'icon' => 'users',
                                 'url' => ['/admin/quiz/teams'],
                                 'active'=> RouteHelper::isRoute('quiz/teams'),
+                            ],
+                        ],
+                    ],
+
+                    [
+                        'label' => SeoModule::t('common', 'SEO'),
+                        'icon' => 'code',
+                        'url' => '#',
+                        'active'=> RouteHelper::isModule('seo'),
+                        'items' => [
+                            [
+                                'label' => SeoModule::t('common', 'METRICS'),
+                                'icon' => 'code',
+                                'url' => ['/admin/seo/metrics'],
+                                'active'=> RouteHelper::isRoute('seo/metrics/index'),
+                            ],
+
+                            [
+                                'label' => SeoModule::t('common', 'META_TAGS'),
+                                'icon' => 'code',
+                                'url' => ['/admin/seo/metas'],
+                                'active'=> RouteHelper::isRoute('seo/metas/index'),
                             ],
                         ],
                     ],
