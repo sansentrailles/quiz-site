@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 use yii\helpers\Html;
 use app\custom\helpers\AppHelper;
+use app\modules\seo\widgets\frontend\meta\MetaTag;
 use app\modules\seo\widgets\frontend\metric\MetricCode;
 
 // @var $this \yii\web\View
 // @var $content string
 
-
-
-// use app\assets\AppAsset;
-// AppAsset::register($this);
+MetaTag::widget([
+    'view' => $this,
+]);
 
 ?>
 <?php $this->beginPage(); ?>
