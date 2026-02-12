@@ -14,15 +14,10 @@ $config = [
         'log',
         'app\modules\admin\Bootstrap',
         'app\modules\user\Bootstrap',
+        'app\modules\quiz\Bootstrap',
     ],
     'controllerNamespace' => 'app\commands',
     'components' => [
-        'search' => [
-            'class' => 'himiklab\yii2\search\Search',
-            'models' => [
-                'app\modules\news_lang\models\NewsItemLang',
-            ],
-        ],
         'fileStorage' => [
             'class' => 'yii2tech\filestorage\local\Storage',
             'basePath' => '@webroot/files',
