@@ -13,6 +13,12 @@ use app\modules\quiz\forms\backend\QuizForm as Form;
 use app\modules\quiz\models\traits\QuizAttributeLabelsTrait;
 use yii\helpers\Url;
 
+enum QuizStatus: int
+{
+    case INVISIBLE = 0;
+    case VISIBLE = 1;
+}
+
 /**
  * This is the model class for table "quizes".
  *
@@ -36,8 +42,8 @@ class Quiz extends ActiveRecord implements Fileable
     use QuizAttributeLabelsTrait;
     use VisibilityTrait;
 
-    public const STATUS_INVISIBLE = 0;
-    public const STATUS_VISIBLE = 1;
+    public const STATUS_INVISIBLE = QuizStatus::INVISIBLE->value;
+    public const STATUS_VISIBLE = QuizStatus::VISIBLE->value;
 
     public const BUCKET_NAME_IMAGE = 'quizImage';
 

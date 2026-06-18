@@ -78,4 +78,11 @@ return [
         'viewPath' => '@app/modules/quiz/views/frontend',
         'layout' => $layoutFrontend,
     ],
+
+    'geo' => [
+        'class' => 'app\modules\geo\Module',
+        'controllerNamespace' => 'app\modules\geo\controllers\frontend',
+        'viewPath' => '@app/modules/geo/views/frontend',
+        'layout' => $layoutFrontend,
+    ],
 ];
