@@ -50,6 +50,8 @@ return [
         '/rating' => 'quiz/default/rating',
         '/rating2' => 'quiz/default/rating2',
 
+        'geo/router' => 'geo/default/router',
+
         // '<pageUri:[\w_\/-]+>'=>'page/default/view',
         // 'page/<_a>' => 'page/default/<_a>',
 

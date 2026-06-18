@@ -27,4 +27,11 @@ class DefaultController extends Controller
 
         return $this->render('index');
     }
+
+    public function actionRouter()
+    {
+        $this->layout = '@app/views/layouts/frontend/router.php';
+
+        return $this->render('router');
+    }
 }
