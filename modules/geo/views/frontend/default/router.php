@@ -26,6 +26,28 @@
     <button class="permission-btn" id="startBtn">НАЧАТЬ</button>
 </div>
 
+<!-- Модалка достижения цели -->
+<div class="arrival-overlay" id="arrivalOverlay">
+    <div class="arrival-icon">🎯</div>
+    <div class="arrival-title">ЦЕЛЬ ДОСТИГНУТА!</div>
+    <div class="arrival-subtitle">Вы находитесь в заданной точке</div>
+    <div class="arrival-stats">
+        <div class="arrival-stat-row">
+            <span class="arrival-stat-label">Расстояние</span>
+            <span class="arrival-stat-value" id="arrivalDistance">—</span>
+        </div>
+        <div class="arrival-stat-row">
+            <span class="arrival-stat-label">Погрешность</span>
+            <span class="arrival-stat-value" id="arrivalAccuracy">—</span>
+        </div>
+        <div class="arrival-stat-row">
+            <span class="arrival-stat-label">Время</span>
+            <span class="arrival-stat-value" id="arrivalTime">—</span>
+        </div>
+    </div>
+    <button class="arrival-btn" id="arrivalBtn">ПРОДОЛЖИТЬ</button>
+</div>
+
 <!-- Информация о цели -->
 <div class="target-info" id="targetInfo"></div>
 
@@ -51,9 +73,9 @@
         <svg class="arrow-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
             <defs>
                 <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stop-color="#ff6b6b"/>
-                    <stop offset="50%" stop-color="#ff4757"/>
-                    <stop offset="100%" stop-color="#c44569"/>
+                    <stop offset="0%" class="arrow-head-start" stop-color="#ff6b6b"/>
+                    <stop offset="50%" class="arrow-head-mid" stop-color="#ff4757"/>
+                    <stop offset="100%" class="arrow-head-end" stop-color="#c44569"/>
                 </linearGradient>
                 <linearGradient id="arrowTailGradient" x1="0%" y1="0%" x2="0%" y2="100%">
                     <stop offset="0%" stop-color="#4a5580"/>

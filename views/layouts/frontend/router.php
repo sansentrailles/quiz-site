@@ -46,6 +46,11 @@ use app\custom\helpers\AppHelper;
             justify-content: space-between;
             padding: 30px 20px;
             position: relative;
+            transition: background 0.6s ease;
+        }
+
+        body.arrived {
+            background: radial-gradient(circle at center, #1a3a2a 0%, #0a1f14 100%);
         }
 
         /* Фоновые звёзды */
@@ -69,6 +74,11 @@ use app\custom\helpers\AppHelper;
             text-transform: uppercase;
             color: #8a94c7;
             margin-bottom: 15px;
+            transition: color 0.6s ease;
+        }
+
+        body.arrived .title {
+            color: #86efac;
         }
 
         .distance {
@@ -80,6 +90,20 @@ use app\custom\helpers\AppHelper;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-shadow: 0 0 40px rgba(110, 168, 255, 0.3);
+            transition: all 0.6s ease;
+        }
+
+        body.arrived .distance {
+            background: linear-gradient(135deg, #ffffff 0%, #4ade80 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: arrivedPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes arrivedPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
         .distance-unit {
@@ -118,6 +142,14 @@ use app\custom\helpers\AppHelper;
             box-shadow: 
                 0 0 60px rgba(110, 168, 255, 0.15) inset,
                 0 0 40px rgba(110, 168, 255, 0.1);
+            transition: all 0.6s ease;
+        }
+
+        body.arrived .compass-ring {
+            border-color: rgba(74, 222, 128, 0.4);
+            box-shadow: 
+                0 0 60px rgba(74, 222, 128, 0.25) inset,
+                0 0 40px rgba(74, 222, 128, 0.2);
         }
 
         .compass-ring::before {
@@ -127,6 +159,11 @@ use app\custom\helpers\AppHelper;
             border: 1px dashed rgba(110, 168, 255, 0.3);
             border-radius: 50%;
             animation: rotate 60s linear infinite;
+            transition: border-color 0.6s ease;
+        }
+
+        body.arrived .compass-ring::before {
+            border-color: rgba(74, 222, 128, 0.4);
         }
 
         @keyframes rotate {
@@ -141,6 +178,10 @@ use app\custom\helpers\AppHelper;
             font-weight: 600;
             color: #8a94c7;
             letter-spacing: 2px;
+            transition: color 0.6s ease;
+        }
+        body.arrived .cardinal {
+            color: #86efac;
         }
         .cardinal.n { top: 10px; left: 50%; transform: translateX(-50%); }
         .cardinal.s { bottom: 10px; left: 50%; transform: translateX(-50%); }
@@ -159,6 +200,17 @@ use app\custom\helpers\AppHelper;
             width: 100%;
             height: 100%;
             filter: drop-shadow(0 0 20px rgba(255, 100, 100, 0.6));
+            transition: filter 0.6s ease;
+        }
+
+        body.arrived .arrow-svg {
+            filter: drop-shadow(0 0 25px rgba(74, 222, 128, 0.8));
+            animation: arrowPulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes arrowPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.08); }
         }
 
         /* Центральная точка */
@@ -191,6 +243,12 @@ use app\custom\helpers\AppHelper;
             margin: 0 auto;
             width: fit-content;
             max-width: 100%;
+            transition: all 0.6s ease;
+        }
+
+        body.arrived .status {
+            border-color: rgba(74, 222, 128, 0.4);
+            background: rgba(74, 222, 128, 0.1);
         }
 
         .status-dot {
@@ -294,6 +352,131 @@ use app\custom\helpers\AppHelper;
             z-index: 3;
             opacity: 0.7;
         }
+
+        /* ====== Модалка достижения цели ====== */
+        .arrival-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(10, 31, 20, 0.85);
+            backdrop-filter: blur(15px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 200;
+            padding: 30px;
+            text-align: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+
+        .arrival-overlay.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .arrival-icon {
+            font-size: 5em;
+            margin-bottom: 20px;
+            animation: bounce 1.5s ease-in-out infinite;
+            filter: drop-shadow(0 0 30px rgba(74, 222, 128, 0.6));
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .arrival-title {
+            font-size: 2.2em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ffffff 0%, #4ade80 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+        }
+
+        .arrival-subtitle {
+            color: #a7f3d0;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            max-width: 400px;
+        }
+
+        .arrival-stats {
+            background: rgba(74, 222, 128, 0.1);
+            border: 1px solid rgba(74, 222, 128, 0.3);
+            border-radius: 15px;
+            padding: 20px 30px;
+            margin-bottom: 30px;
+            min-width: 250px;
+        }
+
+        .arrival-stat-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            font-size: 0.95em;
+        }
+
+        .arrival-stat-row + .arrival-stat-row {
+            border-top: 1px solid rgba(74, 222, 128, 0.15);
+        }
+
+        .arrival-stat-label {
+            color: #86efac;
+            opacity: 0.8;
+        }
+
+        .arrival-stat-value {
+            color: white;
+            font-weight: 600;
+            font-family: 'Courier New', monospace;
+        }
+
+        .arrival-btn {
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(74, 222, 128, 0.4);
+            transition: transform 0.2s;
+        }
+
+        .arrival-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Конфетти-частицы при достижении */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            pointer-events: none;
+            animation: confettiFall 3s linear forwards;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
     </style>
 
     <?php $this->head() ?>
@@ -307,18 +490,18 @@ use app\custom\helpers\AppHelper;
             // ============================================================
             // 🎯 КООРДИНАТЫ ЦЕЛЕВОЙ ТОЧКИ
             // ============================================================
-            // 61.402877
-            // 55.160010
-            // const TARGET_LAT = 55.7558;   // Широта цели (например, Москва, Красная площадь)
-            // const TARGET_LNG = 37.6176;   // Долгота цели
             const TARGET_LAT = 55.160010;   // Широта цели (например, Москва, Красная площадь)
             const TARGET_LNG = 61.402877;   // Долгота цели
             const TARGET_NAME = "Цель";
+            
+            // 🎯 ПОГРЕШНОСТЬ ДОСТИЖЕНИЯ ЦЕЛИ (в метрах)
+            // Точка считается достигнутой, если расстояние до неё меньше этого значения
+            const ARRIVAL_RADIUS = 30;
             // ============================================================
 
             // Отображение информации о цели
             document.getElementById('targetInfo').innerHTML = 
-                `ЦЕЛЬ<br>${TARGET_LAT.toFixed(4)}°N<br>${TARGET_LNG.toFixed(4)}°E`;
+                `ЦЕЛЬ<br>${TARGET_LAT.toFixed(4)}°N<br>${TARGET_LNG.toFixed(4)}°E<br>±${ARRIVAL_RADIUS}м`;
 
             // ====== Фильтр Калмана ======
             class KalmanFilter {
@@ -354,11 +537,9 @@ use app\custom\helpers\AppHelper;
                         return this.angle;
                     }
                     let diff = newAngle - this.angle;
-                    // Нормализуем разницу в диапазон [-180, 180]
                     while (diff > 180) diff -= 360;
                     while (diff < -180) diff += 360;
                     this.angle = this.angle + diff * this.smoothing;
-                    // Нормализуем результат
                     while (this.angle < 0) this.angle += 360;
                     while (this.angle >= 360) this.angle -= 360;
                     return this.angle;
@@ -366,9 +547,8 @@ use app\custom\helpers\AppHelper;
             }
 
             // ====== Утилиты ======
-            // Формула Haversine для расстояния между двумя точками на сфере
             function calculateDistance(lat1, lng1, lat2, lng2) {
-                const R = 6371000; // радиус Земли в метрах
+                const R = 6371000;
                 const dLat = (lat2 - lat1) * Math.PI / 180;
                 const dLng = (lng2 - lng1) * Math.PI / 180;
                 const a = Math.sin(dLat / 2) ** 2 +
@@ -378,7 +558,6 @@ use app\custom\helpers\AppHelper;
                 return R * c;
             }
 
-            // Вычисление начального азимута (bearing) от точки 1 к точке 2
             function calculateBearing(lat1, lng1, lat2, lng2) {
                 const φ1 = lat1 * Math.PI / 180;
                 const φ2 = lat2 * Math.PI / 180;
@@ -388,15 +567,27 @@ use app\custom\helpers\AppHelper;
                         Math.sin(φ1) * Math.cos(φ2) * Math.cos(Δλ);
                 let θ = Math.atan2(y, x);
                 θ = θ * 180 / Math.PI;
-                return (θ + 360) % 360; // нормализуем в [0, 360)
+                return (θ + 360) % 360;
+            }
+
+            function formatTime(date) {
+                return date.toLocaleTimeString('ru-RU', { 
+                    hour: '2-digit', 
+                    minute: '2-digit', 
+                    second: '2-digit' 
+                });
             }
 
             // ====== Состояние ======
             let currentLat = null;
             let currentLng = null;
-            let currentHeading = null; // куда смотрит устройство (0-360, 0 = север)
+            let currentHeading = null;
+            let currentAccuracy = null;
             let gpsReady = false;
             let headingReady = false;
+            let hasArrived = false;         // Флаг: цель достигнута (чтобы не показывать модалку повторно)
+            let arrivalDismissed = false;   // Флаг: пользователь закрыл модалку
+            let startTime = Date.now();
 
             // Фильтры
             const latFilter = new KalmanFilter(0.00001, 0.0005);
@@ -413,6 +604,70 @@ use app\custom\helpers\AppHelper;
             const statusText = document.getElementById('statusText');
             const permissionOverlay = document.getElementById('permissionOverlay');
             const startBtn = document.getElementById('startBtn');
+            const arrivalOverlay = document.getElementById('arrivalOverlay');
+            const arrivalBtn = document.getElementById('arrivalBtn');
+            const arrivalDistance = document.getElementById('arrivalDistance');
+            const arrivalAccuracy = document.getElementById('arrivalAccuracy');
+            const arrivalTime = document.getElementById('arrivalTime');
+
+            // ====== Конфетти при достижении ======
+            function spawnConfetti() {
+                const colors = ['#4ade80', '#22c55e', '#86efac', '#ffffff', '#fbbf24'];
+                for (let i = 0; i < 40; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + '%';
+                    confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.animationDelay = (Math.random() * 1.5) + 's';
+                    confetti.style.animationDuration = (2 + Math.random() * 2) + 's';
+                    confetti.style.width = (6 + Math.random() * 8) + 'px';
+                    confetti.style.height = confetti.style.width;
+                    confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+                    arrivalOverlay.appendChild(confetti);
+                    
+                    setTimeout(() => confetti.remove(), 4500);
+                }
+            }
+
+            // ====== Показ модалки достижения ======
+            function showArrivalModal(distance) {
+                arrivalDistance.textContent = distance.toFixed(1) + ' м';
+                arrivalAccuracy.textContent = currentAccuracy ? currentAccuracy.toFixed(1) + ' м' : '—';
+                arrivalTime.textContent = formatTime(new Date());
+                arrivalOverlay.classList.add('visible');
+                spawnConfetti();
+            }
+
+            function hideArrivalModal() {
+                arrivalOverlay.classList.remove('visible');
+                arrivalDismissed = true;
+            }
+
+            arrivalBtn.addEventListener('click', hideArrivalModal);
+
+            // ====== Проверка достижения цели ======
+            function checkArrival(distance) {
+                const isArrived = distance <= ARRIVAL_RADIUS;
+
+                if (isArrived && !hasArrived) {
+                    // Только что достигли цели — показываем модалку
+                    hasArrived = true;
+                    arrivalDismissed = false;
+                    document.body.classList.add('arrived');
+                    showArrivalModal(distance);
+                    
+                    // Вибрация устройства (если поддерживается)
+                    if (navigator.vibrate) {
+                        navigator.vibrate([200, 100, 200, 100, 400]);
+                    }
+                } else if (!isArrived && hasArrived) {
+                    // Покинули зону достижения — сбрасываем состояние
+                    hasArrived = false;
+                    arrivalDismissed = false;
+                    document.body.classList.remove('arrived');
+                    arrivalOverlay.classList.remove('visible');
+                }
+            }
 
             // ====== Обновление UI ======
             function updateUI() {
@@ -434,9 +689,7 @@ use app\custom\helpers\AppHelper;
                 // Поворот стрелки
                 if (currentHeading !== null) {
                     const bearing = calculateBearing(currentLat, currentLng, TARGET_LAT, TARGET_LNG);
-                    // Угол стрелки = азимут на цель - курс устройства
                     let arrowAngle = bearing - currentHeading;
-                    // Нормализуем
                     while (arrowAngle > 180) arrowAngle -= 360;
                     while (arrowAngle < -180) arrowAngle += 360;
                     
@@ -448,11 +701,19 @@ use app\custom\helpers\AppHelper;
                     headingInfo.textContent = 'Курс: ожидание компаса...';
                 }
 
+                // Проверка достижения цели
+                checkArrival(distance);
+
                 // Обновляем статус
                 updateStatus();
             }
 
             function updateStatus() {
+                if (hasArrived) {
+                    statusDot.className = 'status-dot';
+                    statusText.textContent = `✓ Цель достигнута (±${ARRIVAL_RADIUS}м)`;
+                    return;
+                }
                 if (!gpsReady && !headingReady) {
                     statusDot.className = 'status-dot pending';
                     statusText.textContent = 'Ожидание GPS и компаса...';
@@ -464,7 +725,7 @@ use app\custom\helpers\AppHelper;
                     statusText.textContent = 'Компас ✓ | Ожидание GPS...';
                 } else {
                     statusDot.className = 'status-dot';
-                    statusText.textContent = 'Наведении на цель';
+                    statusText.textContent = 'Наведение на цель';
                 }
             }
 
@@ -475,6 +736,7 @@ use app\custom\helpers\AppHelper;
 
                 currentLat = latFilter.filter(rawLat);
                 currentLng = lngFilter.filter(rawLng);
+                currentAccuracy = position.coords.accuracy;
                 gpsReady = true;
 
                 updateUI();
@@ -501,14 +763,9 @@ use app\custom\helpers\AppHelper;
             function handleOrientation(event) {
                 let heading = null;
 
-                // iOS Safari
                 if (event.webkitCompassHeading !== undefined) {
                     heading = event.webkitCompassHeading;
-                }
-                // Android / Chrome (deviceorientationabsolute)
-                else if (event.alpha !== null) {
-                    // alpha - это угол относительно начала координат
-                    // Для абсолютной ориентации используем формулу
+                } else if (event.alpha !== null) {
                     heading = (360 - event.alpha) % 360;
                 }
 
@@ -521,7 +778,6 @@ use app\custom\helpers\AppHelper;
 
             // ====== Запуск системы ======
             function startTracking() {
-                // Запуск GPS
                 if ('geolocation' in navigator) {
                     navigator.geolocation.watchPosition(
                         handlePosition,
@@ -538,10 +794,8 @@ use app\custom\helpers\AppHelper;
                     return;
                 }
 
-                // Запуск компаса
                 if (typeof DeviceOrientationEvent !== 'undefined' && 
                     typeof DeviceOrientationEvent.requestPermission === 'function') {
-                    // iOS 13+
                     DeviceOrientationEvent.requestPermission()
                         .then(response => {
                             if (response === 'granted') {
@@ -555,14 +809,7 @@ use app\custom\helpers\AppHelper;
                             statusDot.className = 'status-dot error';
                             statusText.textContent = 'Ошибка доступа к компасу';
                         });
-                    
-                    // Также пробуем абсолютную ориентацию
-                    if (typeof DeviceOrientationEvent.requestPermission === 'function') {
-                        // Для абсолютной ориентации на iOS нужен отдельный запрос
-                        // но обычно deviceorientation достаточно с webkitCompassHeading
-                    }
                 } else {
-                    // Android и другие
                     window.addEventListener('deviceorientationabsolute', handleOrientation, true);
                     window.addEventListener('deviceorientation', handleOrientation, true);
                 }
@@ -574,8 +821,6 @@ use app\custom\helpers\AppHelper;
                 startTracking();
             });
 
-            // Автоматический старт на Android (без запроса)
-            // На iOS всё равно нужен клик пользователя
             window.addEventListener('load', () => {
                 const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
                             (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
@@ -583,13 +828,11 @@ use app\custom\helpers\AppHelper;
                                     typeof DeviceOrientationEvent.requestPermission === 'function';
                 
                 if (!isIOS && !needsPermission) {
-                    // На Android можно стартовать автоматически
                     permissionOverlay.classList.add('hidden');
                     startTracking();
                 }
             });
 
-            // Предотвращение масштабирования двойным тапом
             let lastTouchEnd = 0;
             document.addEventListener('touchend', (event) => {
                 const now = Date.now();
