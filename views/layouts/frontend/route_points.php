@@ -10,7 +10,6 @@ use yii\helpers\Html;
  */
 
 ?>
-
 <?php $this->beginPage(); ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -45,6 +44,7 @@ use yii\helpers\Html;
 }'>
     <?php $this->beginBody(); ?>
         <?php echo $content; ?>
+        <?=  $this->render('inner/_script') ?>
     <?php $this->endBody(); ?>
 </body>
 </html>
