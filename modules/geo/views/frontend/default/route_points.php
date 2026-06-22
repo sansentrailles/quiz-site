@@ -15,6 +15,26 @@
     <rect width="100%" height="100%" fill="url(#starfield)"/>
 </svg>
 
+<!-- Предупреждение о HTTPS -->
+<div class="https-warning" id="httpsWarning">
+    <div class="https-warning-icon">🔒</div>
+    <div class="https-warning-title">Требуется защищённое соединение</div>
+    <div class="https-warning-text">
+        Браузеры разрешают доступ к геолокации <b>только по HTTPS</b> (или с localhost).
+        <br><br>
+        Текущий адрес страницы:
+    </div>
+    <div class="https-warning-url" id="currentUrl"></div>
+    <div class="https-warning-text">
+        Откройте страницу по HTTPS или разместите её на сервере с SSL-сертификатом.
+        <br><br>
+        <b>Для локальной разработки</b> можно использовать:
+        <br>• <code>localhost</code>
+        <br>• <code>ngrok</code>, <code>localtunnel</code>
+        <br>• <code>GitHub Pages</code>, <code>Netlify</code>, <code>Vercel</code>
+    </div>
+</div>
+
 <!-- Модалка достижения точки -->
 <div class="arrival-overlay" id="arrivalOverlay">
     <div class="arrival-icon">🎯</div>
@@ -86,11 +106,7 @@
                 </filter>
             </defs>
             
-            <path d="M 100 15 
-                        L 70 115 
-                        L 100 95 
-                        L 130 115 
-                        Z" 
+            <path d="M 100 15 L 70 115 L 100 95 L 130 115 Z" 
                     fill="url(#arrowGradient)" 
                     stroke="#ffcccc" 
                     stroke-width="1.5" 
@@ -98,10 +114,7 @@
                     filter="url(#glow)"/>
             
             <line x1="100" y1="25" x2="100" y2="95" 
-                    stroke="white" 
-                    stroke-width="1.5" 
-                    opacity="0.5"
-                    stroke-linecap="round"/>
+                    stroke="white" stroke-width="1.5" opacity="0.5" stroke-linecap="round"/>
         </svg>
     </div>
 
@@ -114,5 +127,9 @@
         <div class="status-dot pending" id="statusDot"></div>
         <div class="status-text" id="statusText">Инициализация...</div>
     </div>
+    <button class="gps-btn" id="gpsBtn">📍 ВКЛЮЧИТЬ GPS</button>
     <div class="heading-info" id="headingInfo">Курс: —° | Азимут: —°</div>
 </div>
+
+<!-- Отладочная информация -->
+<div class="debug-info" id="debugInfo"></div>
