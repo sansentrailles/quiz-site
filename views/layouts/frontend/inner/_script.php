@@ -99,7 +99,6 @@
     let headingReady = false;
     let hasArrived = false;
     let arrivalDismissed = false;
-    let gpsStarted = false;
     let watchId = null;
 
     const latFilter = new KalmanFilter(0.00001, 0.0005);
@@ -124,54 +123,37 @@
     const arrivalTime = document.getElementById('arrivalTime');
     const pointsList = document.getElementById('pointsList');
     const currentTargetName = document.getElementById('currentTargetName');
-    const gpsBtn = document.getElementById('gpsBtn');
     const httpsWarning = document.getElementById('httpsWarning');
     const currentUrl = document.getElementById('currentUrl');
-    const debugInfo = document.getElementById('debugInfo');
-
-    // ====== Отладочная информация ======
-    function updateDebugInfo(msg) {
-        const protocol = window.location.protocol;
-        const host = window.location.host || window.location.pathname;
-        const isSecure = window.isSecureContext;
-        debugInfo.textContent = 
-            `${protocol}//${host} | secure: ${isSecure} | ${msg}`;
-    }
 
     // ====== Проверка HTTPS ======
-    // Геолокация работает ТОЛЬКО в secure context (HTTPS, localhost, file:// на некоторых браузерах)
     function checkSecureContext() {
-        updateDebugInfo('проверка...');
-        
+        const protocol = window.location.protocol;
+        const isLocalhost = window.location.hostname === 'localhost' || 
+                            window.location.hostname === '127.0.0.1' ||
+                            window.location.hostname === '';
+        const isFile = protocol === 'file:';
+        const isHttps = protocol === 'https:';
+        const isSecure = window.isSecureContext !== false;
+
+        // Если браузер явно сообщает, что контекст небезопасный — показываем предупреждение
         if (window.isSecureContext === false) {
-            // Явно небезопасный контекст
             currentUrl.textContent = window.location.href;
             httpsWarning.classList.add('visible');
             statusDot.className = 'status-dot error';
             statusText.textContent = 'Нет HTTPS — GPS недоступен';
-            gpsBtn.classList.add('hidden');
-            updateDebugInfo('НЕ secure context');
             return false;
         }
-        
+
         // Дополнительная проверка протокола
-        const protocol = window.location.protocol;
-        const isLocalhost = window.location.hostname === 'localhost' || 
-                            window.location.hostname === '127.0.0.1';
-        const isFile = protocol === 'file:';
-        const isHttps = protocol === 'https:';
-        
         if (!isHttps && !isLocalhost && !isFile) {
             currentUrl.textContent = window.location.href;
             httpsWarning.classList.add('visible');
             statusDot.className = 'status-dot error';
             statusText.textContent = 'Требуется HTTPS';
-            gpsBtn.classList.add('hidden');
-            updateDebugInfo(`протокол ${protocol} — не поддерживается`);
             return false;
         }
-        
-        updateDebugInfo('secure context OK');
+
         return true;
     }
 
@@ -343,7 +325,7 @@
         }
         if (!gpsReady && !headingReady) {
             statusDot.className = 'status-dot pending';
-            statusText.textContent = gpsStarted ? 'Ожидание GPS и компаса...' : 'Нажмите "ВКЛЮЧИТЬ GPS"';
+            statusText.textContent = 'Ожидание GPS и компаса...';
         } else if (gpsReady && !headingReady) {
             statusDot.className = 'status-dot pending';
             statusText.textContent = 'GPS ✓ | Ожидание компаса...';
@@ -356,11 +338,7 @@
         }
     }
 
-    // ====== GPS: ИСПРАВЛЕННАЯ ЛОГИКА ======
-    // Ключевое изменение: GPS запускается ТОЛЬКО по явному клику пользователя (user gesture).
-    // Это критично для iOS Safari и некоторых Android-браузеров, где без user gesture
-    // диалог запроса разрешения может вообще не появляться.
-    
+    // ====== GPS: АВТОЗАПУСК ======
     function handlePosition(position) {
         const rawLat = position.coords.latitude;
         const rawLng = position.coords.longitude;
@@ -370,69 +348,47 @@
         currentAccuracy = position.coords.accuracy;
         gpsReady = true;
 
-        updateDebugInfo(`GPS OK: ${rawLat.toFixed(5)}, ${rawLng.toFixed(5)}`);
         updateUI();
     }
 
     function handleGeoError(error) {
-        let msg = 'Ошибка GPS';
-        let debugMsg = `error code ${error.code}`;
-        
+        statusDot.className = 'status-dot error';
         switch (error.code) {
             case error.PERMISSION_DENIED:
-                msg = 'Доступ к геолокации запрещён';
-                debugMsg = 'PERMISSION_DENIED';
+                statusText.textContent = 'Доступ к геолокации запрещён';
                 break;
             case error.POSITION_UNAVAILABLE:
-                msg = 'Геолокация недоступна';
-                debugMsg = 'POSITION_UNAVAILABLE';
+                statusText.textContent = 'Геолокация недоступна';
                 break;
             case error.TIMEOUT:
-                msg = 'Таймаут GPS';
-                debugMsg = 'TIMEOUT';
+                statusText.textContent = 'Таймаут GPS';
                 break;
+            default:
+                statusText.textContent = 'Ошибка GPS';
         }
-        
-        statusDot.className = 'status-dot error';
-        statusText.textContent = msg;
-        updateDebugInfo(debugMsg + ': ' + error.message);
-        
-        // Не скрываем кнопку — даём пользователю возможность попробовать снова
-        gpsBtn.classList.remove('hidden');
-        gpsBtn.disabled = false;
-        gpsBtn.textContent = '📍 ПОПРОБОВАТЬ СНОВА';
     }
 
     const geoOptions = {
         enableHighAccuracy: true,
         timeout: 30000,
-        maximumAge: 0  // требуем свежий фикс
+        maximumAge: 5000
     };
 
     function startGPS() {
         if (!('geolocation' in navigator)) {
             statusDot.className = 'status-dot error';
             statusText.textContent = 'Геолокация не поддерживается';
-            updateDebugInfo('geolocation API отсутствует');
             return;
         }
 
-        // Показываем, что GPS запрашивается
         statusDot.className = 'status-dot pending';
         statusText.textContent = 'Запрос доступа к GPS...';
-        gpsBtn.disabled = true;
-        gpsBtn.textContent = '⏳ ЗАПРОС...';
-        gpsStarted = true;
-        updateDebugInfo('запрос geolocation...');
 
-        // ВАЖНО: вызываем getCurrentPosition СИНХРОННО в обработчике клика.
-        // Это user gesture — браузер обязан показать диалог запроса разрешения.
+        // Сначала getCurrentPosition — явно запрашивает разрешение
         navigator.geolocation.getCurrentPosition(
             (position) => {
-                updateDebugInfo('первый фикс получен');
                 handlePosition(position);
-                
-                // После первого успешного получения — запускаем watchPosition
+                // После первого получения — запускаем watchPosition
                 if (watchId === null) {
                     watchId = navigator.geolocation.watchPosition(
                         handlePosition,
@@ -440,19 +396,21 @@
                         geoOptions
                     );
                 }
-                
-                // Скрываем кнопку — GPS работает
-                gpsBtn.classList.add('hidden');
             },
             (error) => {
                 handleGeoError(error);
+                // Даже при ошибке пробуем watchPosition
+                if (watchId === null) {
+                    watchId = navigator.geolocation.watchPosition(
+                        handlePosition,
+                        handleGeoError,
+                        geoOptions
+                    );
+                }
             },
             geoOptions
         );
     }
-
-    // Кнопка "ВКЛЮЧИТЬ GPS" — явный user gesture
-    gpsBtn.addEventListener('click', startGPS);
 
     // ====== Компас ======
     let usingAbsoluteOrientation = false;
@@ -498,34 +456,30 @@
                 iosOrientationRequested = true;
                 DeviceOrientationEvent.requestPermission()
                     .then(response => {
-                        updateDebugInfo('compass: ' + response);
+                        if (response !== 'granted') {
+                            statusText.textContent = (statusText.textContent || '') + ' | Компас запрещён';
+                        }
                     })
                     .catch(() => {});
             };
-            // Запрос при первом взаимодействии
             document.addEventListener('click', requestIOSPermission, { once: true });
             document.addEventListener('touchstart', requestIOSPermission, { once: true });
         }
     }
 
-    // ====== Запуск ======
+    // ====== Автозапуск при загрузке ======
     window.addEventListener('load', () => {
         initPointsList();
-        startCompass();
         
         // Проверяем secure context
         if (!checkSecureContext()) {
-            // Если не secure context — показываем предупреждение
-            // GPS не будет работать в любом случае
+            // Если не secure context — GPS не будет работать
             return;
         }
         
-        // Если secure context OK — всё равно ждём явного клика пользователя.
-        // Некоторые браузеры (особенно iOS Safari) не показывают диалог разрешения
-        // без user gesture, даже если страница на HTTPS.
-        // Поэтому показываем кнопку "ВКЛЮЧИТЬ GPS" и ждём клика.
-        updateStatus();
-        updateDebugInfo('готово — ждём клика');
+        // Если secure context OK — сразу запускаем GPS и компас
+        startGPS();
+        startCompass();
     });
 
     // Предотвращение масштабирования двойным тапом

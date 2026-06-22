@@ -15,7 +15,7 @@
     <rect width="100%" height="100%" fill="url(#starfield)"/>
 </svg>
 
-<!-- Предупреждение о HTTPS -->
+<!-- Предупреждение о HTTPS (показывается только если нет secure context) -->
 <div class="https-warning" id="httpsWarning">
     <div class="https-warning-icon">🔒</div>
     <div class="https-warning-title">Требуется защищённое соединение</div>
@@ -127,9 +127,5 @@
         <div class="status-dot pending" id="statusDot"></div>
         <div class="status-text" id="statusText">Инициализация...</div>
     </div>
-    <button class="gps-btn" id="gpsBtn">📍 ВКЛЮЧИТЬ GPS</button>
     <div class="heading-info" id="headingInfo">Курс: —° | Азимут: —°</div>
 </div>
-
-<!-- Отладочная информация -->
-<div class="debug-info" id="debugInfo"></div>
