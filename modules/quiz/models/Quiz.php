@@ -42,8 +42,8 @@ class Quiz extends ActiveRecord implements Fileable
     use QuizAttributeLabelsTrait;
     use VisibilityTrait;
 
-    public const STATUS_INVISIBLE = QuizStatus::INVISIBLE->value;
-    public const STATUS_VISIBLE = QuizStatus::VISIBLE->value;
+    public const STATUS_INVISIBLE = 0;
+    public const STATUS_VISIBLE = 1;
 
     public const BUCKET_NAME_IMAGE = 'quizImage';
 

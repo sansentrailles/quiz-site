@@ -5,11 +5,13 @@ declare(strict_types=1);
 use yii\helpers\Html;
 use app\custom\helpers\AppHelper;
 
-// @var $this \yii\web\View
-// @var $content string
-
+/**
+ * @var \yii\web\View $this
+ * @var string $content
+ */
 
 ?>
+
 <?php $this->beginPage(); ?>
 <!DOCTYPE html>
 <html lang="ru">

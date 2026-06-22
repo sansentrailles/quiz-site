@@ -24,6 +24,7 @@ $config = [
         'app\modules\settings\Bootstrap',
         'app\modules\quiz\Bootstrap',
         'app\modules\seo\Bootstrap',
+        'app\modules\geo\Bootstrap',
     ],
     'language' => 'ru',
     'timezone' => 'Asia/Yekaterinburg',

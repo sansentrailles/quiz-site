@@ -104,6 +104,12 @@ $config = [
             'migrationNamespaces' => ['app\modules\seo\migrations'],
             'migrationTable' => 'migration_seo',
         ],
+
+        'migrate-geo' => [
+            'class' => 'yii\console\controllers\MigrateController',
+            'migrationNamespaces' => ['app\modules\geo\migrations'],
+            'migrationTable' => 'migration_geo',
+        ],
     ],
 ];
 

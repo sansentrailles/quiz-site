@@ -49,6 +49,13 @@ return [
                 'layout' => $layoutBackend,
             ],
 
+            'geo' => [
+                'class' => 'app\modules\geo\Module',
+                'controllerNamespace' => 'app\modules\geo\controllers\backend',
+                'viewPath' => '@app/modules/geo/views/backend',
+                'layout' => $layoutBackend,
+            ],
+
             // 'guide' => [
             //     'class' => 'app\modules\guide\Module',
             //     'controllerNamespace' => 'app\modules\guide\controllers\backend',

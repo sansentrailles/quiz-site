@@ -51,6 +51,7 @@ return [
         '/rating2' => 'quiz/default/rating2',
 
         'geo/router' => 'geo/default/router',
+        'geo/route/<id:\d+>' => 'geo/default/route',
 
         // '<pageUri:[\w_\/-]+>'=>'page/default/view',
         // 'page/<_a>' => 'page/default/<_a>',

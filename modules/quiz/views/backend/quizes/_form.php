@@ -14,6 +14,7 @@ use dosamigos\datepicker\DatePicker;
 /** @var View $this */
 /** @var Quiz $model */
 /** @var ActiveForm $form */
+/** @var array $locations */
 
 ?>
 
