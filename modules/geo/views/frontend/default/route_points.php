@@ -42,7 +42,6 @@
 <div class="top-panel">
     <div class="route-title" id="routeTitle">Маршрут</div>
 
-    <!-- Блок "Следующая точка" — без рамки, название на одной строке -->
     <div class="current-target">
         <div class="current-target-row">
             <span class="current-target-label">Следующая точка:</span>
@@ -54,7 +53,6 @@
         </div>
     </div>
 
-    <!-- Список точек — слева сверху, без рамок -->
     <div class="points-list" id="pointsList"></div>
 
     <div class="coords" id="coordsDisplay">Ожидание GPS...</div>
