@@ -1,0 +1,303 @@
+.navigator {
+    position: fixed;
+    inset: 0;
+    background: #1a1a2e;
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    &__header {
+        padding: 16px 20px 8px;
+        text-align: center;
+        z-index: 10;
+    }
+
+    &__title {
+        font-size: 18px;
+        font-weight: 600;
+        margin: 0;
+        opacity: 0.9;
+    }
+
+    &__distance {
+        font-size: 32px;
+        font-weight: 700;
+        color: $primary;
+        margin-top: 4px;
+    }
+
+    &__compass {
+        position: relative;
+        width: 260px;
+        height: 260px;
+        margin: 16px auto;
+        flex-shrink: 0;
+    }
+
+    &__compass-ring {
+        position: absolute;
+        inset: 0;
+        border: 3px solid rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        transition: transform 0.3s ease-out;
+    }
+
+    &__direction {
+        position: absolute;
+        font-size: 16px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.7);
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &--n {
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: $primary;
+            font-size: 18px;
+        }
+
+        &--e {
+            right: -12px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &--s {
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &--w {
+            left: -12px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    &__arrow-container {
+        position: absolute;
+        inset: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.15s ease-out;
+    }
+
+    &__arrow {
+        width: 80px;
+        height: 80px;
+        filter: drop-shadow(0 2px 8px rgba(255, 103, 1, 0.5));
+    }
+
+    &__target-info {
+        text-align: center;
+        padding: 8px 20px;
+        font-size: 14px;
+        opacity: 0.8;
+    }
+
+    &__target-label {
+        opacity: 0.6;
+    }
+
+    &__target-name {
+        font-weight: 600;
+        margin-left: 6px;
+        color: $primary;
+    }
+
+    &__points {
+        flex: 1;
+        overflow-y: auto;
+        padding: 8px 20px 20px;
+    }
+
+    &__point {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 16px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        margin-bottom: 8px;
+        transition: $transition;
+
+        &--active {
+            background: rgba($primary, 0.2);
+            border: 1px solid rgba($primary, 0.4);
+        }
+
+        &--reached {
+            opacity: 0.5;
+
+            .navigator__point-name {
+                text-decoration: line-through;
+            }
+        }
+    }
+
+    &__point-marker {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        font-weight: 600;
+        flex-shrink: 0;
+    }
+
+    &__point--active &__point-marker {
+        background: $primary;
+    }
+
+    &__point--reached &__point-marker {
+        background: $success;
+    }
+
+    &__point-name {
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    &__modal {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+
+        &--visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+
+    &__modal-content {
+        background: #16213e;
+        border-radius: 20px;
+        padding: 40px 30px;
+        text-align: center;
+        max-width: 320px;
+        width: 90%;
+        transform: scale(0.9);
+        transition: transform 0.3s ease;
+
+        .navigator__modal--visible & {
+            transform: scale(1);
+        }
+    }
+
+    &__modal-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: $success;
+        color: #fff;
+        font-size: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 16px;
+    }
+
+    &__modal-title {
+        font-size: 22px;
+        font-weight: 700;
+        margin: 0 0 8px;
+    }
+
+    &__modal-message {
+        font-size: 15px;
+        opacity: 0.8;
+        margin: 0 0 24px;
+        line-height: 1.4;
+    }
+
+    &__modal-btn {
+        background: $primary;
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        padding: 14px 40px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: $transition;
+
+        &:active {
+            transform: scale(0.96);
+        }
+    }
+
+    &__start-screen {
+        position: absolute;
+        inset: 0;
+        background: #1a1a2e;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        z-index: 50;
+        text-align: center;
+        padding: 20px;
+
+        h2 {
+            font-size: 28px;
+            margin: 0;
+        }
+
+        p {
+            opacity: 0.7;
+            margin: 0;
+        }
+    }
+
+    &__start-btn {
+        margin-top: 16px;
+        background: $primary;
+        color: #fff;
+        border: none;
+        border-radius: 14px;
+        padding: 16px 48px;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: $transition;
+
+        &:active {
+            transform: scale(0.96);
+        }
+    }
+
+    &__error {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        background: $danger;
+        color: #fff;
+        padding: 12px 16px;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 14px;
+        display: none;
+        z-index: 200;
+    }
+}

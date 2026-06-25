@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Навигатор</title>
+    <link rel="stylesheet" href="../styles/main.scss">
+</head>
+<body>
+    <div
+        class="navigator"
+        id="navigator"
+        data-points='{
+            "points": [
+                {
+                    "latitude": "55.34345419",
+                    "longitude": "61.33763417",
+                    "title": "КП2",
+                    "message": "Вы достигли точки Стелла"
+                },
+                {
+                    "latitude": "55.34305231",
+                    "longitude": "61.33882042",
+                    "title": "КП1",
+                    "message": "Вы достигли точки Магазин"
+                }
+            ],
+            "title": "Начальный",
+            "arrival_radius": 30
+        }'
+    >
+        <div class="navigator__header">
+            <h1 class="navigator__title" id="navTitle">Навигатор</h1>
+            <div class="navigator__distance" id="navDistance">—</div>
+        </div>
+
+        <div class="navigator__compass" id="navCompass">
+            <div class="navigator__compass-ring" id="compassRing">
+                <span class="navigator__direction navigator__direction--n">С</span>
+                <span class="navigator__direction navigator__direction--e">В</span>
+                <span class="navigator__direction navigator__direction--s">Ю</span>
+                <span class="navigator__direction navigator__direction--w">З</span>
+            </div>
+            <div class="navigator__arrow-container" id="arrowContainer">
+                <svg class="navigator__arrow" viewBox="0 0 100 100" id="navArrow">
+                    <polygon points="50,10 65,70 50,58 35,70" fill="#ff6701" stroke="#cc5200" stroke-width="2"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="navigator__target-info" id="targetInfo">
+            <span class="navigator__target-label">Следующая точка:</span>
+            <span class="navigator__target-name" id="targetName">—</span>
+        </div>
+
+        <div class="navigator__points" id="navPoints"></div>
+
+        <div class="navigator__modal" id="arrivalModal">
+            <div class="navigator__modal-content">
+                <div class="navigator__modal-icon">&#10003;</div>
+                <h2 class="navigator__modal-title" id="arrivalTitle"></h2>
+                <p class="navigator__modal-message" id="arrivalMessage"></p>
+                <button class="navigator__modal-btn" id="continueBtn">Продолжить</button>
+            </div>
+        </div>
+
+        <div class="navigator__start-screen" id="startScreen">
+            <h2>Навигатор</h2>
+            <p>Нажмите кнопку для начала навигации</p>
+            <button class="navigator__start-btn" id="startBtn">Начать</button>
+        </div>
+
+        <div class="navigator__error" id="navError"></div>
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
