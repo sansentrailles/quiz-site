@@ -27,16 +27,16 @@ use yii\helpers\Html;
 <body data-route='{
     "points": [
         {
-            "latitude": "55.34345419",
-            "longitude": "61.33763417",
-            "title": "КП2",
-            "message": "Вы достигли точки Стелла"
-        },
-        {
             "latitude": "55.34305231",
             "longitude": "61.33882042",
             "title": "КП1",
             "message": "Вы достигли точки Магазин"
+        },
+        {
+            "latitude": "55.34345419",
+            "longitude": "61.33763417",
+            "title": "КП2",
+            "message": "Вы достигли точки Стелла"
         }
     ],
     "title": "Начальный",

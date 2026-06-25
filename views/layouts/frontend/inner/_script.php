@@ -119,23 +119,27 @@
   var glowFilter = document.getElementById('glow');
 
   function checkSecureContext() {
-    if (window.isSecureContext === false) {
-      currentUrlEl.textContent = window.location.href;
-      httpsWarning.classList.add('visible');
-      statusDot.className = 'status-dot error';
-      statusText.textContent = 'Нет HTTPS — GPS недоступен';
-      return false;
-    }
     var p = window.location.protocol;
-    var isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname === '';
-    if (p !== 'https:' && p !== 'file:' && !isLocal) {
-      currentUrlEl.textContent = window.location.href;
-      httpsWarning.classList.add('visible');
-      statusDot.className = 'status-dot error';
-      statusText.textContent = 'Требуется HTTPS';
-      return false;
+    var h = window.location.hostname;
+    var isLocalhostExact = h === 'localhost' || h === '127.0.0.1' || h === '::1' || h === '';
+    var isLocalhostSubdomain = h.endsWith('.localhost');
+    var isFile = p === 'file:';
+    var isHttps = p === 'https:';
+    var isSecureByBrowser = window.isSecureContext !== false;
+
+    if (isSecureByBrowser) {
+      return true;
     }
-    return true;
+
+    if (isLocalhostExact || isLocalhostSubdomain || isFile || isHttps) {
+      return true;
+    }
+
+    currentUrlEl.textContent = window.location.href;
+    httpsWarning.classList.add('visible');
+    statusDot.className = 'status-dot error';
+    statusText.textContent = 'GPS недоступен — нужен HTTPS или localhost';
+    return false;
   }
 
   function initPointsList() {
@@ -214,6 +218,8 @@
     arrowWrapper.style.filter = '';
     glowRing.style.boxShadow = '';
   }
+
+  function spawnConfetti() {
     var colors = ['#4ade80', '#22c55e', '#86efac', '#ffffff', '#fbbf24'];
     for (var i = 0; i < 40; i++) {
       var c = document.createElement('div');
@@ -357,10 +363,11 @@
 
   function handleGeoError(err) {
     statusDot.className = 'status-dot error';
-    if (err.code === 1) statusText.textContent = 'Доступ к геолокации запрещён';
-    else if (err.code === 2) statusText.textContent = 'Геолокация недоступна';
-    else if (err.code === 3) statusText.textContent = 'Таймаут GPS';
-    else statusText.textContent = 'Ошибка GPS';
+    var msg = 'GPS ошибка';
+    if (err.code === 1) msg = 'Доступ к геолокации запрещён (разрешите в настройках браузера)';
+    else if (err.code === 2) msg = 'Геолокация недоступна (включите GPS/ГПС на телефоне)';
+    else if (err.code === 3) msg = 'Таймаут GPS (поищите спутники...)';
+    statusText.textContent = msg;
   }
 
   var geoOptions = { enableHighAccuracy: true, timeout: 30000, maximumAge: 5000 };
@@ -368,15 +375,16 @@
   function startGPS() {
     if (!('geolocation' in navigator)) {
       statusDot.className = 'status-dot error';
-      statusText.textContent = 'Геолокация не поддерживается';
+      statusText.textContent = 'Геолокация не поддерживается этим браузером';
       return;
     }
     statusDot.className = 'status-dot pending';
-    statusText.textContent = 'Запрос доступа к GPS...';
+    statusText.textContent = 'GPS: запрос позиции...';
     navigator.geolocation.getCurrentPosition(
       function(pos) {
         handlePosition(pos);
         if (watchId === null) {
+          statusText.textContent = 'GPS: отслеживание позиции...';
           watchId = navigator.geolocation.watchPosition(handlePosition, handleGeoError, geoOptions);
         }
       },
