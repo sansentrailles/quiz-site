@@ -59,14 +59,22 @@ migrate-quiz: ## Выполнить миграции викторин
 migrate-seo: ## Выполнить миграции SEO
 	docker-compose exec php php yii migrate-seo --interactive=0
 
+# Инициализация конфигурационных файлов
+init-config: ## Скопировать конфигурационные файлы из примеров
+	@echo "$(GREEN)Инициализация конфигурационных файлов...$(NC)"
+	@test -f config/db.php || cp config/db.example.php config/db.php
+	@test -f config/params.php || cp config/params.example.php config/params.php
+	@test -f public_html/index.php || cp public_html/index.example.php public_html/index.php
+	@echo "$(GREEN)Конфигурационные файлы инициализированы!$(NC)"
+
 migrate-all: ## Выполнить все миграции
 	@echo "$(GREEN)Выполнение всех миграций...$(NC)"
 	docker-compose exec php php yii migrate-settings --interactive=0
 	docker-compose exec php php yii migrate-quests --interactive=0
 	docker-compose exec php php yii migrate-quiz --interactive=0
 	docker-compose exec php php yii migrate-seo --interactive=0
-	docker-compose exec php php yii migrate-user --interactive=0
-	docker-compose exec php php yii migrate-rbac --interactive=0
+# 	docker-compose exec php php yii migrate-user --interactive=0
+# 	docker-compose exec php php yii migrate-rbac --interactive=0
 	@echo "$(GREEN)Все миграции выполнены!$(NC)"
 
 # Установка проекта (полная инициализация)
@@ -88,10 +96,16 @@ db-shell: ## Подключиться к MySQL
 db-show-tables: ## Показать все таблицы в базе данных
 	docker-compose exec db mysql -u yii2user -pyii2password yii2db -e "SHOW TABLES;"
 
+# Удаление всех таблиц из базы данных
+drop-tables: ## Удалить все таблицы из базы данных
+	@echo "$(YELLOW)Удаление всех таблиц из базы данных...$(NC)"
+	@cat docker/mysql/drop-all-tables.sql | docker-compose exec -T -e MYSQL_PWD=yii2password db mysql -u yii2user yii2db
+	@echo "$(GREEN)База данных очищена!$(NC)"
+
 # Права доступа
 fix-permissions: ## Исправить права на папки runtime и assets
-	docker-compose exec php chown -R www-data:www-data /var/www/runtime /var/www/web/assets
-	docker-compose exec php chmod -R 775 /var/www/runtime /var/www/web/assets
+	docker-compose exec php chown -R www-data:www-data /var/www/runtime /var/www/public_html/assets
+	docker-compose exec php chmod -R 775 /var/www/runtime /var/www/public_html/assets
 	@echo "$(GREEN)Права исправлены!$(NC)"
 
 # Очистка
@@ -112,5 +126,7 @@ test: ## Запустить тесты
 	docker-compose exec php php vendor/bin/codecept run
 
 # Полная переустановка проекта (с нуля)
-reinstall: down build up composer-install migrate-all install ## Полная переустановка проекта
+reinstall: down build up init-config composer-install migrate-all install fix-permissions ## Полная переустановка проекта
 	@echo "$(GREEN)Проект полностью переустановлен!$(NC)"
+# reinstall: down build up composer-install migrate-all install ## Полная переустановка проекта
+# 	@echo "$(GREEN)Проект полностью переустановлен!$(NC)"
