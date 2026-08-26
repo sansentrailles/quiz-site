@@ -9,9 +9,11 @@ use app\custom\widgets\backend\grid\LinkColumn;
 use app\custom\widgets\backend\grid\ActionColumn;
 use app\custom\widgets\backend\grid\ToggleColumn;
 
-// @var $this yii\web\View
-// @var $searchModel app\modules\quiz\models\QuizSearch
-// @var $dataProvider yii\data\ActiveDataProvider
+/**
+ * @var yii\web\View $this
+ * @var app\modules\quiz\forms\backend\search\QuizSearch $searchModel 
+ * @var $dataProvider yii\data\ActiveDataProvider
+ */
 
 $this->title = Module::t('common', 'QUIZES');
 $this->params['breadcrumbs'][] = $this->title;
