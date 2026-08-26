@@ -18,17 +18,6 @@ class Exif
 
         // Поиск EXIF данных
         return $this->findExifData($imageBytes);
-
-        // if ($exifData !== false) {
-        //     // Вывод EXIF данных
-        //     echo "Camera: " . $exifData['Make'] . " " . $exifData['Model'] . "<br>";
-        //     echo "Exposure: " . $exifData['ExposureTime'] . "<br>";
-        //     echo "Aperture: " . $exifData['FNumber'] . "<br>";
-        //     echo "ISO: " . $exifData['ISOSpeedRatings'] . "<br>";
-        //     echo "Date Taken: " . $exifData['DateTimeOriginal'] . "<br>";
-        // } else {
-        //     echo "EXIF data not found.";
-        // }
     }
 
     private function findExifData($imageBytes)

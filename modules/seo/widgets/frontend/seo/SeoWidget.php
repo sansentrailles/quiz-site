@@ -4,15 +4,12 @@ declare(strict_types=1);
 
 namespace app\modules\seo\widgets\frontend\seo;
 
-use app\modules\seo\models\Seo;
 use app\modules\seo\services\SeoService;
 use yii\base\InvalidConfigException;
 use yii\base\Widget;
 
 /**
  * Displays SEO.
- *
- * @author Chistyakov Ilya <ichistyakovv@gmail.com>
  */
 class SeoWidget extends Widget
 {

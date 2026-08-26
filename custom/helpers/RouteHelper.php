@@ -8,8 +8,6 @@ use Yii;
 
 /**
  * A set of methods used for defining a route.
- *
- *  @author Chistyakov Ilya <ichistyakovv@gmail.com>
  */
 class RouteHelper
 {
@@ -34,8 +32,5 @@ class RouteHelper
     public static function isHome()
     {
         return Yii::$app->request->url === '/';
-        // $controller = Yii::$app->controller;
-        // $default_controller = Yii::$app->defaultRoute;
-        // return $controller->id === $default_controller && $controller->action->id === $controller->defaultAction;
     }
 }

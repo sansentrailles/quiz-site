@@ -146,7 +146,7 @@ class StringHelper
     //     return $subject;
     // }
 
-    public static function toRu($value)
+    public static function toRu(string $value): string
     {
         $converter = [
             'f' => 'а', ',' => 'б', 'd' => 'в', 'u' => 'г', 'l' => 'д', 't' => 'е', '`' => 'ё',
@@ -167,7 +167,7 @@ class StringHelper
         return strtr($value, $converter);
     }
 
-    public static function toEn($value)
+    public static function toEn(string $value): string
     {
         $converter = [
             'а' => 'f', 'б' => ',', 'в' => 'd', 'г' => 'u', 'д' => 'l', 'е' => 't', 'ё' => '`',
@@ -201,16 +201,9 @@ class StringHelper
         ];
 
         return str_replace($cyr, $lat, $textcyr);
-        if ($textcyr) {
-            return str_replace($cyr, $lat, $textcyr);
-        }
-        if ($textlat) {
-            return str_replace($lat, $cyr, $textlat);
-        }
-        return null;
     }
 
-    public static function escapeMarkdown($text) 
+    public static function escapeMarkdown(string $text): string
     {
         $specialChars = ['_', '*', '[', ']', '(', ')', '~', '`', '>', '#', '+', '-', '=', '|', '{', '}', '.', '!'];
         foreach ($specialChars as $char) {
@@ -265,12 +258,12 @@ class StringHelper
     public static function generateUuidV4(): string
     {
         return sprintf('%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
-    mt_rand(0, 0xffff), mt_rand(0, 0xffff),
+            mt_rand(0, 0xffff), mt_rand(0, 0xffff),
             mt_rand(0, 0xffff),
             mt_rand(0, 0x0fff) | 0x4000,
             mt_rand(0, 0x3fff) | 0x8000,
             mt_rand(0, 0xffff), mt_rand(0, 0xffff), mt_rand(0, 0xffff)
         );
-}
+    }
 
 }

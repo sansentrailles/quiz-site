@@ -6,22 +6,20 @@ namespace app\custom\helpers;
 
 /**
  * A set of methods used for working with phones.
- *
- *  @author Chistyakov Ilya <ichistyakovv@gmail.com>
  */
 class PhoneHelper
 {
-    public static function clearPhone($phone)
+    public static function clearPhone(string $phone): string
     {
         return preg_replace('~\\D~', '', $phone);
     }
 
-    public static function skipCountryCode($phone)
+    public static function skipCountryCode(string $phone): string
     {
         return substr($phone, 1, \strlen($phone) - 1);
     }
 
-    public static function sanitizePhone($value)
+    public static function sanitizePhone(string $value): string
     {
         $value = preg_replace('~\\D~', '', $value);
         if (\strlen($value) === 11 && $value[0] === 7) {
@@ -31,7 +29,7 @@ class PhoneHelper
         return $value;
     }
 
-    public static function getSpacePhone($phone)
+    public static function getSpacePhone(string $phone): string
     {
         return '8 ' . substr($phone, 1, 3) .
                 ' ' . substr($phone, 4, 3) .
@@ -39,7 +37,7 @@ class PhoneHelper
                 ' ' . substr($phone, 9, 2);
     }
 
-    public static function getSpacePhoneAr($phone)
+    public static function getSpacePhoneAr(string $phone): string
     {
         return substr($phone, 0, 4) .
                 ' ' . substr($phone, 4, 2) .
@@ -48,7 +46,7 @@ class PhoneHelper
                 ' ' . substr($phone, 11, 2);
     }
 
-    public static function getPhoneForCalling($phone, $skipFirst = false)
+    public static function getPhoneForCalling(string $phone, bool $skipFirst = false): string
     {
         $phone = self::sanitizePhone($phone);
         if ($skipFirst) {

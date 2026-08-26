@@ -42,9 +42,5 @@ class MetaTag extends Widget
                 'content' => $meta->content,
             ]);
         }
-
-        // return $this->render($this->template, [
-        //     'metrics' => $metrics,
-        // ]);
     }
 }

@@ -9,8 +9,6 @@ use yii\web\UploadedFile;
 
 /**
  * A set of methods used for working with files.
- *
- *  @author Chistyakov Ilya <ichistyakovv@gmail.com>
  */
 class FileHelper extends YiiFileHelper
 {

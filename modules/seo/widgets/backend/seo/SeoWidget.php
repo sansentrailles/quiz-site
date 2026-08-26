@@ -10,8 +10,6 @@ use yii\base\Widget;
 
 /**
  * Displays SEO button.
- *
- * @author Chistyakov Ilya <ichistyakovv@gmail.com>
  */
 class SeoWidget extends Widget
 {

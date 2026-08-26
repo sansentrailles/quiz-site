@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace app\custom\traits\common\form;
 
-use app\custom\helpers\FileHelper;
 use app\custom\helpers\UploadFileHelper;
 use Closure;
 use Yii;
@@ -34,7 +33,6 @@ trait UploadFilesTrait
      *
      * virtual attribute is an UploadedFile class instance
      * @return array options
-     * @author Chistyakov Ilya <ichistyakovv@gmail.com>
      */
     abstract public function getUploadOptions();
 

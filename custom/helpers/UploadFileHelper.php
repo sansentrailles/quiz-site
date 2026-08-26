@@ -8,8 +8,6 @@ use Yii;
 
 /**
  * A set of methods used for working with file uploading.
- *
- *  @author Chistyakov Ilya <ichistyakovv@gmail.com>
  */
 class UploadFileHelper
 {
@@ -26,11 +24,8 @@ class UploadFileHelper
                 return null;
             }
 
-            // Yii::debug($uploadedFile->tempName);
-            // echo __METHOD__.' '.$uploadedFile->tempName.PHP_EOL;
             $sourceFileData = file_get_contents($uploadedFile->tempName);
             file_put_contents($file, $sourceFileData);
-            // $uploadedFile->saveAs($file, false);
             return [$file, static function () use ($file): void {
                 FileHelper::deleteFile($file);
             }];

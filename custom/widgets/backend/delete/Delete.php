@@ -8,8 +8,6 @@ use yii\base\Widget;
 
 /**
  * Displays remove button.
- *
- * @author Chistyakov Ilya <ichistyakovv@gmail.com>
  */
 class Delete extends Widget
 {

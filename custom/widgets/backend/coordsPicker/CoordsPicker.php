@@ -10,8 +10,6 @@ use yii\base\Widget;
  * Widget allows to use map for finding the places
  * either by clicking on the map or using search by address.
  * The widget automatically converts the point to spherical coordinates.
- *
- * @author Chistyakov Ilya <ichistyakovv@gmail.com>
  */
 class CoordsPicker extends Widget
 {

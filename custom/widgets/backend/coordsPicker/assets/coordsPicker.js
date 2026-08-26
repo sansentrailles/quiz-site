@@ -2,8 +2,6 @@
 /**
  * Module manages the CoordsPicker widgets
  * Each map provider should implement the AdapterInterface
- *
- * @author Chistyakov Ilya <ichistyakovv@gmail.com>
  */
 (function() {
 
