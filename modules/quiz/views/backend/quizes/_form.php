@@ -9,12 +9,14 @@ use app\modules\quiz\Module;
 use dosamigos\tinymce\TinyMce;
 use app\modules\quiz\models\Quiz;
 use app\custom\widgets\backend\delete\Delete;
-use dosamigos\datepicker\DatePicker;
 
-/** @var View $this */
-/** @var Quiz $model */
-/** @var ActiveForm $form */
-/** @var array $locations */
+/**
+ * @var View $this
+ * @var Quiz $model
+ * @var ActiveForm $form
+ * @var array $locations
+ * @var array $labels
+ */
 
 ?>
 
@@ -44,14 +46,7 @@ use dosamigos\datepicker\DatePicker;
         <div class="row">
             <div class="form-group">
                 <div class="col-md-6">
-                    <?= $form->field($model, 'date')->widget(
-                        DatePicker::class, [
-                        'language' => 'ru',
-                        'clientOptions' => [
-                            'autoclose' => true,
-                            'dateFormat' => 'dd.mm.yyyy'
-                        ]
-                    ]);?>
+                    <?= $form->field($model, 'date')->input('date') ?>
                 </div>
 
                 <div class="col-md-6">
@@ -60,18 +55,7 @@ use dosamigos\datepicker\DatePicker;
             </div>
         </div>
 
-        <?php echo $form->field($model, 'text')->widget(TinyMce::class, [
-            'options' => ['rows' => 15],
-            'language' => Yii::$app->language,
-            'clientOptions' => [
-                'plugins' => [
-                    'advlist autolink lists link charmap hr preview pagebreak',
-                    'wordcount code fullscreen nonbreaking',
-                    'save insertdatetime contextmenu paste',
-                ],
-                'toolbar' => 'undo redo | styleselect | bold italic | bullist numlist',
-            ],
-        ]); ?>
+        <?php echo $form->field($model, 'time')->textarea(['rows' => 10]); ?>
 
         <?php echo $form->field($model, 'items')->textarea(['rows' => 10])
             ->hint('<span class="text-green">Каждый пункт на отдельной строке</span>')
