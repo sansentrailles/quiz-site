@@ -3,15 +3,6 @@
 $vendorDir = dirname(__DIR__);
 
 return array (
-  '2amigos/yii2-date-picker-widget' => 
-  array (
-    'name' => '2amigos/yii2-date-picker-widget',
-    'version' => '1.0.7.0',
-    'alias' => 
-    array (
-      '@dosamigos/datepicker' => $vendorDir . '/2amigos/yii2-date-picker-widget/src',
-    ),
-  ),
   'yiisoft/yii2-bootstrap' => 
   array (
     'name' => 'yiisoft/yii2-bootstrap',
@@ -21,15 +12,6 @@ return array (
       '@yii/bootstrap' => $vendorDir . '/yiisoft/yii2-bootstrap/src',
     ),
   ),
-  'alexantr/yii2-colorpicker' => 
-  array (
-    'name' => 'alexantr/yii2-colorpicker',
-    'version' => '2.0.0.0',
-    'alias' => 
-    array (
-      '@alexantr/colorpicker' => $vendorDir . '/alexantr/yii2-colorpicker',
-    ),
-  ),
   'cebe/yii2-gravatar' => 
   array (
     'name' => 'cebe/yii2-gravatar',
@@ -37,15 +19,6 @@ return array (
     'alias' => 
     array (
       '@cebe/gravatar' => $vendorDir . '/cebe/yii2-gravatar/cebe/gravatar',
-    ),
-  ),
-  '2amigos/yii2-tinymce-widget' => 
-  array (
-    'name' => '2amigos/yii2-tinymce-widget',
-    'version' => '1.1.3.0',
-    'alias' => 
-    array (
-      '@dosamigos/tinymce' => $vendorDir . '/2amigos/yii2-tinymce-widget/src',
     ),
   ),
   'rmrevin/yii2-fontawesome' => 
@@ -66,13 +39,22 @@ return array (
       '@dmstr' => $vendorDir . '/dmstr/yii2-adminlte-asset',
     ),
   ),
-  'kartik-v/yii2-field-range' => 
+  'kartik-v/yii2-widget-colorinput' => 
   array (
-    'name' => 'kartik-v/yii2-field-range',
-    'version' => '1.3.5.0',
+    'name' => 'kartik-v/yii2-widget-colorinput',
+    'version' => 'dev-master',
     'alias' => 
     array (
-      '@kartik/field' => $vendorDir . '/kartik-v/yii2-field-range/src',
+      '@kartik/color' => $vendorDir . '/kartik-v/yii2-widget-colorinput/src',
+    ),
+  ),
+  'wapmorgan/yii2-inflection' => 
+  array (
+    'name' => 'wapmorgan/yii2-inflection',
+    'version' => '1.0.4.0',
+    'alias' => 
+    array (
+      '@wapmorgan/yii2inflection' => $vendorDir . '/wapmorgan/yii2-inflection/src',
     ),
   ),
   'kartik-v/yii2-krajee-base' => 
@@ -82,15 +64,6 @@ return array (
     'alias' => 
     array (
       '@kartik/base' => $vendorDir . '/kartik-v/yii2-krajee-base/src',
-    ),
-  ),
-  'kartik-v/yii2-helpers' => 
-  array (
-    'name' => 'kartik-v/yii2-helpers',
-    'version' => '1.3.9.0',
-    'alias' => 
-    array (
-      '@kartik/helpers' => $vendorDir . '/kartik-v/yii2-helpers/src',
     ),
   ),
   'yiisoft/yii2-faker' => 
@@ -111,22 +84,13 @@ return array (
       '@yii/imagine' => $vendorDir . '/yiisoft/yii2-imagine/src',
     ),
   ),
-  'yiisoft/yii2-swiftmailer' => 
+  'kartik-v/yii2-widget-datepicker' => 
   array (
-    'name' => 'yiisoft/yii2-swiftmailer',
-    'version' => '2.1.3.0',
+    'name' => 'kartik-v/yii2-widget-datepicker',
+    'version' => 'dev-master',
     'alias' => 
     array (
-      '@yii/swiftmailer' => $vendorDir . '/yiisoft/yii2-swiftmailer/src',
-    ),
-  ),
-  'zgb7mtr/yii2-bootstrap-color-picker' => 
-  array (
-    'name' => 'zgb7mtr/yii2-bootstrap-color-picker',
-    'version' => '1.0.1.0',
-    'alias' => 
-    array (
-      '@zgb7mtr/colorPicker' => $vendorDir . '/zgb7mtr/yii2-bootstrap-color-picker/src',
+      '@kartik/date' => $vendorDir . '/kartik-v/yii2-widget-datepicker/src',
     ),
   ),
   'yiisoft/yii2-symfonymailer' => 
@@ -138,49 +102,13 @@ return array (
       '@yii/symfonymailer' => $vendorDir . '/yiisoft/yii2-symfonymailer/src',
     ),
   ),
-  'wapmorgan/yii2-inflection' => 
+  'zgb7mtr/yii2-bootstrap-color-picker' => 
   array (
-    'name' => 'wapmorgan/yii2-inflection',
-    'version' => '1.0.4.0',
+    'name' => 'zgb7mtr/yii2-bootstrap-color-picker',
+    'version' => '1.0.1.0',
     'alias' => 
     array (
-      '@wapmorgan/yii2inflection' => $vendorDir . '/wapmorgan/yii2-inflection/src',
-    ),
-  ),
-  'kartik-v/yii2-widget-activeform' => 
-  array (
-    'name' => 'kartik-v/yii2-widget-activeform',
-    'version' => '1.6.4.0',
-    'alias' => 
-    array (
-      '@kartik/form' => $vendorDir . '/kartik-v/yii2-widget-activeform/src',
-    ),
-  ),
-  'kartik-v/yii2-widget-colorinput' => 
-  array (
-    'name' => 'kartik-v/yii2-widget-colorinput',
-    'version' => 'dev-master',
-    'alias' => 
-    array (
-      '@kartik/color' => $vendorDir . '/kartik-v/yii2-widget-colorinput/src',
-    ),
-  ),
-  'kartik-v/yii2-widget-select2' => 
-  array (
-    'name' => 'kartik-v/yii2-widget-select2',
-    'version' => 'dev-master',
-    'alias' => 
-    array (
-      '@kartik/select2' => $vendorDir . '/kartik-v/yii2-widget-select2/src',
-    ),
-  ),
-  'kartik-v/yii2-widget-datepicker' => 
-  array (
-    'name' => 'kartik-v/yii2-widget-datepicker',
-    'version' => 'dev-master',
-    'alias' => 
-    array (
-      '@kartik/date' => $vendorDir . '/kartik-v/yii2-widget-datepicker/src',
+      '@zgb7mtr/colorPicker' => $vendorDir . '/zgb7mtr/yii2-bootstrap-color-picker/src',
     ),
   ),
   'yiisoft/yii2-gii' => 
@@ -195,7 +123,7 @@ return array (
   'yiisoft/yii2-debug' => 
   array (
     'name' => 'yiisoft/yii2-debug',
-    'version' => '2.1.26.0',
+    'version' => '2.1.28.0',
     'alias' => 
     array (
       '@yii/debug' => $vendorDir . '/yiisoft/yii2-debug/src',

@@ -2,6 +2,7 @@
 
 namespace morphos\Russian;
 
+use morphos\CasesHelper;
 use morphos\NumeralGenerator;
 use morphos\S;
 use RuntimeException;
@@ -139,6 +140,14 @@ class CardinalNumeralGenerator extends NumeralGenerator implements Cases
             self::TVORIT  => 'четырьмя',
             self::PREDLOJ => 'четырех',
         ],
+        'восемь'      => [
+            self::IMENIT  => 'восемь',
+            self::RODIT   => 'восьми',
+            self::DAT     => 'восьми',
+            self::VINIT   => 'восемь',
+            self::TVORIT  => 'восемью',
+            self::PREDLOJ => 'восьми',
+        ],
         'восемьдесят' => [
             self::IMENIT  => 'восемьдесят',
             self::RODIT   => 'восьмидесяти',
@@ -163,24 +172,17 @@ class CardinalNumeralGenerator extends NumeralGenerator implements Cases
             self::TVORIT  => 'восьмистами',
             self::PREDLOJ => 'восьмистах',
         ],
-        'тысяча'      => [
-            self::IMENIT  => 'тысяча',
-            self::RODIT   => 'тысяч',
-            self::DAT     => 'тысячам',
-            self::VINIT   => 'тысяч',
-            self::TVORIT  => 'тысячей',
-            self::PREDLOJ => 'тысячах',
-        ],
     ];
 
     /**
      * @param int $number
      * @param string $gender
+     * @param bool $forAccounting
      * @return string[]
      * @phpstan-return array<string, string>
      * @throws \Exception
      */
-    public static function getCases($number, $gender = self::MALE)
+    public static function getCases($number, $gender = self::MALE, $forAccounting = false)
     {
         // simple numeral
         if (isset(static::$words[$number]) || isset(static::$exponents[$number])) {
@@ -242,6 +244,16 @@ class CardinalNumeralGenerator extends NumeralGenerator implements Cases
                     static::PREDLOJ => $prefix . 'истах',
                 ];
             } elseif (isset(static::$exponents[$number])) {
+                if ($forAccounting) {
+                    return array_combine(
+                        CasesHelper::getAllCases(),
+                        array_map(
+                            [__CLASS__, 'joinTwoStringsWithSpace'],
+                            static::getCases(1, $gender),
+                            NounDeclension::getCases($word, false)
+                        )
+                    );
+                }
                 return NounDeclension::getCases($word, false);
             }
 
@@ -321,14 +333,20 @@ class CardinalNumeralGenerator extends NumeralGenerator implements Cases
      * @param int $number
      * @param string $case
      * @param string $gender
+     * @param bool $forAccounting
      *
      * @return string
      * @throws \Exception
      */
-    public static function getCase($number, $case, $gender = self::MALE)
+    public static function getCase($number, $case, $gender = self::MALE, $forAccounting = false)
     {
         $case  = RussianCasesHelper::canonizeCase($case);
-        $forms = static::getCases($number, $gender);
+        $forms = static::getCases($number, $gender, $forAccounting);
         return $forms[$case];
+    }
+
+    public static function joinTwoStringsWithSpace($a, $b)
+    {
+        return $a . ' ' . $b;
     }
 }

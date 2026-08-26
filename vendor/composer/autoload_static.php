@@ -4,37 +4,35 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit780c025a558483967552e2d803224dfb
+class ComposerStaticInitc2c39864c35eb3a7249438fe0bec8af1
 {
     public static $files = array (
-        '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
-        'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
+        '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         'ad155f8f1cf0d418fe49e248db8c661b' => __DIR__ . '/..' . '/react/promise/src/functions_include.php',
-        'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
+        'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
+        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
-        'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
-        '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
-        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '23c18046f52bef3eea034657bafda50f' => __DIR__ . '/..' . '/symfony/polyfill-php81/bootstrap.php',
+        '9d2b9fc6db0f153a0a149fefb182415e' => __DIR__ . '/..' . '/symfony/polyfill-php84/bootstrap.php',
         '271cb6f21c9ae69ccbad5cc1b8d6707c' => __DIR__ . '/..' . '/wapmorgan/morphos/src/English/functions.php',
         '34d31f2fd925dfe2696a521f5ec12db2' => __DIR__ . '/..' . '/wapmorgan/morphos/src/Russian/functions.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
     );
 
     public static $prefixLengthsPsr4 = array (
-        'z' => 
+        'z' =>
         array (
             'zgb7mtr\\colorPicker\\' => 20,
         ),
-        'y' => 
+        'y' =>
         array (
             'yii\\symfonymailer\\' => 18,
-            'yii\\swiftmailer\\' => 16,
             'yii\\imagine\\' => 12,
             'yii\\gii\\' => 8,
             'yii\\faker\\' => 10,
@@ -43,55 +41,41 @@ class ComposerStaticInit780c025a558483967552e2d803224dfb
             'yii\\bootstrap\\' => 14,
             'yii\\' => 4,
         ),
-        'w' => 
+        'w' =>
         array (
             'wapmorgan\\yii2inflection\\' => 25,
         ),
-        'r' => 
+        'r' =>
         array (
             'rmrevin\\yii\\fontawesome\\' => 24,
         ),
-        'm' => 
+        'm' =>
         array (
             'morphos\\' => 8,
         ),
-        'k' => 
+        'k' =>
         array (
-            'kartik\\select2\\' => 15,
-            'kartik\\helpers\\' => 15,
-            'kartik\\form\\' => 12,
-            'kartik\\field\\' => 13,
             'kartik\\date\\' => 12,
             'kartik\\color\\' => 13,
             'kartik\\base\\' => 12,
         ),
-        'd' => 
+        'd' =>
         array (
-            'dosamigos\\tinymce\\' => 18,
-            'dosamigos\\datepicker\\' => 21,
             'dmstr\\' => 6,
         ),
-        'c' => 
+        'c' =>
         array (
             'cebe\\markdown\\' => 14,
         ),
-        'a' => 
+        'S' =>
         array (
-            'alexantr\\colorpicker\\' => 21,
-        ),
-        'Z' => 
-        array (
-            'ZipStream\\' => 10,
-        ),
-        'S' => 
-        array (
+            'Symfony\\Polyfill\\Php84\\' => 23,
             'Symfony\\Polyfill\\Php81\\' => 23,
             'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Intl\\Normalizer\\' => 33,
             'Symfony\\Polyfill\\Intl\\Idn\\' => 26,
             'Symfony\\Polyfill\\Intl\\Grapheme\\' => 31,
-            'Symfony\\Polyfill\\Iconv\\' => 23,
             'Symfony\\Polyfill\\Ctype\\' => 23,
             'Symfony\\Contracts\\Service\\' => 26,
             'Symfony\\Contracts\\EventDispatcher\\' => 34,
@@ -106,10 +90,8 @@ class ComposerStaticInit780c025a558483967552e2d803224dfb
             'Symfony\\Component\\Filesystem\\' => 29,
             'Symfony\\Component\\EventDispatcher\\' => 34,
             'Symfony\\Component\\Console\\' => 26,
-            'Svg\\' => 4,
-            'Sabberworm\\CSS\\' => 15,
         ),
-        'R' => 
+        'R' =>
         array (
             'React\\Stream\\' => 13,
             'React\\Socket\\' => 13,
@@ -119,444 +101,352 @@ class ComposerStaticInit780c025a558483967552e2d803224dfb
             'React\\ChildProcess\\' => 19,
             'React\\Cache\\' => 12,
         ),
-        'P' => 
+        'P' =>
         array (
-            'Psr\\SimpleCache\\' => 16,
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Http\\Client\\' => 16,
             'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
-            'PhpOffice\\PhpSpreadsheet\\' => 25,
             'PhpCsFixer\\' => 11,
         ),
-        'O' => 
+        'O' =>
         array (
             'Overtrue\\PHPLint\\' => 17,
             'OpenApi\\' => 8,
         ),
-        'N' => 
+        'N' =>
         array (
             'N98\\JUnitXml\\' => 13,
         ),
-        'M' => 
-        array (
-            'Matrix\\' => 7,
-            'Masterminds\\' => 12,
-        ),
-        'I' => 
+        'I' =>
         array (
             'Imagine\\' => 8,
         ),
-        'G' => 
+        'G' =>
         array (
             'GuzzleHttp\\Psr7\\' => 16,
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
         ),
-        'F' => 
+        'F' =>
         array (
-            'FontLib\\' => 8,
             'Fidry\\CpuCoreCounter\\' => 21,
             'Faker\\' => 6,
         ),
-        'E' => 
+        'E' =>
         array (
             'Evenement\\' => 10,
+            'Ergebnis\\AgentDetector\\' => 23,
             'Egulias\\EmailValidator\\' => 23,
-            'EdSDK\\FlmngrServer\\' => 19,
         ),
-        'D' => 
+        'D' =>
         array (
-            'Dompdf\\' => 7,
-            'Doctrine\\Deprecations\\' => 22,
             'Doctrine\\Common\\Lexer\\' => 22,
-            'DiDom\\' => 6,
         ),
-        'C' => 
+        'C' =>
         array (
             'Composer\\XdebugHandler\\' => 23,
             'Composer\\Semver\\' => 16,
             'Composer\\Pcre\\' => 14,
-            'Complex\\' => 8,
             'Clue\\React\\NDJson\\' => 18,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'zgb7mtr\\colorPicker\\' => 
+        'zgb7mtr\\colorPicker\\' =>
         array (
             0 => __DIR__ . '/..' . '/zgb7mtr/yii2-bootstrap-color-picker/src',
         ),
-        'yii\\symfonymailer\\' => 
+        'yii\\symfonymailer\\' =>
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2-symfonymailer/src',
         ),
-        'yii\\swiftmailer\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/yiisoft/yii2-swiftmailer/src',
-        ),
-        'yii\\imagine\\' => 
+        'yii\\imagine\\' =>
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2-imagine/src',
         ),
-        'yii\\gii\\' => 
+        'yii\\gii\\' =>
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2-gii/src',
         ),
-        'yii\\faker\\' => 
+        'yii\\faker\\' =>
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2-faker/src',
         ),
-        'yii\\debug\\' => 
+        'yii\\debug\\' =>
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2-debug/src',
         ),
-        'yii\\composer\\' => 
+        'yii\\composer\\' =>
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2-composer',
         ),
-        'yii\\bootstrap\\' => 
+        'yii\\bootstrap\\' =>
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap/src',
         ),
-        'yii\\' => 
+        'yii\\' =>
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
         ),
-        'wapmorgan\\yii2inflection\\' => 
+        'wapmorgan\\yii2inflection\\' =>
         array (
             0 => __DIR__ . '/..' . '/wapmorgan/yii2-inflection/src',
         ),
-        'rmrevin\\yii\\fontawesome\\' => 
+        'rmrevin\\yii\\fontawesome\\' =>
         array (
             0 => __DIR__ . '/..' . '/rmrevin/yii2-fontawesome',
         ),
-        'morphos\\' => 
+        'morphos\\' =>
         array (
             0 => __DIR__ . '/..' . '/wapmorgan/morphos/src',
         ),
-        'kartik\\select2\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-select2/src',
-        ),
-        'kartik\\helpers\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-helpers/src',
-        ),
-        'kartik\\form\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-activeform/src',
-        ),
-        'kartik\\field\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-field-range/src',
-        ),
-        'kartik\\date\\' => 
+        'kartik\\date\\' =>
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-datepicker/src',
         ),
-        'kartik\\color\\' => 
+        'kartik\\color\\' =>
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-colorinput/src',
         ),
-        'kartik\\base\\' => 
+        'kartik\\base\\' =>
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-krajee-base/src',
         ),
-        'dosamigos\\tinymce\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/2amigos/yii2-tinymce-widget/src',
-        ),
-        'dosamigos\\datepicker\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/2amigos/yii2-date-picker-widget/src',
-        ),
-        'dmstr\\' => 
+        'dmstr\\' =>
         array (
             0 => __DIR__ . '/..' . '/dmstr/yii2-adminlte-asset',
         ),
-        'cebe\\markdown\\' => 
+        'cebe\\markdown\\' =>
         array (
             0 => __DIR__ . '/..' . '/cebe/markdown',
         ),
-        'alexantr\\colorpicker\\' => 
+        'Symfony\\Polyfill\\Php84\\' =>
         array (
-            0 => __DIR__ . '/..' . '/alexantr/yii2-colorpicker',
+            0 => __DIR__ . '/..' . '/symfony/polyfill-php84',
         ),
-        'ZipStream\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/maennchen/zipstream-php/src',
-        ),
-        'Symfony\\Polyfill\\Php81\\' => 
+        'Symfony\\Polyfill\\Php81\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php81',
         ),
-        'Symfony\\Polyfill\\Php80\\' => 
+        'Symfony\\Polyfill\\Php80\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
         ),
-        'Symfony\\Polyfill\\Mbstring\\' => 
+        'Symfony\\Polyfill\\Mbstring\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
         ),
-        'Symfony\\Polyfill\\Intl\\Normalizer\\' => 
+        'Symfony\\Polyfill\\Intl\\Normalizer\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer',
         ),
-        'Symfony\\Polyfill\\Intl\\Idn\\' => 
+        'Symfony\\Polyfill\\Intl\\Idn\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-intl-idn',
         ),
-        'Symfony\\Polyfill\\Intl\\Grapheme\\' => 
+        'Symfony\\Polyfill\\Intl\\Grapheme\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme',
         ),
-        'Symfony\\Polyfill\\Iconv\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-iconv',
-        ),
-        'Symfony\\Polyfill\\Ctype\\' => 
+        'Symfony\\Polyfill\\Ctype\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
-        'Symfony\\Contracts\\Service\\' => 
+        'Symfony\\Contracts\\Service\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/service-contracts',
         ),
-        'Symfony\\Contracts\\EventDispatcher\\' => 
+        'Symfony\\Contracts\\EventDispatcher\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/event-dispatcher-contracts',
         ),
-        'Symfony\\Component\\Yaml\\' => 
+        'Symfony\\Component\\Yaml\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/yaml',
         ),
-        'Symfony\\Component\\String\\' => 
+        'Symfony\\Component\\String\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/string',
         ),
-        'Symfony\\Component\\Stopwatch\\' => 
+        'Symfony\\Component\\Stopwatch\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/stopwatch',
         ),
-        'Symfony\\Component\\Process\\' => 
+        'Symfony\\Component\\Process\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/process',
         ),
-        'Symfony\\Component\\OptionsResolver\\' => 
+        'Symfony\\Component\\OptionsResolver\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/options-resolver',
         ),
-        'Symfony\\Component\\Mime\\' => 
+        'Symfony\\Component\\Mime\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/mime',
         ),
-        'Symfony\\Component\\Mailer\\' => 
+        'Symfony\\Component\\Mailer\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/mailer',
         ),
-        'Symfony\\Component\\Finder\\' => 
+        'Symfony\\Component\\Finder\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/finder',
         ),
-        'Symfony\\Component\\Filesystem\\' => 
+        'Symfony\\Component\\Filesystem\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/filesystem',
         ),
-        'Symfony\\Component\\EventDispatcher\\' => 
+        'Symfony\\Component\\EventDispatcher\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/event-dispatcher',
         ),
-        'Symfony\\Component\\Console\\' => 
+        'Symfony\\Component\\Console\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
-        'Svg\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/phenx/php-svg-lib/src/Svg',
-        ),
-        'Sabberworm\\CSS\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/sabberworm/php-css-parser/src',
-        ),
-        'React\\Stream\\' => 
+        'React\\Stream\\' =>
         array (
             0 => __DIR__ . '/..' . '/react/stream/src',
         ),
-        'React\\Socket\\' => 
+        'React\\Socket\\' =>
         array (
             0 => __DIR__ . '/..' . '/react/socket/src',
         ),
-        'React\\Promise\\' => 
+        'React\\Promise\\' =>
         array (
             0 => __DIR__ . '/..' . '/react/promise/src',
         ),
-        'React\\EventLoop\\' => 
+        'React\\EventLoop\\' =>
         array (
             0 => __DIR__ . '/..' . '/react/event-loop/src',
         ),
-        'React\\Dns\\' => 
+        'React\\Dns\\' =>
         array (
             0 => __DIR__ . '/..' . '/react/dns/src',
         ),
-        'React\\ChildProcess\\' => 
+        'React\\ChildProcess\\' =>
         array (
             0 => __DIR__ . '/..' . '/react/child-process/src',
         ),
-        'React\\Cache\\' => 
+        'React\\Cache\\' =>
         array (
             0 => __DIR__ . '/..' . '/react/cache/src',
         ),
-        'Psr\\SimpleCache\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/simple-cache/src',
-        ),
-        'Psr\\Log\\' => 
+        'Psr\\Log\\' =>
         array (
             0 => __DIR__ . '/..' . '/psr/log/src',
         ),
-        'Psr\\Http\\Message\\' => 
+        'Psr\\Http\\Message\\' =>
         array (
             0 => __DIR__ . '/..' . '/psr/http-factory/src',
             1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
-        'Psr\\Http\\Client\\' => 
+        'Psr\\Http\\Client\\' =>
         array (
             0 => __DIR__ . '/..' . '/psr/http-client/src',
         ),
-        'Psr\\EventDispatcher\\' => 
+        'Psr\\EventDispatcher\\' =>
         array (
             0 => __DIR__ . '/..' . '/psr/event-dispatcher/src',
         ),
-        'Psr\\Container\\' => 
+        'Psr\\Container\\' =>
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
         ),
-        'PhpOffice\\PhpSpreadsheet\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/phpoffice/phpspreadsheet/src/PhpSpreadsheet',
-        ),
-        'PhpCsFixer\\' => 
+        'PhpCsFixer\\' =>
         array (
             0 => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src',
         ),
-        'Overtrue\\PHPLint\\' => 
+        'Overtrue\\PHPLint\\' =>
         array (
             0 => __DIR__ . '/..' . '/overtrue/phplint/src',
         ),
-        'OpenApi\\' => 
+        'OpenApi\\' =>
         array (
             0 => __DIR__ . '/..' . '/zircote/swagger-php/src',
         ),
-        'N98\\JUnitXml\\' => 
+        'N98\\JUnitXml\\' =>
         array (
             0 => __DIR__ . '/..' . '/n98/junit-xml/src/N98/JUnitXml',
         ),
-        'Matrix\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/markbaker/matrix/classes/src',
-        ),
-        'Masterminds\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/masterminds/html5/src',
-        ),
-        'Imagine\\' => 
+        'Imagine\\' =>
         array (
             0 => __DIR__ . '/..' . '/imagine/imagine/src',
         ),
-        'GuzzleHttp\\Psr7\\' => 
+        'GuzzleHttp\\Psr7\\' =>
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
         ),
-        'GuzzleHttp\\Promise\\' => 
+        'GuzzleHttp\\Promise\\' =>
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/promises/src',
         ),
-        'GuzzleHttp\\' => 
+        'GuzzleHttp\\' =>
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
-        'FontLib\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/phenx/php-font-lib/src/FontLib',
-        ),
-        'Fidry\\CpuCoreCounter\\' => 
+        'Fidry\\CpuCoreCounter\\' =>
         array (
             0 => __DIR__ . '/..' . '/fidry/cpu-core-counter/src',
         ),
-        'Faker\\' => 
+        'Faker\\' =>
         array (
             0 => __DIR__ . '/..' . '/fakerphp/faker/src/Faker',
         ),
-        'Evenement\\' => 
+        'Evenement\\' =>
         array (
             0 => __DIR__ . '/..' . '/evenement/evenement/src',
         ),
-        'Egulias\\EmailValidator\\' => 
+        'Ergebnis\\AgentDetector\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/ergebnis/agent-detector/src',
+        ),
+        'Egulias\\EmailValidator\\' =>
         array (
             0 => __DIR__ . '/..' . '/egulias/email-validator/src',
         ),
-        'EdSDK\\FlmngrServer\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/edsdk/flmngr-server-php/src',
-        ),
-        'Dompdf\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/dompdf/dompdf/src',
-        ),
-        'Doctrine\\Deprecations\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/doctrine/deprecations/src',
-        ),
-        'Doctrine\\Common\\Lexer\\' => 
+        'Doctrine\\Common\\Lexer\\' =>
         array (
             0 => __DIR__ . '/..' . '/doctrine/lexer/src',
         ),
-        'DiDom\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/imangazaliev/didom/src/DiDom',
-        ),
-        'Composer\\XdebugHandler\\' => 
+        'Composer\\XdebugHandler\\' =>
         array (
             0 => __DIR__ . '/..' . '/composer/xdebug-handler/src',
         ),
-        'Composer\\Semver\\' => 
+        'Composer\\Semver\\' =>
         array (
             0 => __DIR__ . '/..' . '/composer/semver/src',
         ),
-        'Composer\\Pcre\\' => 
+        'Composer\\Pcre\\' =>
         array (
             0 => __DIR__ . '/..' . '/composer/pcre/src',
         ),
-        'Complex\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/markbaker/complex/classes/src',
-        ),
-        'Clue\\React\\NDJson\\' => 
+        'Clue\\React\\NDJson\\' =>
         array (
             0 => __DIR__ . '/..' . '/clue/ndjson-react/src',
         ),
     );
 
     public static $prefixesPsr0 = array (
-        'c' => 
+        'c' =>
         array (
-            'cebe\\gravatar\\' => 
+            'cebe\\gravatar\\' =>
             array (
                 0 => __DIR__ . '/..' . '/cebe/yii2-gravatar',
             ),
         ),
-        'H' => 
+        'H' =>
         array (
-            'HTMLPurifier' => 
+            'HTMLPurifier' =>
             array (
                 0 => __DIR__ . '/..' . '/ezyang/htmlpurifier/library',
             ),
         ),
-        'D' => 
+        'D' =>
         array (
-            'Diff' => 
+            'Diff' =>
             array (
                 0 => __DIR__ . '/..' . '/phpspec/php-diff/lib',
             ),
@@ -567,10 +457,18 @@ class ComposerStaticInit780c025a558483967552e2d803224dfb
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'CURLStringFile' => __DIR__ . '/..' . '/symfony/polyfill-php81/Resources/stubs/CURLStringFile.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'Dompdf\\Cpdf' => __DIR__ . '/..' . '/dompdf/dompdf/lib/Cpdf.php',
+        'Deprecated' => __DIR__ . '/..' . '/symfony/polyfill-php84/Resources/stubs/Deprecated.php',
         'Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
+        'Pdo\\Dblib' => __DIR__ . '/..' . '/symfony/polyfill-php84/Resources/stubs/Pdo/Dblib.php',
+        'Pdo\\Firebird' => __DIR__ . '/..' . '/symfony/polyfill-php84/Resources/stubs/Pdo/Firebird.php',
+        'Pdo\\Mysql' => __DIR__ . '/..' . '/symfony/polyfill-php84/Resources/stubs/Pdo/Mysql.php',
+        'Pdo\\Odbc' => __DIR__ . '/..' . '/symfony/polyfill-php84/Resources/stubs/Pdo/Odbc.php',
+        'Pdo\\Pgsql' => __DIR__ . '/..' . '/symfony/polyfill-php84/Resources/stubs/Pdo/Pgsql.php',
+        'Pdo\\Sqlite' => __DIR__ . '/..' . '/symfony/polyfill-php84/Resources/stubs/Pdo/Sqlite.php',
         'PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
+        'ReflectionConstant' => __DIR__ . '/..' . '/symfony/polyfill-php84/Resources/stubs/ReflectionConstant.php',
         'ReturnTypeWillChange' => __DIR__ . '/..' . '/symfony/polyfill-php81/Resources/stubs/ReturnTypeWillChange.php',
+        'RoundingMode' => __DIR__ . '/..' . '/symfony/polyfill-php84/Resources/stubs/RoundingMode.php',
         'SebastianBergmann\\Diff\\Chunk' => __DIR__ . '/..' . '/sebastian/diff/src/Chunk.php',
         'SebastianBergmann\\Diff\\ConfigurationException' => __DIR__ . '/..' . '/sebastian/diff/src/Exception/ConfigurationException.php',
         'SebastianBergmann\\Diff\\Diff' => __DIR__ . '/..' . '/sebastian/diff/src/Diff.php',
@@ -595,10 +493,10 @@ class ComposerStaticInit780c025a558483967552e2d803224dfb
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit780c025a558483967552e2d803224dfb::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit780c025a558483967552e2d803224dfb::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit780c025a558483967552e2d803224dfb::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit780c025a558483967552e2d803224dfb::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitc2c39864c35eb3a7249438fe0bec8af1::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitc2c39864c35eb3a7249438fe0bec8af1::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitc2c39864c35eb3a7249438fe0bec8af1::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitc2c39864c35eb3a7249438fe0bec8af1::$classMap;
 
         }, null, ClassLoader::class);
     }

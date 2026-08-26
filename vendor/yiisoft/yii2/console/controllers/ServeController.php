@@ -8,7 +8,9 @@
 namespace yii\console\controllers;
 
 use Yii;
+use yii\console\Application;
 use yii\console\Controller;
+use yii\console\ExitCode;
 use yii\helpers\Console;
 
 /**
@@ -19,14 +21,16 @@ use yii\helpers\Console;
  *
  * @author Alexander Makarov <sam@rmcreative.ru>
  * @since 2.0.7
+ *
+ * @template T of Application = Application
+ * @extends Controller<T>
  */
 class ServeController extends Controller
 {
-    const EXIT_CODE_NO_DOCUMENT_ROOT = 2;
-    const EXIT_CODE_NO_ROUTING_FILE = 3;
-    const EXIT_CODE_ADDRESS_TAKEN_BY_ANOTHER_SERVER = 4;
-    const EXIT_CODE_ADDRESS_TAKEN_BY_ANOTHER_PROCESS = 5;
-
+    public const EXIT_CODE_NO_DOCUMENT_ROOT = 2;
+    public const EXIT_CODE_NO_ROUTING_FILE = 3;
+    public const EXIT_CODE_ADDRESS_TAKEN_BY_ANOTHER_SERVER = 4;
+    public const EXIT_CODE_ADDRESS_TAKEN_BY_ANOTHER_PROCESS = 5;
     /**
      * @var int port to serve on.
      */
@@ -83,10 +87,12 @@ class ServeController extends Controller
         $command = '"' . PHP_BINARY . '"' . " -S {$address} -t \"{$documentRoot}\"";
 
         if ($this->router !== null && $router !== '') {
-            $command .= " -r \"{$router}\"";
+            $command .= " \"{$router}\"";
         }
 
         $this->runCommand($command);
+
+        return ExitCode::OK;
     }
 
     /**

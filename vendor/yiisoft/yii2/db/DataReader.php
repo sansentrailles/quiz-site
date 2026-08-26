@@ -16,7 +16,7 @@ use yii\base\InvalidCallException;
  * returns all the rows in a single array. Rows of data can also be read by
  * iterating through the reader. For example,
  *
- * ```php
+ * ```
  * $command = $connection->createCommand('SELECT * FROM post');
  * $reader = $command->query();
  *
@@ -47,6 +47,8 @@ use yii\base\InvalidCallException;
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
+ *
+ * @implements \Iterator<int, mixed>
  */
 class DataReader extends \yii\base\BaseObject implements \Iterator, \Countable
 {
@@ -105,7 +107,7 @@ class DataReader extends \yii\base\BaseObject implements \Iterator, \Countable
 
     /**
      * Advances the reader to the next row in a result set.
-     * @return array the current row, false if no more row available
+     * @return array|false the current row, false if no more row available
      */
     public function read()
     {

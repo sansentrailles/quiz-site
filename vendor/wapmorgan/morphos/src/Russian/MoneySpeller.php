@@ -28,6 +28,7 @@ class MoneySpeller extends \morphos\MoneySpeller
         self::REAL    => ['реал', Gender::MALE, 'сентаво', Gender::NEUTER],
         self::RAND    => ['рэнд', Gender::MALE, 'цент', Gender::MALE],
         self::HRYVNIA => ['гривна', Gender::FEMALE, 'копейка', Gender::FEMALE],
+        self::TENGE   => ['тенге', Gender::NEUTER, 'тиын', Gender::MALE],
     ];
 
     /**
@@ -51,7 +52,7 @@ class MoneySpeller extends \morphos\MoneySpeller
         $currency = CurrenciesHelper::canonizeCurrency($currency);
 
         $integer    = (int)floor($value);
-        $fractional = fmod($value, $integer);
+        $fractional = fmod($value, $integer ?: 1);
         $fractional = round($fractional, 2);
         $fractional = (int)round($fractional * 100);
 
@@ -100,6 +101,21 @@ class MoneySpeller extends \morphos\MoneySpeller
                             . NounPluralization::pluralize(static::$labels[$currency][2], $fractional, false, $case)
                         : null)
                     ;
+
+            case static::ACCOUNTING_FORMAT:
+                $integer_spelled = CardinalNumeralGenerator::getCase(
+                    $integer,
+                    $case !== null ? $case : Cases::IMENIT,
+                    static::$labels[$currency][1],
+                    true
+                );
+
+                return $integer_spelled . ' ' .
+                    NounPluralization::pluralize(static::$labels[$currency][0], $integer, false, $case) .
+                    ($fractional > 0 || $skipFractionalPartIfZero === false
+                        ? ' ' . $fractional . ' ' .
+                        NounPluralization::pluralize(static::$labels[$currency][2], $fractional, false, $case)
+                        : null);
         }
 
         throw new RuntimeException('Unreachable');
